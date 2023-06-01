@@ -1,0 +1,24 @@
+extract:
+  DandBCompany:
+    fields:
+    - DunsNumber
+    - Name
+  OperatingHours:
+    fields:
+    - CurrencyIsoCode
+    - Description
+    - Name
+    - TimeZone
+  WorkType:
+    fields:
+    - ShouldAutoCreateSvcAppt
+    - CurrencyIsoCode
+    - Description
+    - FSL__Due_Date_Offset__c
+    - DurationType
+    - EstimatedDuration
+    - FSL__Exact_Appointments__c
+    - MinimumCrewSize
+    - RecommendedCrewSize
+    - ServiceReportTemplateId
+    - Name
