@@ -109,7 +109,6 @@ INSERT INTO "AttributeDefinition" VALUES(1,'True','USD','Text','','','Meter Read
 INSERT INTO "AttributeDefinition" VALUES(2,'True','USD','Number','1','','Number of Dials','Number of Dials','False','');
 INSERT INTO "AttributeDefinition" VALUES(3,'True','USD','Text','','','Meter Read Date','Meter Read Date','False','');
 INSERT INTO "AttributeDefinition" VALUES(4,'True','USD','Text','3/4','','Meter Size','Meter Size','False','');
-INSERT INTO "AttributeDefinition" VALUES(5,'True','USD','Date','','','test AD','testAD','False','');
 INSERT INTO "AttributeDefinition" VALUES(6,'True','USD','Checkbox','','','Meter Bar Sealed','Meter Bar Sealed','False','');
 INSERT INTO "AttributeDefinition" VALUES(7,'True','USD','Text','BHEL','','Meter Manufacturer','Meter Manufacturer','False','');
 CREATE TABLE "Contact" (
