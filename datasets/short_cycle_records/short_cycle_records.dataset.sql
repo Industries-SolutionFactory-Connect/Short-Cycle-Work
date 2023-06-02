@@ -240,7 +240,7 @@ CREATE TABLE "WorkStepTemplate" (
 	PRIMARY KEY (id)
 );
 INSERT INTO "WorkStepTemplate" VALUES(1,'Check_Meter_Details','USD','Verify the meter details.','True','Check Meter Details','','','','');
-INSERT INTO "WorkStepTemplate" VALUES(2,'','USD','Provide reading and date time of the meter to be replaced.','True','Enter Old Meter Read and Date','','','','');
+INSERT INTO "WorkStepTemplate" VALUES(2,'Enter_Old_Meter_Read_and_Date_Time','USD','Provide reading and date time of the meter to be replaced.','True','Enter Old Meter Read and Date','','','','');
 INSERT INTO "WorkStepTemplate" VALUES(3,'Safety_Checks','USD','Safety instructions to be performed before reaching customer''s location.','True','Safety Checks','','','','');
 INSERT INTO "WorkStepTemplate" VALUES(4,'','USD','Leave note on door after completion of service.','True','Leave note on door','','','','');
 INSERT INTO "WorkStepTemplate" VALUES(5,'','USD','Clean area after completing the service.','True','Clean Area','','','','');
