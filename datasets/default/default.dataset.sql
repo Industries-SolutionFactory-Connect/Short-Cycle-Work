@@ -2875,20 +2875,6 @@ CREATE TABLE "ServiceTerritory" (
 	"OperatingHoursId" VARCHAR(255), 
 	PRIMARY KEY (id)
 );
-INSERT INTO "ServiceTerritory" VALUES(1,'','','USD','','False','','','','False','','','','','','True','','','SF Showroom','','','','','1301');
-INSERT INTO "ServiceTerritory" VALUES(2,'','','USD','','False','','','','True','','','','','','True','','','Test Territory 8417226','','','','','1741');
-INSERT INTO "ServiceTerritory" VALUES(3,'San Francisco','United States','USD','','False','37.793834','-122.395123','','False','','','','','Block','True','37.794086','-122.395062','SFO Downtown','94105','CA','41 Market Street','','467');
-INSERT INTO "ServiceTerritory" VALUES(4,'San Francisco','United States','USD','','False','37.788444','-122.406656','','False','','','','','Block','True','37.78761','-122.407489','San Francisco','94102','CA','200 Geary St','','1301');
-INSERT INTO "ServiceTerritory" VALUES(5,'','','USD','','False','','','','False','','','','','','True','','','Portland','','','','','1374');
-INSERT INTO "ServiceTerritory" VALUES(6,'','','USD','','False','','','','False','','','','','','True','','','Mountain View','','','','','1303');
-INSERT INTO "ServiceTerritory" VALUES(7,'','','USD','','False','','','','False','','','','','','True','','','Canada','','','','','1375');
-INSERT INTO "ServiceTerritory" VALUES(8,'','','USD','','False','','','','False','','','','0.0','','True','','','test','','','','','1374');
-INSERT INTO "ServiceTerritory" VALUES(9,'','','USD','','False','','','','False','','','','','','True','','','Contractor Territory','','','','','1375');
-INSERT INTO "ServiceTerritory" VALUES(10,'','','USD','','False','','','','False','','','','','','True','','','bEMnxlAdzn','','','','','1489');
-INSERT INTO "ServiceTerritory" VALUES(11,'','','USD','','False','','','','False','','','','','','True','','','test123','','','','','1480');
-INSERT INTO "ServiceTerritory" VALUES(12,'','','USD','','False','','','','False','','','','','','False','','','sPwwxBPQKj','','','','','1488');
-INSERT INTO "ServiceTerritory" VALUES(13,'','','USD','','False','','','','False','','','','','','True','','','Pleasanton','','','','','1758');
-INSERT INTO "ServiceTerritory" VALUES(14,'','','USD','','False','','','','False','','','','','','True','','','Nishitha Service Territory','','','','','1758');
 CREATE TABLE "UnitOfMeasure" (
 	id INTEGER NOT NULL, 
 	"Name" VARCHAR(255), 
