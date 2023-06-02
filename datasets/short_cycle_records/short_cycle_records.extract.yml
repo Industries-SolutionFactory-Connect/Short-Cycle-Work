@@ -1,0 +1,195 @@
+extract:
+  Account:
+    fields:
+    - CurrencyIsoCode
+    - Description
+    - Fax
+    - Name
+    - AccountNumber
+    - Phone
+    - Rating
+    - Site
+    - AccountSource
+    - Type
+    - Active__c
+    - AnnualRevenue
+    - BillingCity
+    - BillingCountry
+    - BillingGeocodeAccuracy
+    - BillingLatitude
+    - BillingLongitude
+    - BillingState
+    - BillingStreet
+    - BillingPostalCode
+    - CleanStatus
+    - CustomerPriority__c
+    - DandbCompanyId
+    - DunsNumber
+    - Jigsaw
+    - NumberOfEmployees
+    - Industry
+    - NaicsCode
+    - NaicsDesc
+    - NumberofLocations__c
+    - OperatingHoursId
+    - Ownership
+    - ParentId
+    - ShippingCity
+    - ShippingCountry
+    - ShippingGeocodeAccuracy
+    - ShippingLatitude
+    - ShippingLongitude
+    - ShippingState
+    - ShippingStreet
+    - ShippingPostalCode
+    - Sic
+    - SicDesc
+    - SLA__c
+    - SLAExpirationDate__c
+    - SLASerialNumber__c
+    - TickerSymbol
+    - Tradestyle
+    - UpsellOpportunity__c
+    - Website
+    - YearStarted
+  DandBCompany:
+    fields:
+    - DunsNumber
+    - Name
+  OperatingHours:
+    fields:
+    - CurrencyIsoCode
+    - Description
+    - Name
+    - TimeZone
+  Asset:
+    fields:
+    - AccountId
+    - Name
+    - AssetProvidedById
+    - AssetServicedById
+    - Capacity__c
+    - City
+    - IsCompetitorProduct
+    - ContactId
+    - Country
+    - CurrencyIsoCode
+    - Description
+    - GeocodeAccuracy
+    - InstallDate
+    - IsInternal
+    - Latitude
+    - LocationId
+    - Longitude
+    - Mileage__c
+    - MileageTracking__c
+    - NeedMaintenance__c
+    - ParentId
+    - Performance__c
+    - PostalCode
+    - Price
+    - Product2Id
+    - PurchaseDate
+    - Quantity
+    - SerialNumber
+    - State
+    - Status
+    - Street
+    - UsageEndDate
+  Contact:
+    fields:
+    - LastName
+  Location:
+    fields:
+    - CloseDate
+    - ConstructionEndDate
+    - ConstructionStartDate
+    - CurrencyIsoCode
+    - Description
+    - DrivingDirections
+    - ExternalReference
+    - IsInventoryLocation
+    - IsMobile
+    - Latitude
+    - LocationType
+    - Longitude
+    - Name
+    - OpenDate
+    - PossessionDate
+    - RemodelEndDate
+    - RemodelStartDate
+    - ShouldSyncWithOci
+    - TimeZone
+  Product2:
+    fields:
+    - CurrencyIsoCode
+    - Description
+    - DisplayUrl
+    - ExternalId
+    - Family
+    - IsActive
+    - IsSerialized
+    - Name
+    - ProductCode
+    - QuantityUnitOfMeasure
+    - StockKeepingUnit
+    - TransferRecordMode
+  AttributeDefinition:
+    fields:
+    - IsActive
+    - CurrencyIsoCode
+    - DataType
+    - DefaultValue
+    - Description
+    - Label
+    - Name
+    - IsRequired
+    - UnitOfMeasureId
+  UnitOfMeasure:
+    fields:
+    - Name
+    - Type
+    - UnitCode
+  WorkPlanSelectionRule:
+    fields:
+    - LocationId
+  WorkPlanTemplate:
+    fields:
+    - IsActive
+    - CurrencyIsoCode
+    - Custom1__c
+    - Description
+    - encrypted__c
+    - Name
+    - RelativeExecutionOrder
+  WorkPlanTemplateEntry:
+    fields:
+    - CurrencyIsoCode
+    - custom_wpte__c
+    - ExecutionOrder
+    - WorkPlanTemplateId
+    - WorkStepTemplateId
+  WorkStepTemplate:
+    fields:
+    - ActionDefinition
+    - CurrencyIsoCode
+    - Description
+    - IsActive
+    - Name
+    - custom_wst__c
+    - date_wst__c
+    - geo_wst__Latitude__s
+    - geo_wst__Longitude__s
+  WorkType:
+    fields:
+    - ShouldAutoCreateSvcAppt
+    - CurrencyIsoCode
+    - Description
+    - FSL__Due_Date_Offset__c
+    - DurationType
+    - EstimatedDuration
+    - FSL__Exact_Appointments__c
+    - MinimumCrewSize
+    - RecommendedCrewSize
+    - ServiceReportTemplateId
+    - Name
