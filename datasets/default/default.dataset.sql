@@ -1,10 +1,655 @@
 BEGIN TRANSACTION;
+CREATE TABLE "Account" (
+	id INTEGER NOT NULL, 
+	"CurrencyIsoCode" VARCHAR(255), 
+	"Description" VARCHAR(255), 
+	"Fax" VARCHAR(255), 
+	"Name" VARCHAR(255), 
+	"AccountNumber" VARCHAR(255), 
+	"Phone" VARCHAR(255), 
+	"Rating" VARCHAR(255), 
+	"Site" VARCHAR(255), 
+	"AccountSource" VARCHAR(255), 
+	"Type" VARCHAR(255), 
+	"Active__c" VARCHAR(255), 
+	"AnnualRevenue" VARCHAR(255), 
+	"BillingCity" VARCHAR(255), 
+	"BillingCountry" VARCHAR(255), 
+	"BillingGeocodeAccuracy" VARCHAR(255), 
+	"BillingLatitude" VARCHAR(255), 
+	"BillingLongitude" VARCHAR(255), 
+	"BillingState" VARCHAR(255), 
+	"BillingStreet" VARCHAR(255), 
+	"BillingPostalCode" VARCHAR(255), 
+	"CleanStatus" VARCHAR(255), 
+	"CustomerPriority__c" VARCHAR(255), 
+	"DunsNumber" VARCHAR(255), 
+	"Jigsaw" VARCHAR(255), 
+	"NumberOfEmployees" VARCHAR(255), 
+	"Industry" VARCHAR(255), 
+	"NaicsCode" VARCHAR(255), 
+	"NaicsDesc" VARCHAR(255), 
+	"NumberofLocations__c" VARCHAR(255), 
+	"Ownership" VARCHAR(255), 
+	"ShippingCity" VARCHAR(255), 
+	"ShippingCountry" VARCHAR(255), 
+	"ShippingGeocodeAccuracy" VARCHAR(255), 
+	"ShippingLatitude" VARCHAR(255), 
+	"ShippingLongitude" VARCHAR(255), 
+	"ShippingState" VARCHAR(255), 
+	"ShippingStreet" VARCHAR(255), 
+	"ShippingPostalCode" VARCHAR(255), 
+	"Sic" VARCHAR(255), 
+	"SicDesc" VARCHAR(255), 
+	"SLA__c" VARCHAR(255), 
+	"SLAExpirationDate__c" VARCHAR(255), 
+	"SLASerialNumber__c" VARCHAR(255), 
+	"TickerSymbol" VARCHAR(255), 
+	"Tradestyle" VARCHAR(255), 
+	"UpsellOpportunity__c" VARCHAR(255), 
+	"Website" VARCHAR(255), 
+	"YearStarted" VARCHAR(255), 
+	"DandbCompanyId" VARCHAR(255), 
+	"OperatingHoursId" VARCHAR(255), 
+	"ParentId" VARCHAR(255), 
+	PRIMARY KEY (id)
+);
+INSERT INTO "Account" VALUES(1,'USD','','','Acme','','','','','','','','','','','','','','','','','Pending','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','');
+CREATE TABLE "Asset" (
+	id INTEGER NOT NULL, 
+	"Name" VARCHAR(255), 
+	"Capacity__c" VARCHAR(255), 
+	"City" VARCHAR(255), 
+	"IsCompetitorProduct" VARCHAR(255), 
+	"Country" VARCHAR(255), 
+	"CurrencyIsoCode" VARCHAR(255), 
+	"Description" VARCHAR(255), 
+	"GeocodeAccuracy" VARCHAR(255), 
+	"InstallDate" VARCHAR(255), 
+	"IsInternal" VARCHAR(255), 
+	"Latitude" VARCHAR(255), 
+	"Longitude" VARCHAR(255), 
+	"Mileage__c" VARCHAR(255), 
+	"MileageTracking__c" VARCHAR(255), 
+	"NeedMaintenance__c" VARCHAR(255), 
+	"Performance__c" VARCHAR(255), 
+	"PostalCode" VARCHAR(255), 
+	"Price" VARCHAR(255), 
+	"PurchaseDate" VARCHAR(255), 
+	"Quantity" VARCHAR(255), 
+	"SerialNumber" VARCHAR(255), 
+	"State" VARCHAR(255), 
+	"Status" VARCHAR(255), 
+	"Street" VARCHAR(255), 
+	"UsageEndDate" VARCHAR(255), 
+	"AccountId" VARCHAR(255), 
+	"AssetProvidedById" VARCHAR(255), 
+	"AssetServicedById" VARCHAR(255), 
+	"ContactId" VARCHAR(255), 
+	"LocationId" VARCHAR(255), 
+	"ParentId" VARCHAR(255), 
+	"Product2Id" VARCHAR(255), 
+	PRIMARY KEY (id)
+);
+INSERT INTO "Asset" VALUES(1,'Gas Meter','','','False','','USD','','','','False','','','','','False','','','','','','SN123','','','','','1','','','','503','','');
+CREATE TABLE "AttributeDefinition" (
+	id INTEGER NOT NULL, 
+	"IsActive" VARCHAR(255), 
+	"CurrencyIsoCode" VARCHAR(255), 
+	"DataType" VARCHAR(255), 
+	"DefaultValue" VARCHAR(255), 
+	"Description" VARCHAR(255), 
+	"Label" VARCHAR(255), 
+	"Name" VARCHAR(255), 
+	"IsRequired" VARCHAR(255), 
+	"UnitOfMeasureId" VARCHAR(255), 
+	PRIMARY KEY (id)
+);
+INSERT INTO "AttributeDefinition" VALUES(1,'True','USD','Text','','','Meter Read','Meter Read','False','');
+INSERT INTO "AttributeDefinition" VALUES(2,'True','USD','Number','1','','Number of Dials','Number of Dials','False','');
+INSERT INTO "AttributeDefinition" VALUES(3,'True','USD','Text','','','Meter Read Date','Meter Read Date','False','');
+INSERT INTO "AttributeDefinition" VALUES(4,'True','USD','Text','3/4','','Meter Size','Meter Size','False','');
+INSERT INTO "AttributeDefinition" VALUES(5,'True','USD','Date','','','test AD','testAD','False','');
+INSERT INTO "AttributeDefinition" VALUES(6,'True','USD','Checkbox','','','Meter Bar Sealed','Meter Bar Sealed','False','');
+INSERT INTO "AttributeDefinition" VALUES(7,'True','USD','Text','BHEL','','Meter Manufacturer','Meter Manufacturer','False','');
+CREATE TABLE "Contact" (
+	id INTEGER NOT NULL, 
+	"LastName" VARCHAR(255), 
+	PRIMARY KEY (id)
+);
 CREATE TABLE "DandBCompany" (
 	id INTEGER NOT NULL, 
 	"DunsNumber" VARCHAR(255), 
 	"Name" VARCHAR(255), 
 	PRIMARY KEY (id)
 );
+CREATE TABLE "Location" (
+	id INTEGER NOT NULL, 
+	"CloseDate" VARCHAR(255), 
+	"ConstructionEndDate" VARCHAR(255), 
+	"ConstructionStartDate" VARCHAR(255), 
+	"CurrencyIsoCode" VARCHAR(255), 
+	"Description" VARCHAR(255), 
+	"DrivingDirections" VARCHAR(255), 
+	"ExternalReference" VARCHAR(255), 
+	"IsInventoryLocation" VARCHAR(255), 
+	"IsMobile" VARCHAR(255), 
+	"Latitude" VARCHAR(255), 
+	"LocationType" VARCHAR(255), 
+	"Longitude" VARCHAR(255), 
+	"Name" VARCHAR(255), 
+	"OpenDate" VARCHAR(255), 
+	"PossessionDate" VARCHAR(255), 
+	"RemodelEndDate" VARCHAR(255), 
+	"RemodelStartDate" VARCHAR(255), 
+	"ShouldSyncWithOci" VARCHAR(255), 
+	"TimeZone" VARCHAR(255), 
+	PRIMARY KEY (id)
+);
+INSERT INTO "Location" VALUES(1,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(2,'','','','USD','','','','True','True','','Van','','ContractorTest','','','','','False','');
+INSERT INTO "Location" VALUES(3,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(4,'','','','USD','','','','True','False','','Warehouse','','SF Warehouse','','','','','False','');
+INSERT INTO "Location" VALUES(5,'','','','USD','','','','True','True','','Van','','fslservice''s van','','','','','False','');
+INSERT INTO "Location" VALUES(6,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(7,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(8,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(9,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(10,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(11,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(12,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(13,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(14,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(15,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(16,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(17,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(18,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(19,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(20,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(21,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(22,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(23,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(24,'','','','USD','','','','True','True','','Site','','[sfs-mobile-test] ConsignmentLocation_u7@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(25,'','','','USD','','','','True','True','','Van','','[sfs-mobile-test] ChildLocation_u7@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(26,'','','','USD','','','','True','True','','Van','','[sfs-mobile-test] Location_u7@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(27,'','','','USD','','','','True','True','','Van','','[sfs-mobile-test] Location_u8@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(28,'','','','USD','','','','True','True','','Site','','[sfs-mobile-test] ConsignmentLocation_u8@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(29,'','','','USD','','','','True','True','','Van','','[sfs-mobile-test] ChildLocation_u8@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(30,'','','','USD','','','','True','True','','Van','','[sfs-mobile-test] ChildLocation_u6@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(31,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(32,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(33,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(34,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(35,'','','','USD','','','','True','True','','Site','','[sfs-mobile-test] ConsignmentLocation_u13@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(36,'','','','USD','','','','True','True','','Van','','[sfs-mobile-test] ChildLocation_u13@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(37,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(38,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(39,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(40,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(41,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(42,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(43,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(44,'','','','USD','','','','True','True','','Van','','[sfs-mobile-test] Location_u13@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(45,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(46,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(47,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(48,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(49,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(50,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(51,'','','','USD','San Fran','','','False','False','','Warehouse','','San Fran','','','','','False','');
+INSERT INTO "Location" VALUES(52,'','','','USD','','','','True','True','','Van','','[sfs-mobile-test] Location_u12@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(53,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(54,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(55,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(56,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(57,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(58,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(59,'','','','USD','','','','False','False','','Plant','','2022-04-15 u18','','','','','False','');
+INSERT INTO "Location" VALUES(60,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(61,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(62,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(63,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(64,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(65,'','','','USD','','','','True','False','','Warehouse','','Warehouse B','','','','','False','');
+INSERT INTO "Location" VALUES(66,'','','','USD','','','','True','False','','Warehouse','','Warehouse A','','','','','False','');
+INSERT INTO "Location" VALUES(67,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(68,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(69,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(70,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(71,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(72,'','','','USD','','','','True','False','','Warehouse','','Seattle','','','','','False','');
+INSERT INTO "Location" VALUES(73,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(74,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(75,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(76,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(77,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(78,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(79,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(80,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(81,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(82,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(83,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(84,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(85,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(86,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(87,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(88,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(89,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(90,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(91,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(92,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(93,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(94,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(95,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(96,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(97,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(98,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(99,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(100,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(101,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(102,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(103,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(104,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(105,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(106,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(107,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(108,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(109,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(110,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(111,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(112,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(113,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(114,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(115,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(116,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(117,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(118,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(119,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(120,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(121,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(122,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(123,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(124,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(125,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(126,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(127,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(128,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(129,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(130,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(131,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(132,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(133,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(134,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(135,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(136,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(137,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(138,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(139,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(140,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(141,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(142,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(143,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(144,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(145,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(146,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(147,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(148,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(149,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(150,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(151,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(152,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(153,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(154,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(155,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(156,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(157,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(158,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(159,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(160,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u12@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(161,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u13@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(162,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(163,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(164,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(165,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(166,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(167,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(168,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(169,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(170,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(171,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(172,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(173,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(174,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(175,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(176,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(177,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(178,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(179,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(180,'','','','USD','','','','True','False','','Warehouse','','Warehouse A','','','','','False','');
+INSERT INTO "Location" VALUES(181,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(182,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u12@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(183,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(184,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(185,'','','','USD','','','','False','False','','Warehouse','','Testing','','','','','False','');
+INSERT INTO "Location" VALUES(186,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(187,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(188,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(189,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(190,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(191,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(192,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(193,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(194,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(195,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(196,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(197,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(198,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(199,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(200,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(201,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(202,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(203,'','','','JPY','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_admin_mobile@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(204,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(205,'','','','USD','','','','True','True','','Van','','[sfs-mobile-test] Location_u18@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(206,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u17@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(207,'','','','USD','','','','True','True','','Site','','[sfs-mobile-test] ConsignmentLocation_u16@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(208,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u11@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(209,'','','','USD','','','','True','True','','Van','','[sfs-mobile-test] ChildLocation_u16@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(210,'','','','USD','','','','True','True','','Site','','[sfs-mobile-test] ConsignmentLocation_u18@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(211,'','','','USD','','','','True','True','','Van','','[sfs-mobile-test] ChildLocation_u18@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(212,'','','','USD','','','','True','True','','Van','','[sfs-mobile-test] Location_u15@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(213,'','','','USD','','','','True','True','','Site','','[sfs-mobile-test] ConsignmentLocation_u15@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(214,'','','','USD','','','','True','True','','Van','','[sfs-mobile-test] Location_u16@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(215,'','','','USD','','','','True','True','','Van','','[sfs-mobile-test] Location_u17@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(216,'','','','USD','','','','True','True','','Van','','[sfs-mobile-test] ChildLocation_u17@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(217,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u18@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(218,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u16@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(219,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u13@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(220,'','','','USD','','','','True','True','','Site','','[sfs-mobile-test] ConsignmentLocation_u17@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(221,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u14@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(222,'','','','USD','','','','True','True','','Van','','[sfs-mobile-test] ChildLocation_u15@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(223,'','','','USD','','','','True','True','','Van','','[sfs-mobile-test] Location_u11@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(224,'','','','USD','','','','True','True','','Site','','[sfs-mobile-test] ConsignmentLocation_u11@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(225,'','','','USD','','','','True','True','','Van','','[sfs-mobile-test] ChildLocation_u11@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(226,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u12@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(227,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u15@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(228,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(229,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u2@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(230,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(231,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(232,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(233,'','','','JPY','','','','True','True','','Van','','[sfs-mobile-test] ChildLocation_admin_mobile@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(234,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(235,'','','','JPY','','','','True','True','','Van','','[sfs-mobile-test] Location_admin_mobile@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(236,'','','','JPY','','','','True','True','','Site','','[sfs-mobile-test] ConsignmentLocation_admin_mobile@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(237,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(238,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(239,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(240,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(241,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(242,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(243,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(244,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(245,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(246,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(247,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(248,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(249,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(250,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(251,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(252,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(253,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(254,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(255,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(256,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(257,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(258,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(259,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(260,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(261,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(262,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(263,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(264,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(265,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(266,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(267,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(268,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(269,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(270,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(271,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(272,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(273,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(274,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(275,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(276,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(277,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(278,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(279,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(280,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(281,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(282,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(283,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(284,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(285,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(286,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(287,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(288,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(289,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(290,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(291,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(292,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(293,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(294,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(295,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(296,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(297,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(298,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(299,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(300,'','','','USD','','','','True','True','','Van','','[sfs-mobile-test] Location_u5@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(301,'','','','USD','','','','True','True','','Site','','[sfs-mobile-test] ConsignmentLocation_u5@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(302,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(303,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(304,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(305,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(306,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(307,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(308,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(309,'','','','USD','','','','True','True','','Van','','Denina''s Van','','','','','False','');
+INSERT INTO "Location" VALUES(310,'','','','USD','','','','True','True','','Van','','NarenVan','','','','','False','');
+INSERT INTO "Location" VALUES(311,'','','','USD','','','','True','True','','Warehouse','','Bellevue','','','','','False','');
+INSERT INTO "Location" VALUES(312,'','','','USD','','','','False','False','','Site','','Bellevue','','','','','False','America/Los_Angeles');
+INSERT INTO "Location" VALUES(313,'','','','USD','','','','True','True','','Van','','Kara van','','','','','False','');
+INSERT INTO "Location" VALUES(314,'','','','USD','','','','True','False','','Warehouse','','BayArea-Warehouse','','','','','False','');
+INSERT INTO "Location" VALUES(315,'','','','USD','','','','True','True','','Van','','BA Van','','','','','False','');
+INSERT INTO "Location" VALUES(316,'','','','USD','','','','True','True','','Van','','FSL Technician1','','','','','False','');
+INSERT INTO "Location" VALUES(317,'','','','USD','','','','True','False','','Warehouse','','Kara Warehouse','','','','','False','');
+INSERT INTO "Location" VALUES(318,'','','','USD','','','','True','True','','Van','','Contractor Van','','','','','False','');
+INSERT INTO "Location" VALUES(319,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u13@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(320,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u13@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(321,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(322,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u13@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(323,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u13@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(324,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u13@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(325,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(326,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u13@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(327,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(328,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u13@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(329,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(330,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(331,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(332,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(333,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(334,'','','','USD','','','','True','True','','Van','','test','','','','','False','');
+INSERT INTO "Location" VALUES(335,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(336,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(337,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(338,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(339,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(340,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(341,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(342,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(343,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(344,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(345,'','','','USD','','','','True','True','','Van','','[sfs-mobile-test] ChildLocation_u5@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(346,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(347,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(348,'','','','USD','','','','True','True','','Van','','[sfs-mobile-test] ChildLocation_u1@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(349,'','','','USD','','','','True','True','','Site','','[sfs-mobile-test] ConsignmentLocation_u1@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(350,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u12@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(351,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(352,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(353,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(354,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(355,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(356,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(357,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(358,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(359,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(360,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(361,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(362,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(363,'','','','USD','','','','True','True','','Site','','[sfs-mobile-test] ConsignmentLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(364,'','','','USD','','','','True','True','','Van','','[sfs-mobile-test] Location_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(365,'','','','USD','','','','True','True','','Van','','[sfs-mobile-test] Location_u1@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(366,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(367,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(368,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(369,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(370,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(371,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(372,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(373,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(374,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(375,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(376,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(377,'','','','USD','','','','True','False','','Warehouse','','Kaiju Location A','','','','','False','America/Los_Angeles');
+INSERT INTO "Location" VALUES(378,'','','','USD','','','','True','False','','Warehouse','','Kaiju Location B','','','','','False','America/New_York');
+INSERT INTO "Location" VALUES(379,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(380,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(381,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(382,'','','','USD','','','','True','True','','Van','','[sfs-mobile-test] Location_u2@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(383,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u2@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(384,'','','','USD','','','','True','True','','Van','','[sfs-mobile-test] ChildLocation_u2@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(385,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(386,'','','','USD','','','','True','True','','Site','','[sfs-mobile-test] ConsignmentLocation_u2@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(387,'','','','USD','','','','True','True','','Van','','[sfs-mobile-test] ChildLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(388,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(389,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(390,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(391,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(392,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(393,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(394,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(395,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(396,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(397,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(398,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(399,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(400,'','','','USD','','','','True','True','','Site','','[sfs-mobile-test] ConsignmentLocation_u14@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(401,'','','','USD','','','','True','True','','Van','','[sfs-mobile-test] ChildLocation_u14@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(402,'','','','USD','','','','True','True','','Van','','[sfs-mobile-test] Location_u14@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(403,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(404,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(405,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(406,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(407,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(408,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(409,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(410,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(411,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(412,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(413,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(414,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(415,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(416,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u2@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(417,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(418,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(419,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(420,'','','','USD','','','','True','False','','Warehouse','','SFO','','','','','False','');
+INSERT INTO "Location" VALUES(421,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(422,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(423,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(424,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(425,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(426,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(427,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(428,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(429,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(430,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(431,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(432,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(433,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(434,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(435,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(436,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(437,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(438,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(439,'','','','USD','','','','True','True','','Van','','[sfs-mobile-test] ChildLocation_u3@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(440,'','','','USD','','','','True','True','','Site','','[sfs-mobile-test] ConsignmentLocation_u3@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(441,'','','','USD','','','','True','True','','Van','','[sfs-mobile-test] Location_u3@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(442,'','','','USD','','','','True','True','','Van','','[sfs-mobile-test] Location_u1@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(443,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(444,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(445,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(446,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(447,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(448,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(449,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(450,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(451,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(452,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(453,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(454,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(455,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(456,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(457,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(458,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(459,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(460,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(461,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(462,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(463,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(464,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(465,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(466,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(467,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(468,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(469,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(470,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(471,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(472,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(473,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(474,'','','','USD','','','','True','True','','Van','','[sfs-mobile-test] ChildLocation_u12@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(475,'','','','USD','','','','True','True','','Site','','[sfs-mobile-test] ConsignmentLocation_u12@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(476,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(477,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(478,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(479,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(480,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(481,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(482,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(483,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(484,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(485,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(486,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(487,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(488,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(489,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(490,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(491,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(492,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(493,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(494,'','','','USD','','','','True','True','','Van','','[sfs-mobile-test] Location_u6@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(495,'','','','USD','','','','True','True','','Site','','[sfs-mobile-test] ConsignmentLocation_u6@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(496,'','','','USD','','','','True','False','','Site','','consignment-Nishitha-loc','','','','','False','');
+INSERT INTO "Location" VALUES(497,'','','','USD','','','','True','False','','Warehouse','','Nishitha-child-loc','','','','','False','');
+INSERT INTO "Location" VALUES(498,'','','','USD','','','','False','True','','Warehouse','','Nishitha-loc','','','','','False','');
+INSERT INTO "Location" VALUES(499,'','','','USD','','','','True','False','','Warehouse','','Nishitha cross-border','','','','','False','');
+INSERT INTO "Location" VALUES(500,'','','','USD','','','','True','False','','Warehouse','','Main location','','','','','False','');
+INSERT INTO "Location" VALUES(501,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(502,'','','','USD','','','','True','False','','Van','','[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto','','','','','False','');
+INSERT INTO "Location" VALUES(503,'','','','USD','Test Location123','','','False','False','','Site','','Asset Location','','','','','False','Pacific/Kiritimati');
+INSERT INTO "Location" VALUES(504,'','','','USD','','','','False','False','','Warehouse','','UK','','','','','False','America/Los_Angeles');
 CREATE TABLE "OperatingHours" (
 	id INTEGER NOT NULL, 
 	"CurrencyIsoCode" VARCHAR(255), 
@@ -1980,6 +2625,386 @@ INSERT INTO "OperatingHours" VALUES(1964,'USD','','Test Operating Hours8633119',
 INSERT INTO "OperatingHours" VALUES(1965,'USD','','Test Operating Hours7252610','America/Los_Angeles');
 INSERT INTO "OperatingHours" VALUES(1966,'USD','','Test Operating Hours4730485','America/Los_Angeles');
 INSERT INTO "OperatingHours" VALUES(1967,'USD','','Test Operating Hours9923053','America/Los_Angeles');
+CREATE TABLE "Product2" (
+	id INTEGER NOT NULL, 
+	"CurrencyIsoCode" VARCHAR(255), 
+	"Description" VARCHAR(255), 
+	"DisplayUrl" VARCHAR(255), 
+	"ExternalId" VARCHAR(255), 
+	"Family" VARCHAR(255), 
+	"IsActive" VARCHAR(255), 
+	"IsSerialized" VARCHAR(255), 
+	"Name" VARCHAR(255), 
+	"ProductCode" VARCHAR(255), 
+	"QuantityUnitOfMeasure" VARCHAR(255), 
+	"StockKeepingUnit" VARCHAR(255), 
+	"TransferRecordMode" VARCHAR(255), 
+	PRIMARY KEY (id)
+);
+INSERT INTO "Product2" VALUES(1,'USD','','','','','True','False','ProductWacCbG','6Ay6g7','','','SendAndReceive');
+INSERT INTO "Product2" VALUES(2,'USD','','','','','True','False','Product1iq78t','40u2sp','','','SendAndReceive');
+INSERT INTO "Product2" VALUES(3,'USD','','','','','True','False','ProductSBIBE2','zZMQUS','','','SendAndReceive');
+INSERT INTO "Product2" VALUES(4,'USD','','','','','True','False','ProductFacy03','W9aWED','','','SendAndReceive');
+INSERT INTO "Product2" VALUES(5,'USD','','','','','True','False','Test','','','','SendAndReceive');
+INSERT INTO "Product2" VALUES(6,'USD','','','','','True','False','ProducteWBbId','uPgemd','','','SendAndReceive');
+INSERT INTO "Product2" VALUES(7,'USD','','','','','True','False','Product0VoeDM','HCwzkL','','','SendAndReceive');
+INSERT INTO "Product2" VALUES(8,'USD','','','','','True','False','Productng6mY9','elKx3u','','','SendAndReceive');
+INSERT INTO "Product2" VALUES(9,'USD','','','','','True','False','ProductAazSpF','yF8nYo','','','SendAndReceive');
+INSERT INTO "Product2" VALUES(10,'USD','','','','','True','False','upgrade','','','','SendAndReceive');
+INSERT INTO "Product2" VALUES(11,'USD','','','','','True','False','u2','','','','SendAndReceive');
+INSERT INTO "Product2" VALUES(12,'USD','','','','','True','False','Nishitha product','','','','SendAndReceive');
+INSERT INTO "Product2" VALUES(13,'USD','','','','','True','True','Macbook','','','','SendAndReceive');
+INSERT INTO "Product2" VALUES(14,'USD','','','','','True','False','jpmobiletest-prod2-001','','','','');
+INSERT INTO "Product2" VALUES(15,'USD','','','','','False','True','iPhone','','','','SendAndReceive');
+INSERT INTO "Product2" VALUES(16,'USD','','','','None','True','False','created_prod','','','','');
+INSERT INTO "Product2" VALUES(17,'USD','','','','','True','False','Solar Panel','','','','');
+INSERT INTO "Product2" VALUES(18,'USD','','','','','True','False','Electric Cable','','','','');
+INSERT INTO "Product2" VALUES(19,'USD','','','','','True','True','Nidhi (S&R)','','','','SendAndReceive');
+INSERT INTO "Product2" VALUES(20,'USD','','','','','True','True','Nidhi','','','','ReceiveOnly');
+INSERT INTO "Product2" VALUES(21,'USD','','','','','True','True','Receive Only','','','','ReceiveOnly');
+INSERT INTO "Product2" VALUES(22,'USD','','','','','True','True','Charger Kaiju Product (Receive Only)','','','','ReceiveOnly');
+INSERT INTO "Product2" VALUES(23,'USD','','','','','True','True','Iphone Kaiju Product (S&R)','','','','SendAndReceive');
+INSERT INTO "Product2" VALUES(24,'USD','','','','','True','True','Charger Kaiju Product (Receive Only)','','','','ReceiveOnly');
+INSERT INTO "Product2" VALUES(25,'USD','','','','','True','True','Iphone Kaiju Product (S&R)','','','','SendAndReceive');
+INSERT INTO "Product2" VALUES(26,'USD','','','','','True','True','Charger Kaiju Product (Receive Only)','','','','ReceiveOnly');
+INSERT INTO "Product2" VALUES(27,'USD','','','','','True','True','Charger Kaiju Product (Receive Only)','','','','ReceiveOnly');
+INSERT INTO "Product2" VALUES(28,'USD','','','','','True','True','Charger Kaiju Product (Receive Only)','','','','ReceiveOnly');
+INSERT INTO "Product2" VALUES(29,'USD','','','','','True','True','Charger Kaiju Product (Receive Only)','','','','ReceiveOnly');
+INSERT INTO "Product2" VALUES(30,'USD','','','','','True','True','Iphone Kaiju Product (S&R)','','','','SendAndReceive');
+INSERT INTO "Product2" VALUES(31,'USD','','','','','True','True','Iphone Kaiju Product (S&R)','','','','SendAndReceive');
+INSERT INTO "Product2" VALUES(32,'USD','','','','','True','True','Iphone Kaiju Product (S&R)','','','','SendAndReceive');
+INSERT INTO "Product2" VALUES(33,'USD','','','','','True','True','Charger Kaiju Product (Receive Only)','','','','ReceiveOnly');
+INSERT INTO "Product2" VALUES(34,'USD','','','','','True','True','Iphone Kaiju Product (S&R)','','','','SendAndReceive');
+INSERT INTO "Product2" VALUES(35,'USD','','','','','True','True','Iphone Kaiju Product (S&R)','','','','SendAndReceive');
+INSERT INTO "Product2" VALUES(36,'USD','','','','','True','True','Charger Kaiju Product (Receive Only)','','','','ReceiveOnly');
+INSERT INTO "Product2" VALUES(37,'USD','','','','','True','True','Iphone Kaiju Product (S&R)','','','','SendAndReceive');
+INSERT INTO "Product2" VALUES(38,'USD','','','','','True','True','Iphone Kaiju Product (S&R)','','','','SendAndReceive');
+INSERT INTO "Product2" VALUES(39,'USD','','','','','True','True','Iphone Kaiju Product (S&R)','','','','SendAndReceive');
+INSERT INTO "Product2" VALUES(40,'USD','','','','','True','True','Iphone Kaiju Product (S&R)','','','','SendAndReceive');
+INSERT INTO "Product2" VALUES(41,'USD','','','','','True','False','[sfs-mobile-test] Product2_YAcKgI','hqrdnw','','','');
+INSERT INTO "Product2" VALUES(42,'USD','','','','','True','True','Iphone Kaiju Product (S&R)','','','','SendAndReceive');
+INSERT INTO "Product2" VALUES(43,'USD','','','','','True','True','Charger Kaiju Product (Receive Only)','','','','ReceiveOnly');
+INSERT INTO "Product2" VALUES(44,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(45,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(46,'USD','','','','','True','True','Iphone Kaiju Product (S&R)','','','','SendAndReceive');
+INSERT INTO "Product2" VALUES(47,'USD','','','','','True','True','Charger Kaiju Product (Receive Only)','','','','ReceiveOnly');
+INSERT INTO "Product2" VALUES(48,'USD','','','','','True','False','[sfs-mobile-test] Product2_d5GdEk','SVrM1o','','','');
+INSERT INTO "Product2" VALUES(49,'USD','','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(50,'USD','','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(51,'USD','','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(52,'USD','','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(53,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(54,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(55,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(56,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(57,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(58,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(59,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(60,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(61,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(62,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(63,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(64,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(65,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(66,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(67,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(68,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(69,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(70,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(71,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(72,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(73,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(74,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(75,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(76,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(77,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(78,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(79,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(80,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(81,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(82,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(83,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(84,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(85,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(86,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(87,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(88,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(89,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(90,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(91,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(92,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(93,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(94,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(95,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(96,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(97,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(98,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(99,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(100,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(101,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(102,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(103,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(104,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(105,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(106,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(107,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(108,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(109,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(110,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(111,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(112,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(113,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(114,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(115,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(116,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(117,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(118,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(119,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(120,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(121,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(122,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(123,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(124,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(125,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(126,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(127,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(128,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(129,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(130,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(131,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(132,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(133,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(134,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(135,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(136,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(137,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(138,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(139,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(140,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(141,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(142,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(143,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(144,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(145,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(146,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(147,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(148,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(149,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(150,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(151,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(152,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(153,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(154,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(155,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(156,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(157,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(158,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(159,'USD','','','','','True','True','Charger Kaiju Product (Receive Only)','','','','ReceiveOnly');
+INSERT INTO "Product2" VALUES(160,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(161,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(162,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(163,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(164,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(165,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(166,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(167,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(168,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(169,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(170,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(171,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(172,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(173,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(174,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(175,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(176,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(177,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(178,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(179,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(180,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(181,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(182,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(183,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(184,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(185,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(186,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(187,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(188,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(189,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(190,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(191,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(192,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(193,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(194,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(195,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(196,'USD','','','','','True','True','Iphone Kaiju Product (S&R)','','','','SendAndReceive');
+INSERT INTO "Product2" VALUES(197,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(198,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(199,'USD','kaiju test product','','','','True','False','Charger Kaiju Product (Receive Only)','KAIJU_TEST','','','');
+INSERT INTO "Product2" VALUES(200,'USD','','','','','True','True','Charger Kaiju Product (Receive Only)','','','','ReceiveOnly');
+INSERT INTO "Product2" VALUES(201,'USD','','','','','True','True','Charger Kaiju Product (Receive Only)','','','','ReceiveOnly');
+INSERT INTO "Product2" VALUES(202,'USD','','','','','True','True','Iphone Kaiju Product (S&R)','','','','SendAndReceive');
+INSERT INTO "Product2" VALUES(203,'USD','','','','','True','False','[sfs-mobile-test] Product2_oVX8lU','CRkDGY','','','');
+CREATE TABLE "ServiceContract" (
+	id INTEGER NOT NULL, 
+	"Name" VARCHAR(255), 
+	PRIMARY KEY (id)
+);
+CREATE TABLE "ServiceTerritory" (
+	id INTEGER NOT NULL, 
+	"City" VARCHAR(255), 
+	"Country" VARCHAR(255), 
+	"CurrencyIsoCode" VARCHAR(255), 
+	"Description" VARCHAR(255), 
+	"FSL__Hide_Emergency_Map__c" VARCHAR(255), 
+	"FSL__Internal_SLR_Geolocation__Latitude__s" VARCHAR(255), 
+	"FSL__Internal_SLR_Geolocation__Longitude__s" VARCHAR(255), 
+	"FSL__NumberOfServicesToDripFeed__c" VARCHAR(255), 
+	"FSL__O2_Enabled__c" VARCHAR(255), 
+	"FSL__Service_Cluster_Min_Size__c" VARCHAR(255), 
+	"FSL__Service_Cluster_Proximity__c" VARCHAR(255), 
+	"FSL__System_Jobs__c" VARCHAR(255), 
+	"FSL__TerritoryLevel__c" VARCHAR(255), 
+	"GeocodeAccuracy" VARCHAR(255), 
+	"IsActive" VARCHAR(255), 
+	"Latitude" VARCHAR(255), 
+	"Longitude" VARCHAR(255), 
+	"Name" VARCHAR(255), 
+	"PostalCode" VARCHAR(255), 
+	"State" VARCHAR(255), 
+	"Street" VARCHAR(255), 
+	"TypicalInTerritoryTravelTime" VARCHAR(255), 
+	"OperatingHoursId" VARCHAR(255), 
+	PRIMARY KEY (id)
+);
+INSERT INTO "ServiceTerritory" VALUES(1,'','','USD','','False','','','','False','','','','','','True','','','SF Showroom','','','','','1301');
+INSERT INTO "ServiceTerritory" VALUES(2,'','','USD','','False','','','','True','','','','','','True','','','Test Territory 8417226','','','','','1741');
+INSERT INTO "ServiceTerritory" VALUES(3,'San Francisco','United States','USD','','False','37.793834','-122.395123','','False','','','','','Block','True','37.794086','-122.395062','SFO Downtown','94105','CA','41 Market Street','','467');
+INSERT INTO "ServiceTerritory" VALUES(4,'San Francisco','United States','USD','','False','37.788444','-122.406656','','False','','','','','Block','True','37.78761','-122.407489','San Francisco','94102','CA','200 Geary St','','1301');
+INSERT INTO "ServiceTerritory" VALUES(5,'','','USD','','False','','','','False','','','','','','True','','','Portland','','','','','1374');
+INSERT INTO "ServiceTerritory" VALUES(6,'','','USD','','False','','','','False','','','','','','True','','','Mountain View','','','','','1303');
+INSERT INTO "ServiceTerritory" VALUES(7,'','','USD','','False','','','','False','','','','','','True','','','Canada','','','','','1375');
+INSERT INTO "ServiceTerritory" VALUES(8,'','','USD','','False','','','','False','','','','0.0','','True','','','test','','','','','1374');
+INSERT INTO "ServiceTerritory" VALUES(9,'','','USD','','False','','','','False','','','','','','True','','','Contractor Territory','','','','','1375');
+INSERT INTO "ServiceTerritory" VALUES(10,'','','USD','','False','','','','False','','','','','','True','','','bEMnxlAdzn','','','','','1489');
+INSERT INTO "ServiceTerritory" VALUES(11,'','','USD','','False','','','','False','','','','','','True','','','test123','','','','','1480');
+INSERT INTO "ServiceTerritory" VALUES(12,'','','USD','','False','','','','False','','','','','','False','','','sPwwxBPQKj','','','','','1488');
+INSERT INTO "ServiceTerritory" VALUES(13,'','','USD','','False','','','','False','','','','','','True','','','Pleasanton','','','','','1758');
+INSERT INTO "ServiceTerritory" VALUES(14,'','','USD','','False','','','','False','','','','','','True','','','Nishitha Service Territory','','','','','1758');
+CREATE TABLE "UnitOfMeasure" (
+	id INTEGER NOT NULL, 
+	"Name" VARCHAR(255), 
+	"Type" VARCHAR(255), 
+	"UnitCode" VARCHAR(255), 
+	PRIMARY KEY (id)
+);
+CREATE TABLE "WorkPlanSelectionRule" (
+	id INTEGER NOT NULL, 
+	"IsActive" VARCHAR(255), 
+	"CurrencyIsoCode" VARCHAR(255), 
+	"Description" VARCHAR(255), 
+	"AccountId" VARCHAR(255), 
+	"AssetId" VARCHAR(255), 
+	"LocationId" VARCHAR(255), 
+	"Product2Id" VARCHAR(255), 
+	"ServiceContractId" VARCHAR(255), 
+	"ServiceTerritoryId" VARCHAR(255), 
+	"WorkPlanTemplateId" VARCHAR(255), 
+	"WorkTypeId" VARCHAR(255), 
+	PRIMARY KEY (id)
+);
+INSERT INTO "WorkPlanSelectionRule" VALUES(1,'True','USD','','','02iDC000002n4clYAA','','','','','1','');
+INSERT INTO "WorkPlanSelectionRule" VALUES(2,'True','USD','','','02iDC000002n4eMYAQ','','','','','4','');
+INSERT INTO "WorkPlanSelectionRule" VALUES(3,'True','USD','','','02iDC000002n4cmYAA','','','','','5','');
+INSERT INTO "WorkPlanSelectionRule" VALUES(4,'True','USD','','','02iDC000002n4coYAA','','','','','6','');
+INSERT INTO "WorkPlanSelectionRule" VALUES(5,'True','USD','Field service technician to verify whether they are at right meter before performing meter replacement process.','','','','','','','10','358');
+INSERT INTO "WorkPlanSelectionRule" VALUES(6,'True','USD','Safety Instructions','','','','','','','11','358');
+INSERT INTO "WorkPlanSelectionRule" VALUES(7,'True','USD','Wrap up tasks to be performed after completion of service for Turn On Process.','','','','','','','14','358');
+INSERT INTO "WorkPlanSelectionRule" VALUES(8,'True','USD','Turn On Gas Meter following instructions','','','','','','','15','358');
+INSERT INTO "WorkPlanSelectionRule" VALUES(9,'True','USD','Field Technician needs to perform certain Health and Safety checks after turning on the Meter.','','','','','','','16','358');
+CREATE TABLE "WorkPlanTemplate" (
+	id INTEGER NOT NULL, 
+	"CurrencyIsoCode" VARCHAR(255), 
+	"Custom1__c" VARCHAR(255), 
+	"Description" VARCHAR(255), 
+	"IsActive" VARCHAR(255), 
+	"Name" VARCHAR(255), 
+	"RelativeExecutionOrder" VARCHAR(255), 
+	encrypted__c VARCHAR(255), 
+	PRIMARY KEY (id)
+);
+INSERT INTO "WorkPlanTemplate" VALUES(1,'USD','','','True','Test WPT','','');
+INSERT INTO "WorkPlanTemplate" VALUES(2,'USD','','','True','template1','','');
+INSERT INTO "WorkPlanTemplate" VALUES(3,'USD','','','True','template','','');
+INSERT INTO "WorkPlanTemplate" VALUES(4,'USD','','','True','PPE Template 1','','');
+INSERT INTO "WorkPlanTemplate" VALUES(5,'USD','','','True','2836695','','');
+INSERT INTO "WorkPlanTemplate" VALUES(6,'USD','','','True','WorkPlan9876284','','');
+INSERT INTO "WorkPlanTemplate" VALUES(7,'USD','','','True','Test Verify Meter Work Plan','','');
+INSERT INTO "WorkPlanTemplate" VALUES(8,'USD','','Field Technician needs to perform certain Health and Safety checks before Replacing the actual Meter.','True','Health and Safety Checks','3','');
+INSERT INTO "WorkPlanTemplate" VALUES(9,'USD','','Field Technician needs to perform final health and safety checks after replacing the meter.','True','Final Health And Safety Checks','5','');
+INSERT INTO "WorkPlanTemplate" VALUES(10,'USD','','Field service technician to verify whether they are at right meter before performing meter replacement process.','True','Verify Right Meter','2','');
+INSERT INTO "WorkPlanTemplate" VALUES(11,'USD','','Safety instructions to be performed before reaching customer''s location.','True','Safety Checks','1','');
+INSERT INTO "WorkPlanTemplate" VALUES(12,'USD','','Wrap up tasks to be performed after completion of service.','True','Wrap Up','6','');
+INSERT INTO "WorkPlanTemplate" VALUES(13,'USD','','Enter the details of new Meter and Regulator after Gas Meter Replacement service is done.','True','Meter And Regulator','4','');
+INSERT INTO "WorkPlanTemplate" VALUES(14,'USD','','Wrap up tasks to be performed after completion of service for Turn On Process.','True','Wrap Up Turn On Process','5','');
+INSERT INTO "WorkPlanTemplate" VALUES(15,'USD','','Turn On Gas Meter following instructions','True','Turn On Gas Service','3','');
+INSERT INTO "WorkPlanTemplate" VALUES(16,'USD','','Field Technician needs to perform certain Health and Safety checks after turning on the Meter.','True','Health and Safety Checks Turn On Process','4','');
+INSERT INTO "WorkPlanTemplate" VALUES(17,'USD','','Turn Off Gas Meter following instructions','True','Turn Off Gas Service','3','');
+INSERT INTO "WorkPlanTemplate" VALUES(18,'USD','','Field Technician needs to perform certain Health and Safety checks after turning off the Meter.','True','Health and Safety Checks Turn Off Process','4','');
+INSERT INTO "WorkPlanTemplate" VALUES(19,'USD','','Wrap up tasks to be performed after completion of service for Turn On Process.','True','Wrap Up Turn Off Process','5','');
+CREATE TABLE "WorkPlanTemplateEntry" (
+	id INTEGER NOT NULL, 
+	"CurrencyIsoCode" VARCHAR(255), 
+	custom_wpte__c VARCHAR(255), 
+	"ExecutionOrder" VARCHAR(255), 
+	"WorkPlanTemplateId" VARCHAR(255), 
+	"WorkStepTemplateId" VARCHAR(255), 
+	PRIMARY KEY (id)
+);
+INSERT INTO "WorkPlanTemplateEntry" VALUES(1,'USD','','','15','16');
+INSERT INTO "WorkPlanTemplateEntry" VALUES(2,'USD','','1','14','15');
+INSERT INTO "WorkPlanTemplateEntry" VALUES(3,'USD','','1','10','10');
+INSERT INTO "WorkPlanTemplateEntry" VALUES(4,'USD','','2','10','11');
+INSERT INTO "WorkPlanTemplateEntry" VALUES(5,'USD','','2','14','13');
+INSERT INTO "WorkPlanTemplateEntry" VALUES(6,'USD','','1','4','1');
+INSERT INTO "WorkPlanTemplateEntry" VALUES(7,'USD','','','1','2');
+INSERT INTO "WorkPlanTemplateEntry" VALUES(8,'USD','','','5','4');
+INSERT INTO "WorkPlanTemplateEntry" VALUES(9,'USD','','','5','3');
+INSERT INTO "WorkPlanTemplateEntry" VALUES(10,'USD','','','6','5');
+INSERT INTO "WorkPlanTemplateEntry" VALUES(11,'USD','','','6','6');
+INSERT INTO "WorkPlanTemplateEntry" VALUES(12,'USD','','','11','8');
+INSERT INTO "WorkPlanTemplateEntry" VALUES(13,'USD','','','16','17');
+CREATE TABLE "WorkStepTemplate" (
+	id INTEGER NOT NULL, 
+	"ActionDefinition" VARCHAR(255), 
+	"IsActive" VARCHAR(255), 
+	"CurrencyIsoCode" VARCHAR(255), 
+	custom_wst__c VARCHAR(255), 
+	date_wst__c VARCHAR(255), 
+	"Description" VARCHAR(255), 
+	"geo_wst__Latitude__s" VARCHAR(255), 
+	"geo_wst__Longitude__s" VARCHAR(255), 
+	"Name" VARCHAR(255), 
+	PRIMARY KEY (id)
+);
+INSERT INTO "WorkStepTemplate" VALUES(1,'','True','USD','','','','','','PPE Step Template 1');
+INSERT INTO "WorkStepTemplate" VALUES(2,'','True','USD','','','','','','Test WST');
+INSERT INTO "WorkStepTemplate" VALUES(3,'','True','USD','','','','','','WorkStepTemplate3704681');
+INSERT INTO "WorkStepTemplate" VALUES(4,'','True','USD','','','','','','WorkStepTemplate3543234');
+INSERT INTO "WorkStepTemplate" VALUES(5,'','True','USD','','','','','','WorkStepTemplate9205547');
+INSERT INTO "WorkStepTemplate" VALUES(6,'','True','USD','','','','','','WorkStepTemplate3078502');
+INSERT INTO "WorkStepTemplate" VALUES(7,'','True','USD','','','','','','Test Check Meter Work Step');
+INSERT INTO "WorkStepTemplate" VALUES(8,'','True','USD','','','Invoke a SFS Screen Flow, where Field Technician can verify whether they have performed the Health and Safety checks.','','','Health and Safety Check');
+INSERT INTO "WorkStepTemplate" VALUES(9,'','True','USD','','','Field Technician needs to perform final health and safety checks after replacing the meter.','','','Final Health And Safety Check');
+INSERT INTO "WorkStepTemplate" VALUES(10,'Check_Meter_Details','True','USD','','','Verify the meter details.','','','Check Meter Details');
+INSERT INTO "WorkStepTemplate" VALUES(11,'','True','USD','','','Provide reading and date time of the meter to be replaced.','','','Enter Old Meter Read and Date');
+INSERT INTO "WorkStepTemplate" VALUES(12,'Safety_Checks','True','USD','','','Safety instructions to be performed before reaching customer''s location.','','','Safety Checks');
+INSERT INTO "WorkStepTemplate" VALUES(13,'','True','USD','','','Leave note on door after completion of service.','','','Leave note on door');
+INSERT INTO "WorkStepTemplate" VALUES(14,'','True','USD','','','Enter the details of new Meter and Regulator after Gas Meter Replacement service is done.','','','Meter And Regulator');
+INSERT INTO "WorkStepTemplate" VALUES(15,'','True','USD','','','Clean area after completing the service.','','','Clean Area');
+INSERT INTO "WorkStepTemplate" VALUES(16,'Turn_On_Gas_Meter','True','USD','','','Invoke a SFS Screen Flow, where Field Technician can confirm whether they have followed the Turn on process instructions and also Upload Meter and Tag pictures.','','','Turn On Gas Meter');
+INSERT INTO "WorkStepTemplate" VALUES(17,'Health_and_Safety_Check_Turn_On_Meter','True','USD','','','Invoke a SFS Screen Flow, where Field Technician can verify whether they have performed the Health and Safety checks after Turning on the Meter.','','','Health and Safety Check Turn On Process');
+INSERT INTO "WorkStepTemplate" VALUES(18,'','True','USD','','','Invoke a SFS Screen Flow, where Field Technician can confirm whether they have followed the Turn off process instructions.','','','Turn Off Gas Meter');
+INSERT INTO "WorkStepTemplate" VALUES(19,'','True','USD','','','Invoke a SFS Screen Flow, where Field Technician can verify whether they have performed the Health and Safety checks.','','','Health and Safety Check Turn Off Process');
 CREATE TABLE "WorkType" (
 	id INTEGER NOT NULL, 
 	"ShouldAutoCreateSvcAppt" VARCHAR(255), 
@@ -2057,9 +3082,9 @@ INSERT INTO "WorkType" VALUES(60,'True','USD','','','Hours','2.0','False','','',
 INSERT INTO "WorkType" VALUES(61,'True','USD','','','Hours','2.0','False','','','[sfs-desktop-test] Work Type 2');
 INSERT INTO "WorkType" VALUES(62,'False','USD','','','Hours','2.0','False','','','[sfs-desktop-test] Work Type');
 INSERT INTO "WorkType" VALUES(63,'False','USD','','','Hours','2.0','False','','','[sfs-desktop-test] Work Type');
-INSERT INTO "WorkType" VALUES(64,'True','USD','','','Hours','2.0','False','','','[sfs-desktop-test] Work Type 2');
+INSERT INTO "WorkType" VALUES(64,'False','USD','','','Hours','2.0','False','','','[sfs-desktop-test] Work Type');
 INSERT INTO "WorkType" VALUES(65,'True','USD','','','Hours','2.0','False','','','[sfs-desktop-test] Work Type 2');
-INSERT INTO "WorkType" VALUES(66,'False','USD','','','Hours','2.0','False','','','[sfs-desktop-test] Work Type');
+INSERT INTO "WorkType" VALUES(66,'True','USD','','','Hours','2.0','False','','','[sfs-desktop-test] Work Type 2');
 INSERT INTO "WorkType" VALUES(67,'True','USD','','','Hours','2.0','False','','','[sfs-desktop-test] Work Type 2');
 INSERT INTO "WorkType" VALUES(68,'True','USD','','','Hours','2.0','False','','','[sfs-desktop-test] Work Type 2');
 INSERT INTO "WorkType" VALUES(69,'False','USD','','','Hours','2.0','False','','','[sfs-desktop-test] Work Type');
@@ -2088,9 +3113,9 @@ INSERT INTO "WorkType" VALUES(91,'False','USD','','','Hours','2.0','False','',''
 INSERT INTO "WorkType" VALUES(92,'False','USD','','','Hours','2.0','False','','','[sfs-desktop-test] Work Type');
 INSERT INTO "WorkType" VALUES(93,'True','USD','','','Hours','2.0','False','','','[sfs-desktop-test] Work Type 2');
 INSERT INTO "WorkType" VALUES(94,'False','USD','','','Hours','2.0','False','','','[sfs-desktop-test] Work Type');
-INSERT INTO "WorkType" VALUES(95,'True','USD','','','Hours','2.0','False','','','[sfs-desktop-test] Work Type 2');
+INSERT INTO "WorkType" VALUES(95,'False','USD','','','Hours','2.0','False','','','[sfs-desktop-test] Work Type');
 INSERT INTO "WorkType" VALUES(96,'True','USD','','','Hours','2.0','False','','','[sfs-desktop-test] Work Type 2');
-INSERT INTO "WorkType" VALUES(97,'False','USD','','','Hours','2.0','False','','','[sfs-desktop-test] Work Type');
+INSERT INTO "WorkType" VALUES(97,'True','USD','','','Hours','2.0','False','','','[sfs-desktop-test] Work Type 2');
 INSERT INTO "WorkType" VALUES(98,'False','USD','','','Hours','2.0','False','','','[sfs-desktop-test] Work Type');
 INSERT INTO "WorkType" VALUES(99,'True','USD','','','Hours','2.0','False','','','[sfs-desktop-test] Work Type 2');
 INSERT INTO "WorkType" VALUES(100,'True','USD','','','Hours','2.0','False','','','[sfs-desktop-test] Work Type 2');
@@ -2117,17 +3142,17 @@ INSERT INTO "WorkType" VALUES(120,'False','USD','','','Hours','2.0','False','','
 INSERT INTO "WorkType" VALUES(121,'False','USD','','','Hours','2.0','False','','','[sfs-desktop-test] Work Type');
 INSERT INTO "WorkType" VALUES(122,'True','USD','','','Hours','2.0','False','','','[sfs-desktop-test] Work Type 2');
 INSERT INTO "WorkType" VALUES(123,'False','USD','','','Hours','2.0','False','','','[sfs-desktop-test] Work Type');
-INSERT INTO "WorkType" VALUES(124,'True','USD','','','Hours','2.0','False','','','[sfs-desktop-test] Work Type 2');
+INSERT INTO "WorkType" VALUES(124,'False','USD','','','Hours','2.0','False','','','[sfs-desktop-test] Work Type');
 INSERT INTO "WorkType" VALUES(125,'True','USD','','','Hours','2.0','False','','','[sfs-desktop-test] Work Type 2');
-INSERT INTO "WorkType" VALUES(126,'False','USD','','','Hours','2.0','False','','','[sfs-desktop-test] Work Type');
+INSERT INTO "WorkType" VALUES(126,'True','USD','','','Hours','2.0','False','','','[sfs-desktop-test] Work Type 2');
 INSERT INTO "WorkType" VALUES(127,'False','USD','','','Hours','2.0','False','','','[sfs-desktop-test] Work Type');
 INSERT INTO "WorkType" VALUES(128,'True','USD','','7200.0','Minutes','60.0','False','','','Solar Panel Repair');
 INSERT INTO "WorkType" VALUES(129,'True','USD','','14400.0','Minutes','30.0','False','','','Solar Panel Maintenance');
 INSERT INTO "WorkType" VALUES(130,'True','USD','','2880.0','Hours','2.5','False','','','Connect to Electrical Grid');
-INSERT INTO "WorkType" VALUES(131,'True','USD','','4320.0','Hours','1.5','False','','','Solar Panel Installation');
-INSERT INTO "WorkType" VALUES(132,'True','USD','','','Hours','2.0','False','','','Test MP-WT');
-INSERT INTO "WorkType" VALUES(133,'True','USD','','','Hours','2.0','False','','','[sfs-desktop-test] Work Type 2');
-INSERT INTO "WorkType" VALUES(134,'False','USD','','','Hours','2.0','False','','','[sfs-desktop-test] Work Type');
+INSERT INTO "WorkType" VALUES(131,'False','USD','','','Hours','2.0','False','','','[sfs-desktop-test] Work Type');
+INSERT INTO "WorkType" VALUES(132,'True','USD','','4320.0','Hours','1.5','False','','','Solar Panel Installation');
+INSERT INTO "WorkType" VALUES(133,'True','USD','','','Hours','2.0','False','','','Test MP-WT');
+INSERT INTO "WorkType" VALUES(134,'True','USD','','','Hours','2.0','False','','','[sfs-desktop-test] Work Type 2');
 INSERT INTO "WorkType" VALUES(135,'True','USD','','','Hours','2.0','False','','','Test MP-WT');
 INSERT INTO "WorkType" VALUES(136,'False','USD','','','Hours','2.0','False','','','[sfs-desktop-test] Work Type');
 INSERT INTO "WorkType" VALUES(137,'True','USD','','','Hours','2.0','False','','','Test MP-WT');
@@ -2156,10 +3181,10 @@ INSERT INTO "WorkType" VALUES(159,'True','USD','','','Hours','2.0','False','',''
 INSERT INTO "WorkType" VALUES(160,'True','USD','','','Hours','2.0','False','','','[sfs-desktop-test] Work Type 2');
 INSERT INTO "WorkType" VALUES(161,'True','USD','','','Hours','2.0','False','','','[sfs-desktop-test] Work Type 2');
 INSERT INTO "WorkType" VALUES(162,'True','USD','','','Hours','2.0','False','','','Test MP-WT');
-INSERT INTO "WorkType" VALUES(163,'False','USD','','','Hours','2.0','False','','','[sfs-desktop-test] Work Type');
-INSERT INTO "WorkType" VALUES(164,'True','USD','','','Hours','2.0','False','','','[sfs-desktop-test] Work Type 2');
-INSERT INTO "WorkType" VALUES(165,'False','USD','','','Hours','2.0','False','','','[sfs-desktop-test] Work Type');
-INSERT INTO "WorkType" VALUES(166,'True','USD','','','Hours','2.0','False','','','Test MP-WT');
+INSERT INTO "WorkType" VALUES(163,'True','USD','','','Hours','2.0','False','','','Test MP-WT');
+INSERT INTO "WorkType" VALUES(164,'False','USD','','','Hours','2.0','False','','','[sfs-desktop-test] Work Type');
+INSERT INTO "WorkType" VALUES(165,'True','USD','','','Hours','2.0','False','','','[sfs-desktop-test] Work Type 2');
+INSERT INTO "WorkType" VALUES(166,'False','USD','','','Hours','2.0','False','','','[sfs-desktop-test] Work Type');
 INSERT INTO "WorkType" VALUES(167,'True','USD','','','Hours','2.0','False','','','[sfs-desktop-test] Work Type 2');
 INSERT INTO "WorkType" VALUES(168,'True','USD','','','Hours','2.0','False','','','[sfs-desktop-test] Work Type 2');
 INSERT INTO "WorkType" VALUES(169,'True','USD','','','Hours','2.0','False','','','Test MP-WT');
@@ -2222,9 +3247,9 @@ INSERT INTO "WorkType" VALUES(225,'False','USD','','','Hours','2.0','False','','
 INSERT INTO "WorkType" VALUES(226,'True','USD','','','Hours','2.0','False','','','[sfs-desktop-test] Work Type 2');
 INSERT INTO "WorkType" VALUES(227,'True','USD','','','Hours','2.0','False','','','Test MP-WT');
 INSERT INTO "WorkType" VALUES(228,'False','USD','','','Hours','2.0','False','','','[sfs-desktop-test] Work Type');
-INSERT INTO "WorkType" VALUES(229,'True','USD','','','Hours','2.0','False','','','[sfs-desktop-test] Work Type 2');
-INSERT INTO "WorkType" VALUES(230,'True','USD','','','Hours','2.0','False','','','Test MP-WT');
-INSERT INTO "WorkType" VALUES(231,'False','USD','','','Hours','2.0','False','','','[sfs-desktop-test] Work Type');
+INSERT INTO "WorkType" VALUES(229,'False','USD','','','Hours','2.0','False','','','[sfs-desktop-test] Work Type');
+INSERT INTO "WorkType" VALUES(230,'True','USD','','','Hours','2.0','False','','','[sfs-desktop-test] Work Type 2');
+INSERT INTO "WorkType" VALUES(231,'True','USD','','','Hours','2.0','False','','','Test MP-WT');
 INSERT INTO "WorkType" VALUES(232,'True','USD','','','Hours','2.0','False','','','[sfs-desktop-test] Work Type 2');
 INSERT INTO "WorkType" VALUES(233,'False','USD','','','Hours','2.0','False','','','[sfs-desktop-test] Work Type');
 INSERT INTO "WorkType" VALUES(234,'True','USD','','','Hours','2.0','False','','','[sfs-desktop-test] Work Type 2');
@@ -2253,10 +3278,10 @@ INSERT INTO "WorkType" VALUES(256,'False','USD','','','Hours','2.0','False','','
 INSERT INTO "WorkType" VALUES(257,'True','USD','','','Hours','2.0','False','','','[sfs-desktop-test] Work Type 2');
 INSERT INTO "WorkType" VALUES(258,'True','USD','','','Hours','2.0','False','','','Test MP-WT');
 INSERT INTO "WorkType" VALUES(259,'True','USD','','','Hours','2.0','False','','','Test MP-WT');
-INSERT INTO "WorkType" VALUES(260,'True','USD','','','Hours','2.0','False','','','[sfs-desktop-test] Work Type 2');
-INSERT INTO "WorkType" VALUES(261,'False','USD','','','Hours','2.0','False','','','[sfs-desktop-test] Work Type');
-INSERT INTO "WorkType" VALUES(262,'True','USD','','','Hours','2.0','False','','','[sfs-desktop-test] Work Type 2');
-INSERT INTO "WorkType" VALUES(263,'False','USD','','','Hours','2.0','False','','','[sfs-desktop-test] Work Type');
+INSERT INTO "WorkType" VALUES(260,'False','USD','','','Hours','2.0','False','','','[sfs-desktop-test] Work Type');
+INSERT INTO "WorkType" VALUES(261,'True','USD','','','Hours','2.0','False','','','[sfs-desktop-test] Work Type 2');
+INSERT INTO "WorkType" VALUES(262,'False','USD','','','Hours','2.0','False','','','[sfs-desktop-test] Work Type');
+INSERT INTO "WorkType" VALUES(263,'True','USD','','','Hours','2.0','False','','','[sfs-desktop-test] Work Type 2');
 INSERT INTO "WorkType" VALUES(264,'False','USD','','','Hours','2.0','False','','','[sfs-desktop-test] Work Type');
 INSERT INTO "WorkType" VALUES(265,'True','USD','','','Hours','2.0','False','','','[sfs-desktop-test] Work Type 2');
 INSERT INTO "WorkType" VALUES(266,'True','USD','','','Hours','2.0','False','','','TestWorkType_6950808');
@@ -2318,8 +3343,8 @@ INSERT INTO "WorkType" VALUES(321,'True','USD','','','Hours','2.0','False','',''
 INSERT INTO "WorkType" VALUES(322,'False','USD','','','Hours','2.0','False','','','[sfs-desktop-test] Work Type');
 INSERT INTO "WorkType" VALUES(323,'True','USD','','','Hours','2.0','False','','','[sfs-desktop-test] Work Type 2');
 INSERT INTO "WorkType" VALUES(324,'True','USD','','','Hours','2.0','False','','','Test MP-WT');
-INSERT INTO "WorkType" VALUES(325,'False','USD','','','Hours','2.0','False','','','[sfs-desktop-test] Work Type');
-INSERT INTO "WorkType" VALUES(326,'True','USD','','','Hours','2.0','False','','','Test MP-WT');
+INSERT INTO "WorkType" VALUES(325,'True','USD','','','Hours','2.0','False','','','Test MP-WT');
+INSERT INTO "WorkType" VALUES(326,'False','USD','','','Hours','2.0','False','','','[sfs-desktop-test] Work Type');
 INSERT INTO "WorkType" VALUES(327,'True','USD','','','Hours','2.0','False','','','Test MP-WT');
 INSERT INTO "WorkType" VALUES(328,'True','USD','','','Hours','2.0','False','','','[sfs-desktop-test] Work Type 2');
 INSERT INTO "WorkType" VALUES(329,'True','USD','','','Hours','2.0','False','','','Test MP-WT');
@@ -2353,6 +3378,6 @@ INSERT INTO "WorkType" VALUES(356,'False','USD','','','Hours','2.0','False','','
 INSERT INTO "WorkType" VALUES(357,'True','USD','','','Hours','2.0','False','','','Gas Meter Replacement');
 INSERT INTO "WorkType" VALUES(358,'True','USD','Work Type for the meter turn on process','','Hours','3.0','False','','','Meter Turn On');
 INSERT INTO "WorkType" VALUES(359,'False','USD','Test Meter','','Hours','1.0','False','','','Test Meter');
-INSERT INTO "WorkType" VALUES(360,'False','USD','','','Hours','4.0','False','','','Meter Turn Off');
+INSERT INTO "WorkType" VALUES(360,'True','USD','','','Hours','4.0','False','','','Meter Turn Off');
 INSERT INTO "WorkType" VALUES(361,'False','USD','','0.0','Hours','1.0','False','','','Gas Leakage Order');
 COMMIT;

@@ -1,4 +1,57 @@
 extract:
+  Account:
+    fields:
+    - CurrencyIsoCode
+    - Description
+    - Fax
+    - Name
+    - AccountNumber
+    - Phone
+    - Rating
+    - Site
+    - AccountSource
+    - Type
+    - Active__c
+    - AnnualRevenue
+    - BillingCity
+    - BillingCountry
+    - BillingGeocodeAccuracy
+    - BillingLatitude
+    - BillingLongitude
+    - BillingState
+    - BillingStreet
+    - BillingPostalCode
+    - CleanStatus
+    - CustomerPriority__c
+    - DandbCompanyId
+    - DunsNumber
+    - Jigsaw
+    - NumberOfEmployees
+    - Industry
+    - NaicsCode
+    - NaicsDesc
+    - NumberofLocations__c
+    - OperatingHoursId
+    - Ownership
+    - ParentId
+    - ShippingCity
+    - ShippingCountry
+    - ShippingGeocodeAccuracy
+    - ShippingLatitude
+    - ShippingLongitude
+    - ShippingState
+    - ShippingStreet
+    - ShippingPostalCode
+    - Sic
+    - SicDesc
+    - SLA__c
+    - SLAExpirationDate__c
+    - SLASerialNumber__c
+    - TickerSymbol
+    - Tradestyle
+    - UpsellOpportunity__c
+    - Website
+    - YearStarted
   DandBCompany:
     fields:
     - DunsNumber
@@ -9,6 +62,94 @@ extract:
     - Description
     - Name
     - TimeZone
+  Asset:
+    fields:
+    - AccountId
+    - Name
+    - AssetProvidedById
+    - AssetServicedById
+    - Capacity__c
+    - City
+    - IsCompetitorProduct
+    - ContactId
+    - Country
+    - CurrencyIsoCode
+    - Description
+    - GeocodeAccuracy
+    - InstallDate
+    - IsInternal
+    - Latitude
+    - LocationId
+    - Longitude
+    - Mileage__c
+    - MileageTracking__c
+    - NeedMaintenance__c
+    - ParentId
+    - Performance__c
+    - PostalCode
+    - Price
+    - Product2Id
+    - PurchaseDate
+    - Quantity
+    - SerialNumber
+    - State
+    - Status
+    - Street
+    - UsageEndDate
+  Contact:
+    fields:
+    - LastName
+  Location:
+    fields:
+    - CloseDate
+    - ConstructionEndDate
+    - ConstructionStartDate
+    - CurrencyIsoCode
+    - Description
+    - DrivingDirections
+    - ExternalReference
+    - IsInventoryLocation
+    - IsMobile
+    - Latitude
+    - LocationType
+    - Longitude
+    - Name
+    - OpenDate
+    - PossessionDate
+    - RemodelEndDate
+    - RemodelStartDate
+    - ShouldSyncWithOci
+    - TimeZone
+  Product2:
+    fields:
+    - CurrencyIsoCode
+    - Description
+    - DisplayUrl
+    - ExternalId
+    - Family
+    - IsActive
+    - IsSerialized
+    - Name
+    - ProductCode
+    - QuantityUnitOfMeasure
+    - StockKeepingUnit
+    - TransferRecordMode
+  AttributeDefinition:
+    fields:
+    - IsActive
+    - CurrencyIsoCode
+    - DataType
+    - DefaultValue
+    - Description
+    - Label
+    - Name
+    - IsRequired
+    - UnitOfMeasureId
+  UnitOfMeasure:
+    fields:
+    - Name
+    - Type
+    - UnitCode
   WorkType:
     fields:
     - ShouldAutoCreateSvcAppt
@@ -22,3 +163,70 @@ extract:
     - RecommendedCrewSize
     - ServiceReportTemplateId
     - Name
+  WorkStepTemplate:
+    fields:
+    - ActionDefinition
+    - IsActive
+    - CurrencyIsoCode
+    - custom_wst__c
+    - date_wst__c
+    - Description
+    - geo_wst__Latitude__s
+    - geo_wst__Longitude__s
+    - Name
+  WorkPlanTemplateEntry:
+    fields:
+    - CurrencyIsoCode
+    - custom_wpte__c
+    - ExecutionOrder
+    - WorkPlanTemplateId
+    - WorkStepTemplateId
+  WorkPlanTemplate:
+    fields:
+    - CurrencyIsoCode
+    - Custom1__c
+    - Description
+    - IsActive
+    - Name
+    - RelativeExecutionOrder
+    - encrypted__c
+  WorkPlanSelectionRule:
+    fields:
+    - AccountId
+    - IsActive
+    - AssetId
+    - CurrencyIsoCode
+    - Description
+    - LocationId
+    - Product2Id
+    - ServiceContractId
+    - ServiceTerritoryId
+    - WorkPlanTemplateId
+    - WorkTypeId
+  ServiceContract:
+    fields:
+    - Name
+  ServiceTerritory:
+    fields:
+    - City
+    - Country
+    - CurrencyIsoCode
+    - Description
+    - FSL__Hide_Emergency_Map__c
+    - FSL__Internal_SLR_Geolocation__Latitude__s
+    - FSL__Internal_SLR_Geolocation__Longitude__s
+    - FSL__NumberOfServicesToDripFeed__c
+    - FSL__O2_Enabled__c
+    - FSL__Service_Cluster_Min_Size__c
+    - FSL__Service_Cluster_Proximity__c
+    - FSL__System_Jobs__c
+    - FSL__TerritoryLevel__c
+    - GeocodeAccuracy
+    - IsActive
+    - Latitude
+    - Longitude
+    - Name
+    - PostalCode
+    - State
+    - Street
+    - TypicalInTerritoryTravelTime
