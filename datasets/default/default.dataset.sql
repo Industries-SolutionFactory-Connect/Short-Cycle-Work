@@ -109,7 +109,6 @@ INSERT INTO "AttributeDefinition" VALUES(1,'True','USD','Text','','','Meter Read
 INSERT INTO "AttributeDefinition" VALUES(2,'True','USD','Number','1','','Number of Dials','Number of Dials','False','');
 INSERT INTO "AttributeDefinition" VALUES(3,'True','USD','Text','','','Meter Read Date','Meter Read Date','False','');
 INSERT INTO "AttributeDefinition" VALUES(4,'True','USD','Text','3/4','','Meter Size','Meter Size','False','');
-INSERT INTO "AttributeDefinition" VALUES(6,'True','USD','Checkbox','','','Meter Bar Sealed','Meter Bar Sealed','False','');
 INSERT INTO "AttributeDefinition" VALUES(7,'True','USD','Text','BHEL','','Meter Manufacturer','Meter Manufacturer','False','');
 CREATE TABLE "Contact" (
 	id INTEGER NOT NULL, 
@@ -224,7 +223,7 @@ CREATE TABLE "WorkPlanSelectionRule" (
 	"WorkTypeId" VARCHAR(255), 
 	PRIMARY KEY (id)
 );
-INSERT INTO "WorkPlanSelectionRule" VALUES(5,'True','USD','Field service technician to verify whether they are at right meter before performing meter replacement process.','','','','','','','10','358');
+INSERT INTO "WorkPlanSelectionRule" VALUES(5,'True','USD','Field service technician to verify whether they are at right meter before turning on gas meter process.','','','','','','','10','358');
 INSERT INTO "WorkPlanSelectionRule" VALUES(6,'True','USD','Safety Instructions','','','','','','','11','358');
 INSERT INTO "WorkPlanSelectionRule" VALUES(7,'True','USD','Wrap up tasks to be performed after completion of service for Turn On Process.','','','','','','','14','358');
 INSERT INTO "WorkPlanSelectionRule" VALUES(8,'True','USD','Turn On Gas Meter following instructions','','','','','','','15','358');
@@ -240,7 +239,7 @@ CREATE TABLE "WorkPlanTemplate" (
 	encrypted__c VARCHAR(255), 
 	PRIMARY KEY (id)
 );
-INSERT INTO "WorkPlanTemplate" VALUES(10,'USD','','Field service technician to verify whether they are at right meter before performing meter replacement process.','True','Verify Right Meter','2','');
+INSERT INTO "WorkPlanTemplate" VALUES(10,'USD','','Field service technician to verify whether they are at right meter before turning on gas meter process.','True','Verify Right Meter','2','');
 INSERT INTO "WorkPlanTemplate" VALUES(11,'USD','','Safety instructions to be performed before reaching customer''s location.','True','Safety Checks','1','');
 INSERT INTO "WorkPlanTemplate" VALUES(14,'USD','','Wrap up tasks to be performed after completion of service for Turn On Process.','True','Wrap Up Turn On Process','5','');
 INSERT INTO "WorkPlanTemplate" VALUES(15,'USD','','Turn On Gas Meter following instructions','True','Turn On Gas Service','3','');
