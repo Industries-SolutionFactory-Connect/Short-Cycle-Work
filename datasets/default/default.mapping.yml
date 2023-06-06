@@ -5,17 +5,318 @@
 # .load.yml file and re-capturing:
 #
 #  https://cumulusci.readthedocs.io/en/stable/data.html#extracting-and-loading-sample-datasets
+Insert DandBCompany:
+  sf_object: DandBCompany
+  table: DandBCompany
+  fields:
+  - DunsNumber
+  - Name
+Insert OperatingHours:
+  sf_object: OperatingHours
+  table: OperatingHours
+  fields:
+  - CurrencyIsoCode
+  - Description
+  - Name
+  - TimeZone
+Insert Contact:
+  sf_object: Contact
+  table: Contact
+  fields:
+  - LastName
 Insert Location:
   sf_object: Location
   table: Location
   fields:
-  - Name
-Insert Address:
-  sf_object: Address
-  table: Address
-  fields:
+  - CloseDate
+  - ConstructionEndDate
+  - ConstructionStartDate
+  - CurrencyIsoCode
+  - Description
+  - DrivingDirections
+  - ExternalReference
+  - IsInventoryLocation
+  - IsMobile
+  - Latitude
   - LocationType
+  - Longitude
+  - Name
+  - OpenDate
+  - PossessionDate
+  - RemodelEndDate
+  - RemodelStartDate
+  - ShouldSyncWithOci
+  - TimeZone
+Insert Product2:
+  sf_object: Product2
+  table: Product2
+  fields:
+  - CurrencyIsoCode
+  - Description
+  - DisplayUrl
+  - ExternalId
+  - Family
+  - IsActive
+  - IsSerialized
+  - Name
+  - ProductCode
+  - QuantityUnitOfMeasure
+  - StockKeepingUnit
+  - TransferRecordMode
+Insert UnitOfMeasure:
+  sf_object: UnitOfMeasure
+  table: UnitOfMeasure
+  fields:
+  - Name
+  - Type
+  - UnitCode
+Insert WorkType:
+  sf_object: WorkType
+  table: WorkType
+  fields:
+  - ShouldAutoCreateSvcAppt
+  - CurrencyIsoCode
+  - Description
+  - FSL__Due_Date_Offset__c
+  - DurationType
+  - EstimatedDuration
+  - FSL__Exact_Appointments__c
+  - MinimumCrewSize
+  - RecommendedCrewSize
+  - Name
+Insert WorkStepTemplate:
+  sf_object: WorkStepTemplate
+  table: WorkStepTemplate
+  fields:
+  - ActionDefinition
+  - IsActive
+  - CurrencyIsoCode
+  - custom_wst__c
+  - date_wst__c
+  - Description
+  - geo_wst__Latitude__s
+  - geo_wst__Longitude__s
+  - Name
+Insert WorkPlanTemplate:
+  sf_object: WorkPlanTemplate
+  table: WorkPlanTemplate
+  fields:
+  - CurrencyIsoCode
+  - Custom1__c
+  - Description
+  - IsActive
+  - Name
+  - RelativeExecutionOrder
+  - encrypted__c
+Insert ServiceContract:
+  sf_object: ServiceContract
+  table: ServiceContract
+  fields:
+  - Name
+Insert Account:
+  sf_object: Account
+  table: Account
+  fields:
+  - CurrencyIsoCode
+  - Description
+  - Fax
+  - Name
+  - AccountNumber
+  - Phone
+  - Rating
+  - Site
+  - AccountSource
+  - Type
+  - Active__c
+  - AnnualRevenue
+  - BillingCity
+  - BillingCountry
+  - BillingGeocodeAccuracy
+  - BillingLatitude
+  - BillingLongitude
+  - BillingState
+  - BillingStreet
+  - BillingPostalCode
+  - CleanStatus
+  - CustomerPriority__c
+  - DunsNumber
+  - Jigsaw
+  - NumberOfEmployees
+  - Industry
+  - NaicsCode
+  - NaicsDesc
+  - NumberofLocations__c
+  - Ownership
+  - ShippingCity
+  - ShippingCountry
+  - ShippingGeocodeAccuracy
+  - ShippingLatitude
+  - ShippingLongitude
+  - ShippingState
+  - ShippingStreet
+  - ShippingPostalCode
+  - Sic
+  - SicDesc
+  - SLA__c
+  - SLAExpirationDate__c
+  - SLASerialNumber__c
+  - TickerSymbol
+  - Tradestyle
+  - UpsellOpportunity__c
+  - Website
+  - YearStarted
   lookups:
+    DandbCompanyId:
+      table: DandBCompany
+      key_field: DandbCompanyId
+    OperatingHoursId:
+      table: OperatingHours
+      key_field: OperatingHoursId
     ParentId:
-      table: Location
+      table: Account
       key_field: ParentId
+      after: Insert Account
+Insert AttributeDefinition:
+  sf_object: AttributeDefinition
+  table: AttributeDefinition
+  fields:
+  - IsActive
+  - CurrencyIsoCode
+  - DataType
+  - DefaultValue
+  - Description
+  - Label
+  - Name
+  - IsRequired
+  lookups:
+    UnitOfMeasureId:
+      table: UnitOfMeasure
+      key_field: UnitOfMeasureId
+Insert WorkPlanTemplateEntry:
+  sf_object: WorkPlanTemplateEntry
+  table: WorkPlanTemplateEntry
+  fields:
+  - CurrencyIsoCode
+  - custom_wpte__c
+  - ExecutionOrder
+  lookups:
+    WorkPlanTemplateId:
+      table: WorkPlanTemplate
+      key_field: WorkPlanTemplateId
+    WorkStepTemplateId:
+      table: WorkStepTemplate
+      key_field: WorkStepTemplateId
+Insert ServiceTerritory:
+  sf_object: ServiceTerritory
+  table: ServiceTerritory
+  fields:
+  - City
+  - Country
+  - CurrencyIsoCode
+  - Description
+  - FSL__Hide_Emergency_Map__c
+  - FSL__Internal_SLR_Geolocation__Latitude__s
+  - FSL__Internal_SLR_Geolocation__Longitude__s
+  - FSL__NumberOfServicesToDripFeed__c
+  - FSL__O2_Enabled__c
+  - FSL__Service_Cluster_Min_Size__c
+  - FSL__Service_Cluster_Proximity__c
+  - FSL__System_Jobs__c
+  - FSL__TerritoryLevel__c
+  - GeocodeAccuracy
+  - IsActive
+  - Latitude
+  - Longitude
+  - Name
+  - PostalCode
+  - State
+  - Street
+  - TypicalInTerritoryTravelTime
+  lookups:
+    OperatingHoursId:
+      table: OperatingHours
+      key_field: OperatingHoursId
+Insert Asset:
+  sf_object: Asset
+  table: Asset
+  fields:
+  - Name
+  - Capacity__c
+  - City
+  - IsCompetitorProduct
+  - Country
+  - CurrencyIsoCode
+  - Description
+  - GeocodeAccuracy
+  - InstallDate
+  - IsInternal
+  - Latitude
+  - Longitude
+  - Mileage__c
+  - MileageTracking__c
+  - NeedMaintenance__c
+  - Performance__c
+  - PostalCode
+  - Price
+  - PurchaseDate
+  - Quantity
+  - SerialNumber
+  - State
+  - Status
+  - Street
+  - UsageEndDate
+  lookups:
+    AccountId:
+      table: Account
+      key_field: AccountId
+    AssetProvidedById:
+      table: Account
+      key_field: AssetProvidedById
+    AssetServicedById:
+      table: Account
+      key_field: AssetServicedById
+    ContactId:
+      table: Contact
+      key_field: ContactId
+    LocationId:
+      table: Location
+      key_field: LocationId
+    ParentId:
+      table: Asset
+      key_field: ParentId
+      after: Insert Asset
+    Product2Id:
+      table: Product2
+      key_field: Product2Id
+Insert WorkPlanSelectionRule:
+  sf_object: WorkPlanSelectionRule
+  table: WorkPlanSelectionRule
+  fields:
+  - IsActive
+  - CurrencyIsoCode
+  - Description
+  lookups:
+    AccountId:
+      table: Account
+      key_field: AccountId
+    AssetId:
+      table: Asset
+      key_field: AssetId
+    LocationId:
+      table: Location
+      key_field: LocationId
+    Product2Id:
+      table: Product2
+      key_field: Product2Id
+    ServiceContractId:
+      table: ServiceContract
+      key_field: ServiceContractId
+    ServiceTerritoryId:
+      table: ServiceTerritory
+      key_field: ServiceTerritoryId
+    WorkPlanTemplateId:
+      table: WorkPlanTemplate
+      key_field: WorkPlanTemplateId
+    WorkTypeId:
+      table: WorkType
+      key_field: WorkTypeId
