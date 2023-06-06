@@ -1,516 +1,299 @@
 BEGIN TRANSACTION;
-CREATE TABLE "Address" (
+CREATE TABLE "Account" (
 	id INTEGER NOT NULL, 
-	"LocationType" VARCHAR(255), 
+	"CurrencyIsoCode" VARCHAR(255), 
+	"Description" VARCHAR(255), 
+	"Fax" VARCHAR(255), 
+	"Name" VARCHAR(255), 
+	"AccountNumber" VARCHAR(255), 
+	"Phone" VARCHAR(255), 
+	"Rating" VARCHAR(255), 
+	"Site" VARCHAR(255), 
+	"AccountSource" VARCHAR(255), 
+	"Type" VARCHAR(255), 
+	"Active__c" VARCHAR(255), 
+	"AnnualRevenue" VARCHAR(255), 
+	"BillingCity" VARCHAR(255), 
+	"BillingCountry" VARCHAR(255), 
+	"BillingGeocodeAccuracy" VARCHAR(255), 
+	"BillingLatitude" VARCHAR(255), 
+	"BillingLongitude" VARCHAR(255), 
+	"BillingState" VARCHAR(255), 
+	"BillingStreet" VARCHAR(255), 
+	"BillingPostalCode" VARCHAR(255), 
+	"CleanStatus" VARCHAR(255), 
+	"CustomerPriority__c" VARCHAR(255), 
+	"DunsNumber" VARCHAR(255), 
+	"Jigsaw" VARCHAR(255), 
+	"NumberOfEmployees" VARCHAR(255), 
+	"Industry" VARCHAR(255), 
+	"NaicsCode" VARCHAR(255), 
+	"NaicsDesc" VARCHAR(255), 
+	"NumberofLocations__c" VARCHAR(255), 
+	"Ownership" VARCHAR(255), 
+	"ShippingCity" VARCHAR(255), 
+	"ShippingCountry" VARCHAR(255), 
+	"ShippingGeocodeAccuracy" VARCHAR(255), 
+	"ShippingLatitude" VARCHAR(255), 
+	"ShippingLongitude" VARCHAR(255), 
+	"ShippingState" VARCHAR(255), 
+	"ShippingStreet" VARCHAR(255), 
+	"ShippingPostalCode" VARCHAR(255), 
+	"Sic" VARCHAR(255), 
+	"SicDesc" VARCHAR(255), 
+	"SLA__c" VARCHAR(255), 
+	"SLAExpirationDate__c" VARCHAR(255), 
+	"SLASerialNumber__c" VARCHAR(255), 
+	"TickerSymbol" VARCHAR(255), 
+	"Tradestyle" VARCHAR(255), 
+	"UpsellOpportunity__c" VARCHAR(255), 
+	"Website" VARCHAR(255), 
+	"YearStarted" VARCHAR(255), 
+	"DandbCompanyId" VARCHAR(255), 
+	"OperatingHoursId" VARCHAR(255), 
 	"ParentId" VARCHAR(255), 
 	PRIMARY KEY (id)
 );
-INSERT INTO "Address" VALUES(1,'Site','380');
+INSERT INTO "Account" VALUES(1,'USD','','','Acme','','','','','','','','','','','','','','','','','Pending','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','');
+CREATE TABLE "Asset" (
+	id INTEGER NOT NULL, 
+	"Name" VARCHAR(255), 
+	"Capacity__c" VARCHAR(255), 
+	"City" VARCHAR(255), 
+	"IsCompetitorProduct" VARCHAR(255), 
+	"Country" VARCHAR(255), 
+	"CurrencyIsoCode" VARCHAR(255), 
+	"Description" VARCHAR(255), 
+	"GeocodeAccuracy" VARCHAR(255), 
+	"InstallDate" VARCHAR(255), 
+	"IsInternal" VARCHAR(255), 
+	"Latitude" VARCHAR(255), 
+	"Longitude" VARCHAR(255), 
+	"Mileage__c" VARCHAR(255), 
+	"MileageTracking__c" VARCHAR(255), 
+	"NeedMaintenance__c" VARCHAR(255), 
+	"Performance__c" VARCHAR(255), 
+	"PostalCode" VARCHAR(255), 
+	"Price" VARCHAR(255), 
+	"PurchaseDate" VARCHAR(255), 
+	"Quantity" VARCHAR(255), 
+	"SerialNumber" VARCHAR(255), 
+	"State" VARCHAR(255), 
+	"Status" VARCHAR(255), 
+	"Street" VARCHAR(255), 
+	"UsageEndDate" VARCHAR(255), 
+	"AccountId" VARCHAR(255), 
+	"AssetProvidedById" VARCHAR(255), 
+	"AssetServicedById" VARCHAR(255), 
+	"ContactId" VARCHAR(255), 
+	"LocationId" VARCHAR(255), 
+	"ParentId" VARCHAR(255), 
+	"Product2Id" VARCHAR(255), 
+	PRIMARY KEY (id)
+);
+INSERT INTO "Asset" VALUES(1,'Gas Meter','','','False','','USD','','','','False','','','','','False','','','','','','SN123','','','','','1','','','','503','','');
+CREATE TABLE "AttributeDefinition" (
+	id INTEGER NOT NULL, 
+	"IsActive" VARCHAR(255), 
+	"CurrencyIsoCode" VARCHAR(255), 
+	"DataType" VARCHAR(255), 
+	"DefaultValue" VARCHAR(255), 
+	"Description" VARCHAR(255), 
+	"Label" VARCHAR(255), 
+	"Name" VARCHAR(255), 
+	"IsRequired" VARCHAR(255), 
+	"UnitOfMeasureId" VARCHAR(255), 
+	PRIMARY KEY (id)
+);
+INSERT INTO "AttributeDefinition" VALUES(1,'True','USD','Text','','','Meter Read','Meter Read','False','');
+INSERT INTO "AttributeDefinition" VALUES(2,'True','USD','Number','1','','Number of Dials','Number of Dials','False','');
+INSERT INTO "AttributeDefinition" VALUES(3,'True','USD','Text','','','Meter Read Date','Meter Read Date','False','');
+INSERT INTO "AttributeDefinition" VALUES(4,'True','USD','Text','3/4','','Meter Size','Meter Size','False','');
+INSERT INTO "AttributeDefinition" VALUES(6,'True','USD','Checkbox','','','Meter Bar Sealed','Meter Bar Sealed','False','');
+INSERT INTO "AttributeDefinition" VALUES(7,'True','USD','Text','BHEL','','Meter Manufacturer','Meter Manufacturer','False','');
+CREATE TABLE "Contact" (
+	id INTEGER NOT NULL, 
+	"LastName" VARCHAR(255), 
+	PRIMARY KEY (id)
+);
+CREATE TABLE "DandBCompany" (
+	id INTEGER NOT NULL, 
+	"DunsNumber" VARCHAR(255), 
+	"Name" VARCHAR(255), 
+	PRIMARY KEY (id)
+);
 CREATE TABLE "Location" (
+	id INTEGER NOT NULL, 
+	"CloseDate" VARCHAR(255), 
+	"ConstructionEndDate" VARCHAR(255), 
+	"ConstructionStartDate" VARCHAR(255), 
+	"CurrencyIsoCode" VARCHAR(255), 
+	"Description" VARCHAR(255), 
+	"DrivingDirections" VARCHAR(255), 
+	"ExternalReference" VARCHAR(255), 
+	"IsInventoryLocation" VARCHAR(255), 
+	"IsMobile" VARCHAR(255), 
+	"Latitude" VARCHAR(255), 
+	"LocationType" VARCHAR(255), 
+	"Longitude" VARCHAR(255), 
+	"Name" VARCHAR(255), 
+	"OpenDate" VARCHAR(255), 
+	"PossessionDate" VARCHAR(255), 
+	"RemodelEndDate" VARCHAR(255), 
+	"RemodelStartDate" VARCHAR(255), 
+	"ShouldSyncWithOci" VARCHAR(255), 
+	"TimeZone" VARCHAR(255), 
+	PRIMARY KEY (id)
+);
+INSERT INTO "Location" VALUES(503,'','','','USD','Test Location123','','','False','False','','Site','','Asset Location','','','','','False','Pacific/Kiritimati');
+CREATE TABLE "OperatingHours" (
+	id INTEGER NOT NULL, 
+	"CurrencyIsoCode" VARCHAR(255), 
+	"Description" VARCHAR(255), 
+	"Name" VARCHAR(255), 
+	"TimeZone" VARCHAR(255), 
+	PRIMARY KEY (id)
+);
+CREATE TABLE "Product2" (
+	id INTEGER NOT NULL, 
+	"CurrencyIsoCode" VARCHAR(255), 
+	"Description" VARCHAR(255), 
+	"DisplayUrl" VARCHAR(255), 
+	"ExternalId" VARCHAR(255), 
+	"Family" VARCHAR(255), 
+	"IsActive" VARCHAR(255), 
+	"IsSerialized" VARCHAR(255), 
+	"Name" VARCHAR(255), 
+	"ProductCode" VARCHAR(255), 
+	"QuantityUnitOfMeasure" VARCHAR(255), 
+	"StockKeepingUnit" VARCHAR(255), 
+	"TransferRecordMode" VARCHAR(255), 
+	PRIMARY KEY (id)
+);
+CREATE TABLE "ServiceContract" (
 	id INTEGER NOT NULL, 
 	"Name" VARCHAR(255), 
 	PRIMARY KEY (id)
 );
-INSERT INTO "Location" VALUES(1,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(2,'[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto');
-INSERT INTO "Location" VALUES(3,'Testing');
-INSERT INTO "Location" VALUES(4,'[sfs-mobile-test] CrossBorderLocation_u12@gs0.q3auto');
-INSERT INTO "Location" VALUES(5,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(6,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(7,'[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto');
-INSERT INTO "Location" VALUES(8,'[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto');
-INSERT INTO "Location" VALUES(9,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(10,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(11,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(12,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(13,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(14,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(15,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(16,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(17,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(18,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(19,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(20,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(21,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(22,'[sfs-mobile-test] CrossBorderLocation_admin_mobile@gs0.q3auto');
-INSERT INTO "Location" VALUES(23,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(24,'[sfs-mobile-test] Location_u18@gs0.q3auto');
-INSERT INTO "Location" VALUES(25,'[sfs-mobile-test] CrossBorderLocation_u17@gs0.q3auto');
-INSERT INTO "Location" VALUES(26,'[sfs-mobile-test] ConsignmentLocation_u16@gs0.q3auto');
-INSERT INTO "Location" VALUES(27,'[sfs-mobile-test] ChildLocation_u16@gs0.q3auto');
-INSERT INTO "Location" VALUES(28,'[sfs-mobile-test] ConsignmentLocation_u18@gs0.q3auto');
-INSERT INTO "Location" VALUES(29,'[sfs-mobile-test] ChildLocation_u18@gs0.q3auto');
-INSERT INTO "Location" VALUES(30,'[sfs-mobile-test] CrossBorderLocation_u11@gs0.q3auto');
-INSERT INTO "Location" VALUES(31,'[sfs-mobile-test] Location_u15@gs0.q3auto');
-INSERT INTO "Location" VALUES(32,'[sfs-mobile-test] ConsignmentLocation_u15@gs0.q3auto');
-INSERT INTO "Location" VALUES(33,'[sfs-mobile-test] Location_u16@gs0.q3auto');
-INSERT INTO "Location" VALUES(34,'[sfs-mobile-test] Location_u17@gs0.q3auto');
-INSERT INTO "Location" VALUES(35,'[sfs-mobile-test] ChildLocation_u17@gs0.q3auto');
-INSERT INTO "Location" VALUES(36,'[sfs-mobile-test] CrossBorderLocation_u18@gs0.q3auto');
-INSERT INTO "Location" VALUES(37,'[sfs-mobile-test] CrossBorderLocation_u16@gs0.q3auto');
-INSERT INTO "Location" VALUES(38,'[sfs-mobile-test] CrossBorderLocation_u13@gs0.q3auto');
-INSERT INTO "Location" VALUES(39,'[sfs-mobile-test] ConsignmentLocation_u17@gs0.q3auto');
-INSERT INTO "Location" VALUES(40,'[sfs-mobile-test] CrossBorderLocation_u14@gs0.q3auto');
-INSERT INTO "Location" VALUES(41,'[sfs-mobile-test] ChildLocation_u15@gs0.q3auto');
-INSERT INTO "Location" VALUES(42,'[sfs-mobile-test] Location_u11@gs0.q3auto');
-INSERT INTO "Location" VALUES(43,'[sfs-mobile-test] ConsignmentLocation_u11@gs0.q3auto');
-INSERT INTO "Location" VALUES(44,'[sfs-mobile-test] ChildLocation_u11@gs0.q3auto');
-INSERT INTO "Location" VALUES(45,'[sfs-mobile-test] CrossBorderLocation_u12@gs0.q3auto');
-INSERT INTO "Location" VALUES(46,'[sfs-mobile-test] CrossBorderLocation_u15@gs0.q3auto');
-INSERT INTO "Location" VALUES(47,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(48,'[sfs-mobile-test] CrossBorderLocation_u2@gs0.q3auto');
-INSERT INTO "Location" VALUES(49,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(50,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(51,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(52,'[sfs-mobile-test] ChildLocation_admin_mobile@gs0.q3auto');
-INSERT INTO "Location" VALUES(53,'[sfs-mobile-test] Location_admin_mobile@gs0.q3auto');
-INSERT INTO "Location" VALUES(54,'[sfs-mobile-test] ConsignmentLocation_admin_mobile@gs0.q3auto');
-INSERT INTO "Location" VALUES(55,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(56,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(57,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(58,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(59,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(60,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(61,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(62,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(63,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(64,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(65,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(66,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(67,'[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto');
-INSERT INTO "Location" VALUES(68,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(69,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(70,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(71,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(72,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(73,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(74,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(75,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(76,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(77,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(78,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(79,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(80,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(81,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(82,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(83,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(84,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(85,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(86,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(87,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(88,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(89,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(90,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(91,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(92,'[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto');
-INSERT INTO "Location" VALUES(93,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(94,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(95,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(96,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(97,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(98,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(99,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(100,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(101,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(102,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(103,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(104,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(105,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(106,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(107,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(108,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(109,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(110,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(111,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(112,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(113,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(114,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(115,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(116,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(117,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(118,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(119,'[sfs-mobile-test] Location_u5@gs0.q3auto');
-INSERT INTO "Location" VALUES(120,'[sfs-mobile-test] ConsignmentLocation_u5@gs0.q3auto');
-INSERT INTO "Location" VALUES(121,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(122,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(123,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(124,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(125,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(126,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(127,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(128,'Denina''s Van');
-INSERT INTO "Location" VALUES(129,'NarenVan');
-INSERT INTO "Location" VALUES(130,'Bellevue');
-INSERT INTO "Location" VALUES(131,'Bellevue');
-INSERT INTO "Location" VALUES(132,'BayArea-Warehouse');
-INSERT INTO "Location" VALUES(133,'BA Van');
-INSERT INTO "Location" VALUES(134,'FSL Technician1');
-INSERT INTO "Location" VALUES(135,'Kara van');
-INSERT INTO "Location" VALUES(136,'Kara Warehouse');
-INSERT INTO "Location" VALUES(137,'Contractor Van');
-INSERT INTO "Location" VALUES(138,'[sfs-mobile-test] CrossBorderLocation_u13@gs0.q3auto');
-INSERT INTO "Location" VALUES(139,'[sfs-mobile-test] CrossBorderLocation_u13@gs0.q3auto');
-INSERT INTO "Location" VALUES(140,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(141,'[sfs-mobile-test] CrossBorderLocation_u13@gs0.q3auto');
-INSERT INTO "Location" VALUES(142,'[sfs-mobile-test] CrossBorderLocation_u13@gs0.q3auto');
-INSERT INTO "Location" VALUES(143,'[sfs-mobile-test] CrossBorderLocation_u13@gs0.q3auto');
-INSERT INTO "Location" VALUES(144,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(145,'[sfs-mobile-test] CrossBorderLocation_u13@gs0.q3auto');
-INSERT INTO "Location" VALUES(146,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(147,'[sfs-mobile-test] CrossBorderLocation_u13@gs0.q3auto');
-INSERT INTO "Location" VALUES(148,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(149,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(150,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(151,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(152,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(153,'test');
-INSERT INTO "Location" VALUES(154,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(155,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(156,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(157,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(158,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(159,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(160,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(161,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(162,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(163,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(164,'[sfs-mobile-test] ChildLocation_u5@gs0.q3auto');
-INSERT INTO "Location" VALUES(165,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(166,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(167,'[sfs-mobile-test] ChildLocation_u1@gs0.q3auto');
-INSERT INTO "Location" VALUES(168,'[sfs-mobile-test] ConsignmentLocation_u1@gs0.q3auto');
-INSERT INTO "Location" VALUES(169,'[sfs-mobile-test] CrossBorderLocation_u12@gs0.q3auto');
-INSERT INTO "Location" VALUES(170,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(171,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(172,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(173,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(174,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(175,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(176,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(177,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(178,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(179,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(180,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(181,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(182,'[sfs-mobile-test] ConsignmentLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(183,'[sfs-mobile-test] Location_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(184,'[sfs-mobile-test] Location_u1@gs0.q3auto');
-INSERT INTO "Location" VALUES(185,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(186,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(187,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(188,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(189,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(190,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(191,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(192,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(193,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(194,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(195,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(196,'Kaiju Location A');
-INSERT INTO "Location" VALUES(197,'Kaiju Location B');
-INSERT INTO "Location" VALUES(198,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(199,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(200,'[sfs-mobile-test] Location_u2@gs0.q3auto');
-INSERT INTO "Location" VALUES(201,'[sfs-mobile-test] CrossBorderLocation_u2@gs0.q3auto');
-INSERT INTO "Location" VALUES(202,'[sfs-mobile-test] ChildLocation_u2@gs0.q3auto');
-INSERT INTO "Location" VALUES(203,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(204,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(205,'[sfs-mobile-test] ConsignmentLocation_u2@gs0.q3auto');
-INSERT INTO "Location" VALUES(206,'[sfs-mobile-test] ChildLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(207,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(208,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(209,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(210,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(211,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(212,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(213,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(214,'[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto');
-INSERT INTO "Location" VALUES(215,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(216,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(217,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(218,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(219,'[sfs-mobile-test] ConsignmentLocation_u14@gs0.q3auto');
-INSERT INTO "Location" VALUES(220,'[sfs-mobile-test] ChildLocation_u14@gs0.q3auto');
-INSERT INTO "Location" VALUES(221,'[sfs-mobile-test] Location_u14@gs0.q3auto');
-INSERT INTO "Location" VALUES(222,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(223,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(224,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(225,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(226,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(227,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(228,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(229,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(230,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(231,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(232,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(233,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(234,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(235,'[sfs-mobile-test] CrossBorderLocation_u2@gs0.q3auto');
-INSERT INTO "Location" VALUES(236,'[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto');
-INSERT INTO "Location" VALUES(237,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(238,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(239,'SFO');
-INSERT INTO "Location" VALUES(240,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(241,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(242,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(243,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(244,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(245,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(246,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(247,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(248,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(249,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(250,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(251,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(252,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(253,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(254,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(255,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(256,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(257,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(258,'[sfs-mobile-test] ChildLocation_u3@gs0.q3auto');
-INSERT INTO "Location" VALUES(259,'[sfs-mobile-test] ConsignmentLocation_u3@gs0.q3auto');
-INSERT INTO "Location" VALUES(260,'[sfs-mobile-test] Location_u3@gs0.q3auto');
-INSERT INTO "Location" VALUES(261,'[sfs-mobile-test] Location_u1@gs0.q3auto');
-INSERT INTO "Location" VALUES(262,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(263,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(264,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(265,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(266,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(267,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(268,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(269,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(270,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(271,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(272,'[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto');
-INSERT INTO "Location" VALUES(273,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(274,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(275,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(276,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(277,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(278,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(279,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(280,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(281,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(282,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(283,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(284,'[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto');
-INSERT INTO "Location" VALUES(285,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(286,'[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto');
-INSERT INTO "Location" VALUES(287,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(288,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(289,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(290,'[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto');
-INSERT INTO "Location" VALUES(291,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(292,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(293,'[sfs-mobile-test] ChildLocation_u12@gs0.q3auto');
-INSERT INTO "Location" VALUES(294,'[sfs-mobile-test] ConsignmentLocation_u12@gs0.q3auto');
-INSERT INTO "Location" VALUES(295,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(296,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(297,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(298,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(299,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(300,'[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto');
-INSERT INTO "Location" VALUES(301,'[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto');
-INSERT INTO "Location" VALUES(302,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(303,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(304,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(305,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(306,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(307,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(308,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(309,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(310,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(311,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(312,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(313,'[sfs-mobile-test] Location_u6@gs0.q3auto');
-INSERT INTO "Location" VALUES(314,'[sfs-mobile-test] ConsignmentLocation_u6@gs0.q3auto');
-INSERT INTO "Location" VALUES(315,'consignment-Nishitha-loc');
-INSERT INTO "Location" VALUES(316,'Nishitha-child-loc');
-INSERT INTO "Location" VALUES(317,'Nishitha-loc');
-INSERT INTO "Location" VALUES(318,'Nishitha cross-border');
-INSERT INTO "Location" VALUES(319,'Main location');
-INSERT INTO "Location" VALUES(320,'[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto');
-INSERT INTO "Location" VALUES(321,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(322,'[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto');
-INSERT INTO "Location" VALUES(323,'ContractorTest');
-INSERT INTO "Location" VALUES(324,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(325,'SF Warehouse');
-INSERT INTO "Location" VALUES(326,'fslservice''s van');
-INSERT INTO "Location" VALUES(327,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(328,'[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto');
-INSERT INTO "Location" VALUES(329,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(330,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(331,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(332,'[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto');
-INSERT INTO "Location" VALUES(333,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(334,'[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto');
-INSERT INTO "Location" VALUES(335,'[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto');
-INSERT INTO "Location" VALUES(336,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(337,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(338,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(339,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(340,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(341,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(342,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(343,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(344,'[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto');
-INSERT INTO "Location" VALUES(345,'[sfs-mobile-test] ConsignmentLocation_u7@gs0.q3auto');
-INSERT INTO "Location" VALUES(346,'[sfs-mobile-test] ChildLocation_u7@gs0.q3auto');
-INSERT INTO "Location" VALUES(347,'[sfs-mobile-test] Location_u7@gs0.q3auto');
-INSERT INTO "Location" VALUES(348,'[sfs-mobile-test] Location_u8@gs0.q3auto');
-INSERT INTO "Location" VALUES(349,'[sfs-mobile-test] ConsignmentLocation_u8@gs0.q3auto');
-INSERT INTO "Location" VALUES(350,'[sfs-mobile-test] ChildLocation_u8@gs0.q3auto');
-INSERT INTO "Location" VALUES(351,'[sfs-mobile-test] ChildLocation_u6@gs0.q3auto');
-INSERT INTO "Location" VALUES(352,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(353,'[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto');
-INSERT INTO "Location" VALUES(354,'[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto');
-INSERT INTO "Location" VALUES(355,'[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto');
-INSERT INTO "Location" VALUES(356,'[sfs-mobile-test] ConsignmentLocation_u13@gs0.q3auto');
-INSERT INTO "Location" VALUES(357,'[sfs-mobile-test] ChildLocation_u13@gs0.q3auto');
-INSERT INTO "Location" VALUES(358,'[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto');
-INSERT INTO "Location" VALUES(359,'[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto');
-INSERT INTO "Location" VALUES(360,'[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto');
-INSERT INTO "Location" VALUES(361,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(362,'[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto');
-INSERT INTO "Location" VALUES(363,'[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto');
-INSERT INTO "Location" VALUES(364,'[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto');
-INSERT INTO "Location" VALUES(365,'[sfs-mobile-test] Location_u13@gs0.q3auto');
-INSERT INTO "Location" VALUES(366,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(367,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(368,'[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto');
-INSERT INTO "Location" VALUES(369,'[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto');
-INSERT INTO "Location" VALUES(370,'[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto');
-INSERT INTO "Location" VALUES(371,'[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto');
-INSERT INTO "Location" VALUES(372,'[sfs-mobile-test] Location_u12@gs0.q3auto');
-INSERT INTO "Location" VALUES(373,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(374,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(375,'San Fran');
-INSERT INTO "Location" VALUES(376,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(377,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(378,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(379,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(380,'2022-04-15 u18');
-INSERT INTO "Location" VALUES(381,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(382,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(383,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(384,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(385,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(386,'Warehouse B');
-INSERT INTO "Location" VALUES(387,'Warehouse A');
-INSERT INTO "Location" VALUES(388,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(389,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(390,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(391,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(392,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(393,'Seattle');
-INSERT INTO "Location" VALUES(394,'[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto');
-INSERT INTO "Location" VALUES(395,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(396,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(397,'[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto');
-INSERT INTO "Location" VALUES(398,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(399,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(400,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(401,'[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto');
-INSERT INTO "Location" VALUES(402,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(403,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(404,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(405,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(406,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(407,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(408,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(409,'[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto');
-INSERT INTO "Location" VALUES(410,'[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto');
-INSERT INTO "Location" VALUES(411,'[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto');
-INSERT INTO "Location" VALUES(412,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(413,'[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto');
-INSERT INTO "Location" VALUES(414,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(415,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(416,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(417,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(418,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(419,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(420,'[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto');
-INSERT INTO "Location" VALUES(421,'[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto');
-INSERT INTO "Location" VALUES(422,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(423,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(424,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(425,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(426,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(427,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(428,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(429,'[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto');
-INSERT INTO "Location" VALUES(430,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(431,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(432,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(433,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(434,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(435,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(436,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(437,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(438,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(439,'[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto');
-INSERT INTO "Location" VALUES(440,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(441,'[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto');
-INSERT INTO "Location" VALUES(442,'[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto');
-INSERT INTO "Location" VALUES(443,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(444,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(445,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(446,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(447,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(448,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(449,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(450,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(451,'[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto');
-INSERT INTO "Location" VALUES(452,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(453,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(454,'[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto');
-INSERT INTO "Location" VALUES(455,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(456,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(457,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(458,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(459,'[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto');
-INSERT INTO "Location" VALUES(460,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(461,'[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto');
-INSERT INTO "Location" VALUES(462,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(463,'[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto');
-INSERT INTO "Location" VALUES(464,'[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto');
-INSERT INTO "Location" VALUES(465,'[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto');
-INSERT INTO "Location" VALUES(466,'[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto');
-INSERT INTO "Location" VALUES(467,'[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto');
-INSERT INTO "Location" VALUES(468,'[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto');
-INSERT INTO "Location" VALUES(469,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(470,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(471,'[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto');
-INSERT INTO "Location" VALUES(472,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(473,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(474,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(475,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(476,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(477,'[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto');
-INSERT INTO "Location" VALUES(478,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(479,'[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto');
-INSERT INTO "Location" VALUES(480,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(481,'[sfs-mobile-test] CrossBorderLocation_u12@gs0.q3auto');
-INSERT INTO "Location" VALUES(482,'[sfs-mobile-test] CrossBorderLocation_u13@gs0.q3auto');
-INSERT INTO "Location" VALUES(483,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(484,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(485,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(486,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(487,'[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto');
-INSERT INTO "Location" VALUES(488,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(489,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(490,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(491,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(492,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(493,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(494,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(495,'[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto');
-INSERT INTO "Location" VALUES(496,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(497,'[sfs-mobile-test] CrossBorderLocation_u3@gs0.q3auto');
-INSERT INTO "Location" VALUES(498,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(499,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(500,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
-INSERT INTO "Location" VALUES(501,'Warehouse A');
-INSERT INTO "Location" VALUES(502,'[sfs-mobile-test] CrossBorderLocation_u4@gs0.q3auto');
+CREATE TABLE "ServiceTerritory" (
+	id INTEGER NOT NULL, 
+	"City" VARCHAR(255), 
+	"Country" VARCHAR(255), 
+	"CurrencyIsoCode" VARCHAR(255), 
+	"Description" VARCHAR(255), 
+	"FSL__Hide_Emergency_Map__c" VARCHAR(255), 
+	"FSL__Internal_SLR_Geolocation__Latitude__s" VARCHAR(255), 
+	"FSL__Internal_SLR_Geolocation__Longitude__s" VARCHAR(255), 
+	"FSL__NumberOfServicesToDripFeed__c" VARCHAR(255), 
+	"FSL__O2_Enabled__c" VARCHAR(255), 
+	"FSL__Service_Cluster_Min_Size__c" VARCHAR(255), 
+	"FSL__Service_Cluster_Proximity__c" VARCHAR(255), 
+	"FSL__System_Jobs__c" VARCHAR(255), 
+	"FSL__TerritoryLevel__c" VARCHAR(255), 
+	"GeocodeAccuracy" VARCHAR(255), 
+	"IsActive" VARCHAR(255), 
+	"Latitude" VARCHAR(255), 
+	"Longitude" VARCHAR(255), 
+	"Name" VARCHAR(255), 
+	"PostalCode" VARCHAR(255), 
+	"State" VARCHAR(255), 
+	"Street" VARCHAR(255), 
+	"TypicalInTerritoryTravelTime" VARCHAR(255), 
+	"OperatingHoursId" VARCHAR(255), 
+	PRIMARY KEY (id)
+);
+CREATE TABLE "UnitOfMeasure" (
+	id INTEGER NOT NULL, 
+	"Name" VARCHAR(255), 
+	"Type" VARCHAR(255), 
+	"UnitCode" VARCHAR(255), 
+	PRIMARY KEY (id)
+);
+CREATE TABLE "WorkPlanSelectionRule" (
+	id INTEGER NOT NULL, 
+	"IsActive" VARCHAR(255), 
+	"CurrencyIsoCode" VARCHAR(255), 
+	"Description" VARCHAR(255), 
+	"AccountId" VARCHAR(255), 
+	"AssetId" VARCHAR(255), 
+	"LocationId" VARCHAR(255), 
+	"Product2Id" VARCHAR(255), 
+	"ServiceContractId" VARCHAR(255), 
+	"ServiceTerritoryId" VARCHAR(255), 
+	"WorkPlanTemplateId" VARCHAR(255), 
+	"WorkTypeId" VARCHAR(255), 
+	PRIMARY KEY (id)
+);
+INSERT INTO "WorkPlanSelectionRule" VALUES(5,'True','USD','Field service technician to verify whether they are at right meter before turning off gas meter process.','','','','','','','10','360');
+INSERT INTO "WorkPlanSelectionRule" VALUES(6,'True','USD','Safety Instructions','','','','','','','11','360');
+INSERT INTO "WorkPlanSelectionRule" VALUES(7,'True','USD','Wrap up tasks to be performed after completion of service for Turn Off Process.','','','','','','','14','360');
+INSERT INTO "WorkPlanSelectionRule" VALUES(8,'True','USD','Turn Off Gas Meter following instructions','','','','','','','15','360');
+INSERT INTO "WorkPlanSelectionRule" VALUES(9,'True','USD','Field Technician needs to perform certain Health and Safety checks after turning off the Meter.','','','','','','','16','360');
+CREATE TABLE "WorkPlanTemplate" (
+	id INTEGER NOT NULL, 
+	"CurrencyIsoCode" VARCHAR(255), 
+	"Custom1__c" VARCHAR(255), 
+	"Description" VARCHAR(255), 
+	"IsActive" VARCHAR(255), 
+	"Name" VARCHAR(255), 
+	"RelativeExecutionOrder" VARCHAR(255), 
+	encrypted__c VARCHAR(255), 
+	PRIMARY KEY (id)
+);
+INSERT INTO "WorkPlanTemplate" VALUES(10,'USD','','Field service technician to verify whether they are at right meter before turning off meter process.','True','Verify Right Meter','2','');
+INSERT INTO "WorkPlanTemplate" VALUES(11,'USD','','Safety instructions to be performed before reaching customer''s location.','True','Safety Checks','1','');
+INSERT INTO "WorkPlanTemplate" VALUES(14,'USD','','Wrap up tasks to be performed after completion of service for Turn Off Process.','True','Wrap Up Turn Off Process','5','');
+INSERT INTO "WorkPlanTemplate" VALUES(15,'USD','','Turn Off Gas Meter following instructions','True','Turn Off Gas Service','3','');
+INSERT INTO "WorkPlanTemplate" VALUES(16,'USD','','Field Technician needs to perform certain Health and Safety checks after turning off the Meter.','True','Health and Safety Checks Turn Off Process','4','');
+CREATE TABLE "WorkPlanTemplateEntry" (
+	id INTEGER NOT NULL, 
+	"CurrencyIsoCode" VARCHAR(255), 
+	custom_wpte__c VARCHAR(255), 
+	"ExecutionOrder" VARCHAR(255), 
+	"WorkPlanTemplateId" VARCHAR(255), 
+	"WorkStepTemplateId" VARCHAR(255), 
+	PRIMARY KEY (id)
+);
+INSERT INTO "WorkPlanTemplateEntry" VALUES(1,'USD','','','15','18');
+INSERT INTO "WorkPlanTemplateEntry" VALUES(2,'USD','','1','14','15');
+INSERT INTO "WorkPlanTemplateEntry" VALUES(3,'USD','','1','10','10');
+INSERT INTO "WorkPlanTemplateEntry" VALUES(4,'USD','','2','10','11');
+INSERT INTO "WorkPlanTemplateEntry" VALUES(5,'USD','','2','14','13');
+INSERT INTO "WorkPlanTemplateEntry" VALUES(12,'USD','','','11','12');
+INSERT INTO "WorkPlanTemplateEntry" VALUES(13,'USD','','','16','19');
+CREATE TABLE "WorkStepTemplate" (
+	id INTEGER NOT NULL, 
+	"ActionDefinition" VARCHAR(255), 
+	"IsActive" VARCHAR(255), 
+	"CurrencyIsoCode" VARCHAR(255), 
+	custom_wst__c VARCHAR(255), 
+	date_wst__c VARCHAR(255), 
+	"Description" VARCHAR(255), 
+	"geo_wst__Latitude__s" VARCHAR(255), 
+	"geo_wst__Longitude__s" VARCHAR(255), 
+	"Name" VARCHAR(255), 
+	PRIMARY KEY (id)
+);
+INSERT INTO "WorkStepTemplate" VALUES(10,'Check_Meter_Details','True','USD','','','Verify the meter details.','','','Check Meter Details');
+INSERT INTO "WorkStepTemplate" VALUES(11,'Enter_Old_Meter_Read_and_Date_Time','True','USD','','','Provide reading and date time of the meter to be replaced.','','','Enter Old Meter Read and Date');
+INSERT INTO "WorkStepTemplate" VALUES(12,'Safety_Checks','True','USD','','','Safety instructions to be performed before reaching customer''s location.','','','Safety Checks');
+INSERT INTO "WorkStepTemplate" VALUES(13,'','True','USD','','','Leave note on door after completion of service.','','','Leave note on door');
+INSERT INTO "WorkStepTemplate" VALUES(15,'','True','USD','','','Clean area after completing the service.','','','Clean Area');
+INSERT INTO "WorkStepTemplate" VALUES(18,'Turn_Off_Gas_Meter','True','USD','','','Invoke a SFS Screen Flow, where Field Technician can confirm whether they have followed the Turn off process instructions.','','','Turn Off Gas Meter');	
+INSERT INTO "WorkStepTemplate" VALUES(19,'Health_and_Safety_Check_Turn_Off_Meter','True','USD','','','Invoke a SFS Screen Flow, where Field Technician can verify whether they have performed the Health and Safety checks.','','','Health and Safety Check Turn Off Process');
+CREATE TABLE "WorkType" (
+	id INTEGER NOT NULL, 
+	"ShouldAutoCreateSvcAppt" VARCHAR(255), 
+	"CurrencyIsoCode" VARCHAR(255), 
+	"Description" VARCHAR(255), 
+	"FSL__Due_Date_Offset__c" VARCHAR(255), 
+	"DurationType" VARCHAR(255), 
+	"EstimatedDuration" VARCHAR(255), 
+	"FSL__Exact_Appointments__c" VARCHAR(255), 
+	"MinimumCrewSize" VARCHAR(255), 
+	"RecommendedCrewSize" VARCHAR(255), 
+	"Name" VARCHAR(255), 
+	PRIMARY KEY (id)
+);
+INSERT INTO "WorkType" VALUES(360,'True','USD','','','Hours','4.0','False','','','Meter Turn Off');
 COMMIT;
