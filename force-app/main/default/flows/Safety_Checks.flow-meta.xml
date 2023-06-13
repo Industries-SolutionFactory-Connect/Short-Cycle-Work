@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>A Screen flow that is used for safety checks to be performed by field technician before reaching customer&apos;s location.</description>
+    <environments>Default</environments>
+    <interviewLabel>Safety Checks {!$Flow.CurrentDateTime}</interviewLabel>
+    <isTemplate>true</isTemplate>
+    <label>Safety Checks</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>FieldServiceMobile</processType>
+    <recordLookups>
+        <description>Get Asset record associated with the Work Order</description>
+        <name>Get_Asset</name>
+        <label>Get Asset</label>
+        <locationX>807</locationX>
+        <locationY>153</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Location</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>var_AssetId</elementReference>
+            </value>
+        </filters>
+        <object>Asset</object>
+        <outputAssignments>
+            <assignToReference>var_LocationId</assignToReference>
+            <field>LocationId</field>
+        </outputAssignments>
+    </recordLookups>
+    <recordLookups>
+        <description>Get Location record associated with Asset.</description>
+        <name>Get_Location</name>
+        <label>Get Location</label>
+        <locationX>807</locationX>
+        <locationY>314</locationY>
+        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>S01_SafetyChecks</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>var_LocationId</elementReference>
+            </value>
+        </filters>
+        <object>Location</object>
+        <outputAssignments>
+            <assignToReference>var_MeterReadingWarning</assignToReference>
+            <field>Description</field>
+        </outputAssignments>
+    </recordLookups>
+    <recordLookups>
+        <description>Get Work Order record associated with Work Step in the flow.</description>
+        <name>Get_WorkOrder</name>
+        <label>Get Work Order</label>
+        <locationX>651</locationX>
+        <locationY>153</locationY>
+        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Asset</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>var_WorkOrderId</elementReference>
+            </value>
+        </filters>
+        <object>WorkOrder</object>
+        <outputAssignments>
+            <assignToReference>var_AssetId</assignToReference>
+            <field>AssetId</field>
+        </outputAssignments>
+    </recordLookups>
+    <recordLookups>
+        <description>Get Work Step record associated with this flow.</description>
+        <name>Get_WorkStep</name>
+        <label>Get Work Step</label>
+        <locationX>475</locationX>
+        <locationY>153</locationY>
+        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_WorkOrder</targetReference>
+        </connector>
+        <filterLogic>or</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Id</elementReference>
+            </value>
+        </filters>
+        <object>WorkStep</object>
+        <outputAssignments>
+            <assignToReference>var_WorkOrderId</assignToReference>
+            <field>WorkOrderId</field>
+        </outputAssignments>
+    </recordLookups>
+    <recordUpdates>
+        <description>Update Meter Reading Warning column in Location.</description>
+        <name>Update_Location</name>
+        <label>Update Location</label>
+        <locationX>449</locationX>
+        <locationY>315</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>var_LocationId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Description</field>
+            <value>
+                <elementReference>S01_Hazards</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Location</object>
+    </recordUpdates>
+    <screens>
+        <description>A Screen flow that is used for safety checks to be performed by field technician before reaching customer&apos;s location.</description>
+        <name>S01_SafetyChecks</name>
+        <label>Safety Checks</label>
+        <locationX>640</locationX>
+        <locationY>314</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Update_Location</targetReference>
+        </connector>
+        <fields>
+            <name>S01_AreConesBehindTires</name>
+            <dataType>Boolean</dataType>
+            <fieldText>I have placed Cones behind Tires</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>S01_Hazards</name>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>var_MeterReadingWarning</elementReference>
+            </defaultValue>
+            <fieldText>Hazards</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <start>
+        <locationX>39</locationX>
+        <locationY>134</locationY>
+        <connector>
+            <targetReference>Get_WorkStep</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>This variable is used to store Id of Work Step associated with this flow.</description>
+        <name>Id</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <description>This variable is used to store Id of Work Step associated with this flow.</description>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <description>This variable is used to store Asset Id.</description>
+        <name>var_AssetId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <description>This variable is used to store Location Id.</description>
+        <name>var_LocationId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <description>This variable is used to store Meter Reading warning message.</description>
+        <name>var_MeterReadingWarning</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <description>This variable is used to store Work Order Id.</description>
+        <name>var_WorkOrderId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+</Flow>
