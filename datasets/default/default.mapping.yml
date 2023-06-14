@@ -5,12 +5,6 @@
 # .load.yml file and re-capturing:
 #
 #  https://cumulusci.readthedocs.io/en/stable/data.html#extracting-and-loading-sample-datasets
-Insert DandBCompany:
-  sf_object: DandBCompany
-  table: DandBCompany
-  fields:
-  - DunsNumber
-  - Name
 Insert OperatingHours:
   sf_object: OperatingHours
   table: OperatingHours
@@ -19,11 +13,6 @@ Insert OperatingHours:
   - Description
   - Name
   - TimeZone
-Insert Contact:
-  sf_object: Contact
-  table: Contact
-  fields:
-  - LastName
 Insert Location:
   sf_object: Location
   table: Location
@@ -63,13 +52,19 @@ Insert Product2:
   - QuantityUnitOfMeasure
   - StockKeepingUnit
   - TransferRecordMode
-Insert UnitOfMeasure:
-  sf_object: UnitOfMeasure
-  table: UnitOfMeasure
+Insert AttributeDefinition:
+  sf_object: AttributeDefinition
+  table: AttributeDefinition
   fields:
+  - IsActive
+  - CurrencyIsoCode
+  - DataType
+  - DefaultValue
+  - Description
+  - Label
   - Name
-  - Type
-  - UnitCode
+  - IsRequired
+  - DeveloperName
 Insert WorkType:
   sf_object: WorkType
   table: WorkType
@@ -108,11 +103,6 @@ Insert WorkPlanTemplate:
   - Name
   - RelativeExecutionOrder
   - encrypted__c
-Insert ServiceContract:
-  sf_object: ServiceContract
-  table: ServiceContract
-  fields:
-  - Name
 Insert Account:
   sf_object: Account
   table: Account
@@ -166,9 +156,6 @@ Insert Account:
   - Website
   - YearStarted
   lookups:
-    DandbCompanyId:
-      table: DandBCompany
-      key_field: DandbCompanyId
     OperatingHoursId:
       table: OperatingHours
       key_field: OperatingHoursId
@@ -176,22 +163,6 @@ Insert Account:
       table: Account
       key_field: ParentId
       after: Insert Account
-Insert AttributeDefinition:
-  sf_object: AttributeDefinition
-  table: AttributeDefinition
-  fields:
-  - IsActive
-  - CurrencyIsoCode
-  - DataType
-  - DefaultValue
-  - Description
-  - Label
-  - Name
-  - IsRequired
-  lookups:
-    UnitOfMeasureId:
-      table: UnitOfMeasure
-      key_field: UnitOfMeasureId
 Insert WorkPlanTemplateEntry:
   sf_object: WorkPlanTemplateEntry
   table: WorkPlanTemplateEntry
@@ -275,9 +246,6 @@ Insert Asset:
     AssetServicedById:
       table: Account
       key_field: AssetServicedById
-    ContactId:
-      table: Contact
-      key_field: ContactId
     LocationId:
       table: Location
       key_field: LocationId
@@ -288,6 +256,19 @@ Insert Asset:
     Product2Id:
       table: Product2
       key_field: Product2Id
+Insert AssetAttribute:
+  sf_object: AssetAttribute
+  table: AssetAttribute
+  fields:
+  - AttributeValue
+  - ExternalId
+  lookups:
+    AssetId:
+      table: Asset
+      key_field: AssetId
+    AttributeDefinitionId:
+      table: AttributeDefinition
+      key_field: AttributeDefinitionId
 Insert WorkPlanSelectionRule:
   sf_object: WorkPlanSelectionRule
   table: WorkPlanSelectionRule
@@ -308,9 +289,6 @@ Insert WorkPlanSelectionRule:
     Product2Id:
       table: Product2
       key_field: Product2Id
-    ServiceContractId:
-      table: ServiceContract
-      key_field: ServiceContractId
     ServiceTerritoryId:
       table: ServiceTerritory
       key_field: ServiceTerritoryId
