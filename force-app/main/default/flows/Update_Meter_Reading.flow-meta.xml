@@ -248,7 +248,7 @@
         <locationY>407</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>S01_MeterReadAndDateTime</targetReference>
+            <targetReference>S01_MeterReadDetails</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -286,7 +286,7 @@
             <field>Name</field>
             <operator>EqualTo</operator>
             <value>
-                <stringValue>Meter Read Date</stringValue>
+                <stringValue>Meter Read Date Time</stringValue>
             </value>
         </filters>
         <object>AttributeDefinition</object>
@@ -406,8 +406,8 @@
     </recordUpdates>
     <screens>
         <description>A Screen flow that is used to update the meter readings.</description>
-        <name>S01_MeterReadAndDateTime</name>
-        <label>Enter Old Meter Read and Date Time</label>
+        <name>S01_MeterReadDetails</name>
+        <label>Enter Meter Read Details</label>
         <locationX>923</locationX>
         <locationY>408</locationY>
         <allowBack>false</allowBack>

@@ -589,7 +589,7 @@
             <field>Name</field>
             <operator>EqualTo</operator>
             <value>
-                <stringValue>Meter Read Date</stringValue>
+                <stringValue>Meter Read Date Time</stringValue>
             </value>
         </filters>
         <object>AttributeDefinition</object>
@@ -743,7 +743,7 @@
     <screens>
         <description>A Screen flow that is used to add the details and photos of Meter and Regulators.</description>
         <name>S01_MeterAndRegulatorDetails</name>
-        <label>Meter And Regulator Details</label>
+        <label>Enter Meter And Regulator Details</label>
         <locationX>862</locationX>
         <locationY>363</locationY>
         <allowBack>false</allowBack>
@@ -753,13 +753,8 @@
             <targetReference>Create_GasMeterAsset</targetReference>
         </connector>
         <fields>
-            <name>S01_MeterAndRegulator</name>
-            <fieldText>&lt;p&gt;&lt;strong&gt;Enter Meter And Regulator Details&lt;/strong&gt;&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
-        <fields>
             <name>S01_MeterDetails</name>
-            <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Meter Details:&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;Meter Details:&lt;/strong&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
@@ -826,21 +821,17 @@
                 </value>
             </inputParameters>
             <inputParameters>
-                <name>contentDocIds</name>
+                <name>recordId</name>
                 <value>
-                    <elementReference>var_MeterContentDocumentIds</elementReference>
+                    <elementReference>var_WorkOrderId</elementReference>
                 </value>
             </inputParameters>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
-            <outputParameters>
-                <assignToReference>var_MeterContentDocumentIds</assignToReference>
-                <name>contentDocIds</name>
-            </outputParameters>
         </fields>
         <fields>
             <name>S01_RegulatorDetails</name>
-            <fieldText>&lt;p&gt;Regulator Details&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;strong&gt;Regulator Details&lt;/strong&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
@@ -894,23 +885,19 @@
                 </value>
             </inputParameters>
             <inputParameters>
-                <name>contentDocIds</name>
-                <value>
-                    <elementReference>var_RegulatorContentDocumentIds</elementReference>
-                </value>
-            </inputParameters>
-            <inputParameters>
                 <name>title</name>
                 <value>
                     <stringValue>Upload Photo</stringValue>
                 </value>
             </inputParameters>
+            <inputParameters>
+                <name>recordId</name>
+                <value>
+                    <elementReference>var_WorkOrderId</elementReference>
+                </value>
+            </inputParameters>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
-            <outputParameters>
-                <assignToReference>var_RegulatorContentDocumentIds</assignToReference>
-                <name>contentDocIds</name>
-            </outputParameters>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>true</showHeader>

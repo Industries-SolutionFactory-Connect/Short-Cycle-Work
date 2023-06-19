@@ -65,13 +65,6 @@
             <fieldType>InputField</fieldType>
             <isRequired>true</isRequired>
         </fields>
-        <fields>
-            <name>Comments</name>
-            <dataType>String</dataType>
-            <fieldText>Comments</fieldText>
-            <fieldType>InputField</fieldType>
-            <isRequired>false</isRequired>
-        </fields>
         <showFooter>true</showFooter>
         <showHeader>true</showHeader>
     </screens>

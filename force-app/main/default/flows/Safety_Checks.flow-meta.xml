@@ -1,5 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignments>
+        <name>Set_RecordId</name>
+        <label>Set RecordId</label>
+        <locationX>1113</locationX>
+        <locationY>146</locationY>
+        <assignmentItems>
+            <assignToReference>recordId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Get_WorkStep</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <description>Check if Id of Work Step exists or not.</description>
+        <name>Check_Id_Exists</name>
+        <label>Check Id Exists?</label>
+        <locationX>886</locationX>
+        <locationY>143</locationY>
+        <defaultConnector>
+            <targetReference>Get_WorkStep</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>IdExists</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_RecordId</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
     <description>A Screen flow that is used for safety checks to be performed by field technician before reaching customer&apos;s location.</description>
     <environments>Default</environments>
     <interviewLabel>Safety Checks {!$Flow.CurrentDateTime}</interviewLabel>
@@ -28,8 +70,8 @@
         <description>Get Asset record associated with the Work Order</description>
         <name>Get_Asset</name>
         <label>Get Asset</label>
-        <locationX>807</locationX>
-        <locationY>153</locationY>
+        <locationX>541</locationX>
+        <locationY>418</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_Location</targetReference>
@@ -52,8 +94,8 @@
         <description>Get Location record associated with Asset.</description>
         <name>Get_Location</name>
         <label>Get Location</label>
-        <locationX>807</locationX>
-        <locationY>314</locationY>
+        <locationX>398</locationX>
+        <locationY>435</locationY>
         <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>S01_SafetyChecks</targetReference>
@@ -76,8 +118,8 @@
         <description>Get Work Order record associated with Work Step in the flow.</description>
         <name>Get_WorkOrder</name>
         <label>Get Work Order</label>
-        <locationX>651</locationX>
-        <locationY>153</locationY>
+        <locationX>717</locationX>
+        <locationY>415</locationY>
         <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_Asset</targetReference>
@@ -100,8 +142,8 @@
         <description>Get Work Step record associated with this flow.</description>
         <name>Get_WorkStep</name>
         <label>Get Work Step</label>
-        <locationX>475</locationX>
-        <locationY>153</locationY>
+        <locationX>913</locationX>
+        <locationY>415</locationY>
         <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_WorkOrder</targetReference>
@@ -131,8 +173,8 @@
         <description>Update Meter Reading Warning column in Location.</description>
         <name>Update_Location</name>
         <label>Update Location</label>
-        <locationX>449</locationX>
-        <locationY>315</locationY>
+        <locationX>50</locationX>
+        <locationY>447</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -153,8 +195,8 @@
         <description>A Screen flow that is used for safety checks to be performed by field technician before reaching customer&apos;s location.</description>
         <name>S01_SafetyChecks</name>
         <label>Safety Checks</label>
-        <locationX>640</locationX>
-        <locationY>314</locationY>
+        <locationX>229</locationX>
+        <locationY>444</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -179,13 +221,13 @@
             <isRequired>false</isRequired>
         </fields>
         <showFooter>true</showFooter>
-        <showHeader>true</showHeader>
+        <showHeader>false</showHeader>
     </screens>
     <start>
-        <locationX>39</locationX>
-        <locationY>134</locationY>
+        <locationX>390</locationX>
+        <locationY>108</locationY>
         <connector>
-            <targetReference>Get_WorkStep</targetReference>
+            <targetReference>Check_Id_Exists</targetReference>
         </connector>
     </start>
     <status>Active</status>

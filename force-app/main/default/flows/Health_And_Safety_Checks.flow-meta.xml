@@ -35,7 +35,7 @@
         <allowPause>false</allowPause>
         <fields>
             <name>S01_Instructions</name>
-            <fieldText>&lt;p&gt;&lt;strong&gt;Instructions:&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Test for Unwanted Charge:&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;1) Test a Volt stick on a known live source.&lt;/p&gt;&lt;p&gt;2) Test the voltages on gas appliances and Meter installation using the tip of volt stick.&lt;/p&gt;&lt;p&gt;3) If the Volt stick illuminates, then cease the work activity and refer to your company procedure.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Tightness Test:&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;1) Raise the pressure to 7/10 millibar (mb) for 1 minute to test the let by of the ECV.1. If the let by is susceptive, then disconnect the regulator and apply the leak detection fluid LDF (Leak Detection Fluid) inside the ECV.&lt;/p&gt;&lt;p&gt;2) If let by is present, then contact the gas transporter.&lt;/p&gt;&lt;p&gt;3) Raise the pressure to 20 millibar for 1 minute for the stabilisation period.&lt;/p&gt;&lt;p&gt;4) For a further 2 minutes, test the installation at 20mb.&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;strong&gt;Instructions:&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Test for Unwanted Charge:&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;1) Test a Volt stick on a known live source.&lt;/p&gt;&lt;p&gt;2) Test the voltages on gas appliances and Meter installation using the tip of volt stick.&lt;/p&gt;&lt;p&gt;3) If the Volt stick illuminates, then cease the work activity and refer to your company procedure.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Tightness Test:&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;1) Raise the pressure to 7/10 millibar (mb) for 1 minute to test the let by of the ECV.1. If the let by is susceptive, then disconnect the regulator and apply the leak detection fluid LDF (Leak Detection Fluid) inside the ECV.&lt;/p&gt;&lt;p&gt;2) If let by is present, then contact the gas transporter.&lt;/p&gt;&lt;p&gt;3) Raise the pressure to 20 millibar for 1 minute for the stabilisation period.&lt;/p&gt;&lt;p&gt;4) For a further 2 minutes, test the installation at 20mb.&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
@@ -60,7 +60,7 @@
             <isRequired>true</isRequired>
         </fields>
         <showFooter>true</showFooter>
-        <showHeader>true</showHeader>
+        <showHeader>false</showHeader>
     </screens>
     <start>
         <locationX>543</locationX>

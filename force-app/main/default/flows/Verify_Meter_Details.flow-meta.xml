@@ -4,8 +4,8 @@
         <description>Sets recordId.</description>
         <name>Set_RecordId</name>
         <label>Set RecordId</label>
-        <locationX>557</locationX>
-        <locationY>67</locationY>
+        <locationX>632</locationX>
+        <locationY>10</locationY>
         <assignmentItems>
             <assignToReference>recordId</assignToReference>
             <operator>Assign</operator>
@@ -13,6 +13,9 @@
                 <elementReference>Id</elementReference>
             </value>
         </assignmentItems>
+        <connector>
+            <targetReference>Get_WorkStep</targetReference>
+        </connector>
     </assignments>
     <decisions>
         <description>Check whether Id of Work Step exists or not.</description>
@@ -90,8 +93,8 @@
     <recordLookups>
         <name>Get_Asset</name>
         <label>Get Asset</label>
-        <locationX>786</locationX>
-        <locationY>163</locationY>
+        <locationX>927</locationX>
+        <locationY>174</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_MeterSizeAttributeDefinition</targetReference>
@@ -145,8 +148,8 @@
         <description>Get Meter Manufacturer Attribute Definition.</description>
         <name>Get_MeterManufacturerAttributeDefinition</name>
         <label>Get Meter Manufacturer Attribute Definition</label>
-        <locationX>955</locationX>
-        <locationY>348</locationY>
+        <locationX>1064</locationX>
+        <locationY>361</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_NumberOfDialsAttributeDefinition</targetReference>
@@ -200,8 +203,8 @@
         <description>Get Meter Size Attribute Definition.</description>
         <name>Get_MeterSizeAttributeDefinition</name>
         <label>Get Meter Size Attribute Definition</label>
-        <locationX>955</locationX>
-        <locationY>163</locationY>
+        <locationX>1063</locationX>
+        <locationY>171</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_MeterManufacturerAttributeDefinition</targetReference>
@@ -228,7 +231,7 @@
         <locationY>360</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>S01_CheckMeterDetails</targetReference>
+            <targetReference>S01_VerifyMeterDetails</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -279,8 +282,8 @@
         <description>Get Work Order.</description>
         <name>Get_WorkOrder</name>
         <label>Get Work Order</label>
-        <locationX>635</locationX>
-        <locationY>165</locationY>
+        <locationX>785</locationX>
+        <locationY>175</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_Asset</targetReference>
@@ -303,8 +306,8 @@
         <description>Get Work Step.</description>
         <name>Get_WorkStep</name>
         <label>Get Work Step</label>
-        <locationX>467</locationX>
-        <locationY>165</locationY>
+        <locationX>632</locationX>
+        <locationY>177</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_WorkOrder</targetReference>
@@ -347,8 +350,8 @@
     </recordUpdates>
     <screens>
         <description>A Screen flow that is used to verify the details of meter to be replaced.</description>
-        <name>S01_CheckMeterDetails</name>
-        <label>Check Meter Details</label>
+        <name>S01_VerifyMeterDetails</name>
+        <label>Verify Meter Details</label>
         <locationX>220</locationX>
         <locationY>605</locationY>
         <allowBack>false</allowBack>
@@ -408,7 +411,7 @@
             <isRequired>true</isRequired>
         </fields>
         <showFooter>true</showFooter>
-        <showHeader>true</showHeader>
+        <showHeader>false</showHeader>
     </screens>
     <start>
         <locationX>10</locationX>
