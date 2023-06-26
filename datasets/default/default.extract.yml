@@ -1,0 +1,54 @@
+extract:
+  WorkType:
+    fields:
+    - ShouldAutoCreateSvcAppt
+    - CurrencyIsoCode
+    - Description
+    - FSL__Due_Date_Offset__c
+    - DurationType
+    - EstimatedDuration
+    - FSL__Exact_Appointments__c
+    - MinimumCrewSize
+    - RecommendedCrewSize
+    - ServiceReportTemplateId
+    - Name
+  WorkPlanSelectionRule:
+    fields:
+    - WorkTypeId
+    - AccountId
+    - IsActive
+    - AssetId
+    - CurrencyIsoCode
+    - Description
+    - LocationId
+    - Product2Id
+    - ServiceTerritoryId
+    - WorkPlanTemplateId
+    - ServiceContractId
+  WorkStepTemplate:
+    fields:
+    - ActionDefinition
+    - IsActive
+    - CurrencyIsoCode
+    - custom_wst__c
+    - date_wst__c
+    - Description
+    - geo_wst__Latitude__s
+    - geo_wst__Longitude__s
+    - Name
+  WorkPlanTemplate:
+    fields:
+    - IsActive
+    - CurrencyIsoCode
+    - Custom1__c
+    - Description
+    - encrypted__c
+    - Name
+    - RelativeExecutionOrder
+  WorkPlanTemplateEntry:
+    fields:
+    - CurrencyIsoCode
+    - custom_wpte__c
+    - ExecutionOrder
+    - WorkPlanTemplateId
+    - WorkStepTemplateId
