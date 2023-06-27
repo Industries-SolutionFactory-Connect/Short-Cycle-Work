@@ -10,25 +10,7 @@ CREATE TABLE "Asset" (
 	"Name" VARCHAR(255), 
 	PRIMARY KEY (id)
 );
-INSERT INTO "Asset" VALUES(1,'Regulator-Rsn7');
-INSERT INTO "Asset" VALUES(2,'Gas Meter');
-INSERT INTO "Asset" VALUES(3,'Gas Meter-MSN567');
-INSERT INTO "Asset" VALUES(4,'Regulator-RSN789');
-INSERT INTO "Asset" VALUES(5,'Gas Meter-MSN78');
-INSERT INTO "Asset" VALUES(6,'Regulator-RSN78');
-INSERT INTO "Asset" VALUES(7,'Regulator-R45');
-INSERT INTO "Asset" VALUES(8,'Gas Meter-MSN1');
-INSERT INTO "Asset" VALUES(9,'Regulator-RSN1');
-INSERT INTO "Asset" VALUES(10,'Regulator-Rsn12');
-INSERT INTO "Asset" VALUES(11,'Gas Meter-MSn7');
-INSERT INTO "Asset" VALUES(12,'Gas Meter-MSN4');
-INSERT INTO "Asset" VALUES(13,'Regulator-RSn4');
-INSERT INTO "Asset" VALUES(14,'Gas Meter-Mm12');
-INSERT INTO "Asset" VALUES(15,'Gas Meter-MS321');
-INSERT INTO "Asset" VALUES(16,'Regulator-RSN321');
-INSERT INTO "Asset" VALUES(17,'Gas Meter-M45');
-INSERT INTO "Asset" VALUES(18,'Gas Meter-MSN8');
-INSERT INTO "Asset" VALUES(19,'Regulator');
+
 CREATE TABLE "Location" (
 	id INTEGER NOT NULL, 
 	"Name" VARCHAR(255), 
