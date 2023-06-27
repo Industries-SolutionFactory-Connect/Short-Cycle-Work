@@ -2716,20 +2716,6 @@ CREATE TABLE "ServiceTerritory" (
 	"OperatingHoursId" VARCHAR(255), 
 	PRIMARY KEY (id)
 );
-INSERT INTO "ServiceTerritory" VALUES(1,'SF Showroom','125');
-INSERT INTO "ServiceTerritory" VALUES(2,'Test Territory 8417226','309');
-INSERT INTO "ServiceTerritory" VALUES(3,'SFO Downtown','819');
-INSERT INTO "ServiceTerritory" VALUES(4,'San Francisco','125');
-INSERT INTO "ServiceTerritory" VALUES(5,'Portland','131');
-INSERT INTO "ServiceTerritory" VALUES(6,'Mountain View','127');
-INSERT INTO "ServiceTerritory" VALUES(7,'Canada','132');
-INSERT INTO "ServiceTerritory" VALUES(8,'test','131');
-INSERT INTO "ServiceTerritory" VALUES(9,'Contractor Territory','132');
-INSERT INTO "ServiceTerritory" VALUES(10,'bEMnxlAdzn','237');
-INSERT INTO "ServiceTerritory" VALUES(11,'test123','182');
-INSERT INTO "ServiceTerritory" VALUES(12,'sPwwxBPQKj','236');
-INSERT INTO "ServiceTerritory" VALUES(13,'Pleasanton','416');
-INSERT INTO "ServiceTerritory" VALUES(14,'Nishitha Service Territory','416');
 INSERT INTO "ServiceTerritory" VALUES(15,'Test IST Service Territory','1969');
 INSERT INTO "ServiceTerritory" VALUES(16,'testSTAdmin','1970');
 INSERT INTO "ServiceTerritory" VALUES(17,'testST','1970');
