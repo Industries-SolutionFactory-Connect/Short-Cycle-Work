@@ -2796,12 +2796,6 @@ CREATE TABLE "WorkPlanTemplateEntry" (
 	"WorkStepTemplateId" VARCHAR(255), 
 	PRIMARY KEY (id)
 );
-INSERT INTO "WorkPlanTemplateEntry" VALUES(1,'USD','','1','7Iy6t0000008PcnCAE','4L06t0000008PcuCAE');
-INSERT INTO "WorkPlanTemplateEntry" VALUES(2,'USD','','','7Iy6t0000008PcmCAE','4L06t0000008PctCAE');
-INSERT INTO "WorkPlanTemplateEntry" VALUES(3,'USD','','','7Iy6t0000008PckCAE','4L06t0000008PcpCAE');
-INSERT INTO "WorkPlanTemplateEntry" VALUES(4,'USD','','','7Iy6t0000008PckCAE','4L06t0000008PcqCAE');
-INSERT INTO "WorkPlanTemplateEntry" VALUES(5,'USD','','','7Iy6t0000008PclCAE','4L06t0000008PcrCAE');
-INSERT INTO "WorkPlanTemplateEntry" VALUES(6,'USD','','','7Iy6t0000008PclCAE','4L06t0000008PcsCAE');
 INSERT INTO "WorkPlanTemplateEntry" VALUES(7,'USD','','1','4','6');
 INSERT INTO "WorkPlanTemplateEntry" VALUES(8,'USD','','1','2','5');
 INSERT INTO "WorkPlanTemplateEntry" VALUES(9,'USD','','1','1','2');
