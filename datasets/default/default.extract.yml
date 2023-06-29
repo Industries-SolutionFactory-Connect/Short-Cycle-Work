@@ -1,54 +1,273 @@
 extract:
-  WorkType:
+  Account:
     fields:
-    - ShouldAutoCreateSvcAppt
     - CurrencyIsoCode
     - Description
-    - FSL__Due_Date_Offset__c
-    - DurationType
-    - EstimatedDuration
-    - FSL__Exact_Appointments__c
-    - MinimumCrewSize
-    - RecommendedCrewSize
-    - ServiceReportTemplateId
+    - Fax
+    - vlocity_cmt__Juridsiction1__c
+    - vlocity_cmt__Jurisdiction2__c
     - Name
-  WorkPlanSelectionRule:
+    - AccountNumber
+    - vlocity_cmt__AccountPaymentType__c
+    - Phone
+    - Rating
+    - Site
+    - AccountSource
+    - Type
+    - Active__c
+    - vlocity_cmt__Active__c
+    - AnnualRevenue
+    - vlocity_cmt__AutoPaymentAmount__c
+    - vlocity_cmt__AutoPaymentLimitAmount__c
+    - vlocity_cmt__AutoPaymentMethodId__c
+    - vlocity_cmt__BillCycle__c
+    - vlocity_cmt__BillDeliveryMethod__c
+    - vlocity_cmt__BillFormat__c
+    - vlocity_cmt__BillFrequency__c
+    - vlocity_cmt__BillingAccountStatus__c
+    - BillingCity
+    - BillingCountry
+    - vlocity_cmt__BillingEmailAddress__c
+    - BillingGeocodeAccuracy
+    - BillingLatitude
+    - BillingLongitude
+    - BillingState
+    - BillingStreet
+    - BillingPostalCode
+    - vlocity_cmt__Churn__c
+    - CleanStatus
+    - vlocity_cmt__CLTV__c
+    - vlocity_cmt__PrimaryContactId__c
+    - vlocity_cmt__ContactPreferences__c
+    - vlocity_cmt__CreditRating__c
+    - vlocity_cmt__CreditScore__c
+    - vlocity_cmt__CustomerClass__c
+    - vlocity_cmt__CustomerOfBrand__c
+    - CustomerPriority__c
+    - vlocity_cmt__CustomerPriority__c
+    - vlocity_cmt__vCustomerPriority__c
+    - vlocity_cmt__CustomerSinceDate__c
+    - vlocity_cmt__CustomerValue__c
+    - DandbCompanyId
+    - DunsNumber
+    - Jigsaw
+    - vlocity_cmt__DateFounded__c
+    - vlocity_cmt__DirectoryListed__c
+    - NumberOfEmployees
+    - vlocity_cmt__EnableAutopay__c
+    - vlocity_cmt__Disclosure1__c
+    - vlocity_cmt__HasFraud__c
+    - vlocity_cmt__FraudReason__c
+    - vlocity_cmt__Disclosure2__c
+    - Industry
+    - vlocity_cmt__IsPersonAccount__c
+    - vlocity_cmt__IsRootResolved__c
+    - vlocity_cmt__LegalForm__c
+    - vlocity_cmt__Disclosure3__c
+    - NaicsCode
+    - NaicsDesc
+    - vlocity_cmt__NetWorth__c
+    - vlocity_cmt__BillNumberOfCopies__c
+    - NumberofLocations__c
+    - vlocity_cmt__NumberofLocations__c
+    - OperatingHoursId
+    - Ownership
+    - ParentId
+    - vlocity_cmt__PartyId__c
+    - vlocity_cmt__PersonContactId__c
+    - vlocity_cmt__PreferredLanguage__c
+    - vlocity_cmt__PremisesId__c
+    - vlocity_cmt__PrepayReloadThreshold__c
+    - RecordTypeId
+    - vlocity_cmt__ReferredByContactId__c
+    - vlocity_cmt__RootAccountId__c
+    - ShippingCity
+    - ShippingCountry
+    - ShippingGeocodeAccuracy
+    - ShippingLatitude
+    - ShippingLongitude
+    - ShippingState
+    - ShippingStreet
+    - ShippingPostalCode
+    - Sic
+    - SicDesc
+    - SLA__c
+    - vlocity_cmt__SLA__c
+    - vlocity_cmt__vSLA__c
+    - SLAExpirationDate__c
+    - vlocity_cmt__vSLAExpirationDate__c
+    - SLASerialNumber__c
+    - vlocity_cmt__vSLASerialNumber__c
+    - vlocity_cmt__Status__c
+    - vlocity_cmt__TaxExemptionType__c
+    - vlocity_cmt__TaxExemptionEndDate__c
+    - vlocity_cmt__TaxExemptionPercentage__c
+    - vlocity_cmt__TaxExemptionStartDate__c
+    - vlocity_cmt__TaxID__c
+    - TickerSymbol
+    - Tradestyle
+    - UpsellOpportunity__c
+    - vlocity_cmt__UpsellOpportunity__c
+    - Website
+    - YearStarted
+  Contact:
     fields:
-    - WorkTypeId
+    - AssistantName
+    - AssistantPhone
+    - Birthdate
+    - CleanStatus
+    - CurrencyIsoCode
+    - Department
+    - Description
+    - DoNotCall
+    - Email
+    - EmailBouncedDate
+    - EmailBouncedReason
+    - Fax
+    - FirstName
+    - GenderIdentity
+    - HasOptedOutOfEmail
+    - HasOptedOutOfFax
+    - HomePhone
+    - Jigsaw
+    - Languages__c
+    - LastName
+    - LeadSource
+    - Level__c
+    - MailingCity
+    - MailingCountry
+    - MailingGeocodeAccuracy
+    - MailingLatitude
+    - MailingLongitude
+    - MailingPostalCode
+    - MailingState
+    - MailingStreet
+    - MobilePhone
+    - OtherCity
+    - OtherCountry
+    - OtherGeocodeAccuracy
+    - OtherLatitude
+    - OtherLongitude
+    - OtherPhone
+    - OtherPostalCode
+    - OtherState
+    - OtherStreet
+    - Phone
+    - Pronouns
+    - SFS_External_ID__c
+    - Salutation
+    - Title
+    - vlocity_cmt__AnnualIncome__c
+    - vlocity_cmt__Authorized__c
+    - vlocity_cmt__ContactNumber__c
+    - vlocity_cmt__CustomerSentiment__c
+    - vlocity_cmt__DriversLicenseNumber__c
+    - vlocity_cmt__EmploymentStatus__c
+    - vlocity_cmt__Gender__c
+    - vlocity_cmt__HasFraud__c
+    - vlocity_cmt__Image__c
+    - vlocity_cmt__IsActive__c
+    - vlocity_cmt__IsEmployee__c
+    - vlocity_cmt__IsPartner__c
+    - vlocity_cmt__IsPersonAccount__c
+    - vlocity_cmt__LastContactbyRecordOwner__c
+    - vlocity_cmt__Location__c
+    - vlocity_cmt__MiddleName__c
+    - vlocity_cmt__NetWorth__c
+    - vlocity_cmt__Occupation__c
+    - vlocity_cmt__SSN__c
+    - vlocity_cmt__SocialSecurityNumber__c
+    - vlocity_cmt__StateOfIssuance__c
+    - vlocity_cmt__Status__c
+    - vlocity_cmt__TaxId__c
+    - vlocity_cmt__Type__c
+    - vlocity_cmt__UserLeaseExpires__c
+    - vlocity_cmt__UserLeaseToken__c
+    - vlocity_cmt__UserName__c
+    - vlocity_cmt__UserPassSalt__c
+    - vlocity_cmt__UserPass__c
+    - vlocity_cmt__WebSite__c
+    - AccountId
+    - vlocity_cmt__PrimaryEmployerId__c
+    - IndividualId
+    - vlocity_cmt__PartyId__c
+    - RecordTypeId
+    - ReportsToId
+    - vlocity_cmt__UserId__c
+  vlocity_cmt__Premises__c:
+    fields:
+    - CurrencyIsoCode
+    - Name
+    - vlocity_cmt__ActivationDate__c
+    - vlocity_cmt__Address1__c
+    - vlocity_cmt__Address2__c
+    - vlocity_cmt__AlternateCity__c
+    - vlocity_cmt__AlternateCountry__c
+    - vlocity_cmt__AlternatePostalCode__c
+    - vlocity_cmt__AlternateState__c
+    - vlocity_cmt__AlternateStreetAddress__c
+    - vlocity_cmt__City__c
+    - vlocity_cmt__Country__c
+    - vlocity_cmt__DistributionArea__c
+    - vlocity_cmt__Floor__c
+    - vlocity_cmt__Geolocation__Latitude__s
+    - vlocity_cmt__Geolocation__Longitude__s
+    - vlocity_cmt__HouseNumberSupplement__c
+    - vlocity_cmt__IsKeyAtPremises__c
+    - vlocity_cmt__IsOkToEnter__c
+    - vlocity_cmt__IsSupplyGuaranteed__c
+    - vlocity_cmt__Jurisdiction__c
+    - vlocity_cmt__MeterReadInstructions__c
+    - vlocity_cmt__MeterReadWarning__c
+    - vlocity_cmt__NumberOfOccupants__c
+    - vlocity_cmt__PostalCode__c
+    - vlocity_cmt__PremisesIdentifier__c
+    - vlocity_cmt__PremisesNumber__c
+    - vlocity_cmt__PremisesType__c
+    - vlocity_cmt__State__c
+    - vlocity_cmt__Status__c
+    - vlocity_cmt__StreetAddress__c
+    - vlocity_cmt__SupplyGuaranteeReason__c
+    - vlocity_cmt__TimeZone__c
+    - vlocity_cmt__TrendArea__c
+    - vlocity_cmt__UnitNumber__c
+    - vlocity_cmt__ParentPremisesId__c
+    - vlocity_cmt__PropertyOwnerAccountId__c
+  AccountContactRelation:
+    fields:
+    - CurrencyIsoCode
     - AccountId
     - IsActive
-    - AssetId
-    - CurrencyIsoCode
-    - Description
-    - LocationId
-    - Product2Id
-    - ServiceTerritoryId
-    - WorkPlanTemplateId
-    - ServiceContractId
-  WorkStepTemplate:
+    - ContactId
+    - EndDate
+    - Roles
+    - StartDate
+  Asset:
     fields:
-    - ActionDefinition
+    - ContactId
+    - vlocity_cmt__PremisesId__c
+  Product2:
+    fields:
+    - vlocity_cmt__StandardPremium__c
+    - vlocity_cmt__AttributeDefaultValues__c
+  vlocity_cmt__ServicePoint__c:
+    fields:
+    - vlocity_cmt__IsKeyAtPremises__c
+    - vlocity_cmt__IsPremisesInfoOverridden__c
+    - vlocity_cmt__PremisesId__c
+  vlocity_cmt__Household__c:
+    fields: []
+  AttributeDefinition:
+    fields:
     - IsActive
+    - DeveloperName
+    - PicklistId
     - CurrencyIsoCode
-    - custom_wst__c
-    - date_wst__c
+    - DataType
+    - DefaultValue
     - Description
-    - geo_wst__Latitude__s
-    - geo_wst__Longitude__s
+    - Label
     - Name
-  WorkPlanTemplate:
-    fields:
-    - IsActive
-    - CurrencyIsoCode
-    - Custom1__c
-    - Description
-    - encrypted__c
-    - Name
-    - RelativeExecutionOrder
-  WorkPlanTemplateEntry:
-    fields:
-    - CurrencyIsoCode
-    - custom_wpte__c
-    - ExecutionOrder
-    - WorkPlanTemplateId
-    - WorkStepTemplateId
+    - IsRequired
+    - SourceSystemIdentifier
+    - UnitOfMeasureId
