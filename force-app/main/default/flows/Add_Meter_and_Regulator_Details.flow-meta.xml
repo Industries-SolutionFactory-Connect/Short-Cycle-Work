@@ -151,6 +151,12 @@
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>Product2Id</field>
+            <value>
+                <elementReference>var_ProductId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Quantity</field>
             <value>
                 <numberValue>1.0</numberValue>
@@ -166,6 +172,18 @@
             <field>Status</field>
             <value>
                 <stringValue>Installed</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>vlocity_cmt__PremisesId__c</field>
+            <value>
+                <elementReference>var_PremisesId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>vlocity_cmt__ServicePointId__c</field>
+            <value>
+                <elementReference>var_ServicePointId</elementReference>
             </value>
         </inputAssignments>
         <object>Asset</object>
@@ -376,6 +394,18 @@
                 <stringValue>Installed</stringValue>
             </value>
         </inputAssignments>
+        <inputAssignments>
+            <field>vlocity_cmt__PremisesId__c</field>
+            <value>
+                <elementReference>var_PremisesId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>vlocity_cmt__ServicePointId__c</field>
+            <value>
+                <elementReference>var_ServicePointId</elementReference>
+            </value>
+        </inputAssignments>
         <object>Asset</object>
     </recordCreates>
     <recordCreates>
@@ -524,6 +554,18 @@
         <outputAssignments>
             <assignToReference>var_LocationId</assignToReference>
             <field>LocationId</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>var_ProductId</assignToReference>
+            <field>Product2Id</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>var_PremisesId</assignToReference>
+            <field>vlocity_cmt__PremisesId__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>var_ServicePointId</assignToReference>
+            <field>vlocity_cmt__ServicePointId__c</field>
         </outputAssignments>
     </recordLookups>
     <recordLookups>
@@ -1015,6 +1057,20 @@
         <isOutput>true</isOutput>
     </variables>
     <variables>
+        <name>var_PremisesId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>var_ProductId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
         <description>This variable is used to store Asset Id of regulator.</description>
         <name>var_RegulatorAssetId</name>
         <dataType>String</dataType>
@@ -1057,6 +1113,13 @@
     <variables>
         <description>This variable is used to store Id of Attribute Definition for Regulator Size.</description>
         <name>var_RegulatorSizeAttributeDefinitionId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>var_ServicePointId</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>true</isInput>
