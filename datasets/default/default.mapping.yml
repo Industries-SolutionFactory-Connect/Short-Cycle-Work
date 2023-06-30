@@ -249,69 +249,9 @@ Insert Product2:
   - vlocity_cmt__VersionEndDateTime__c
   - vlocity_cmt__VersionLabel__c
   - vlocity_cmt__VersionStartDateTime__c
-Insert vlocity_cmt__Household__c:
-  sf_object: vlocity_cmt__Household__c
-  table: vlocity_cmt__Household__c
-Insert vlocity_cmt__InventoryItem__c:
-  sf_object: vlocity_cmt__InventoryItem__c
-  table: vlocity_cmt__InventoryItem__c
-Insert vlocity_cmt__PriceList__c:
-  sf_object: vlocity_cmt__PriceList__c
-  table: vlocity_cmt__PriceList__c
-  fields:
-  - vlocity_cmt__Code__c
-Insert vlocity_cmt__ProductAttribXN__c:
-  sf_object: vlocity_cmt__ProductAttribXN__c
-  table: vlocity_cmt__ProductAttribXN__c
-Insert vlocity_cmt__ChargeMeasurement__c:
-  sf_object: vlocity_cmt__ChargeMeasurement__c
-  table: vlocity_cmt__ChargeMeasurement__c
-Insert Pricebook2:
-  sf_object: Pricebook2
-  table: Pricebook2
-  fields:
-  - Name
-Insert AttributePicklist:
-  sf_object: AttributePicklist
-  table: AttributePicklist
-  fields:
-  - Code
-  - Name
-Insert UnitOfMeasure:
-  sf_object: UnitOfMeasure
-  table: UnitOfMeasure
-  fields:
-  - Name
-  - Type
-  - UnitCode
-Insert Order:
-  sf_object: Order
-  table: Order
-  fields:
-  - EffectiveDate
-  - Status
-Insert vlocity_cmt__Subscription__c:
-  sf_object: vlocity_cmt__Subscription__c
-  table: vlocity_cmt__Subscription__c
-  fields:
-  - vlocity_cmt__SubscriptionNumber__c
-Insert DandBCompany:
-  sf_object: DandBCompany
-  table: DandBCompany
-  fields:
-  - DunsNumber
-  - Name
-Insert vlocity_cmt__Party__c:
-  sf_object: vlocity_cmt__Party__c
-  table: vlocity_cmt__Party__c
 Insert SchedulingConstraint:
   sf_object: SchedulingConstraint
   table: SchedulingConstraint
-  fields:
-  - Name
-Insert TravelMode:
-  sf_object: TravelMode
-  table: TravelMode
   fields:
   - Name
 Insert ServiceTerritory:
@@ -428,18 +368,6 @@ Insert AttributeDefinition:
     UnitOfMeasureId:
       table: UnitOfMeasure
       key_field: UnitOfMeasureId
-Insert PricebookEntry:
-  sf_object: PricebookEntry
-  table: PricebookEntry
-  fields:
-  - UnitPrice
-  lookups:
-    Pricebook2Id:
-      table: Pricebook2
-      key_field: Pricebook2Id
-    Product2Id:
-      table: Product2
-      key_field: Product2Id
 Insert OrderItem:
   sf_object: OrderItem
   table: OrderItem
