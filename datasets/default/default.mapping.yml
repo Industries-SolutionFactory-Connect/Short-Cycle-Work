@@ -420,13 +420,6 @@ Insert TimeSlot:
     OperatingHoursId:
       table: OperatingHours
       key_field: OperatingHoursId
-Insert ProductServiceCampaignItem:
-  sf_object: ProductServiceCampaignItem
-  table: ProductServiceCampaignItem
-  lookups:
-    ProductServiceCampaignId:
-      table: ProductServiceCampaign
-      key_field: ProductServiceCampaignId
 Insert Contact:
   sf_object: Contact
   table: Contact
