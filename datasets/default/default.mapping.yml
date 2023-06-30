@@ -5,397 +5,113 @@
 # .load.yml file and re-capturing:
 #
 #  https://cumulusci.readthedocs.io/en/stable/data.html#extracting-and-loading-sample-datasets
-Insert Product2:
-  sf_object: Product2
-  table: Product2
-  fields:
-  - vlocity_cmt__StandardPremium__c
-  - vlocity_cmt__AttributeDefaultValues__c
-  - Name
-Insert vlocity_cmt__Household__c:
-  sf_object: vlocity_cmt__Household__c
-  table: vlocity_cmt__Household__c
-Insert AttributePicklist:
-  sf_object: AttributePicklist
-  table: AttributePicklist
-  fields:
-  - Code
-  - Name
-Insert UnitOfMeasure:
-  sf_object: UnitOfMeasure
-  table: UnitOfMeasure
-  fields:
-  - Name
-  - Type
-  - UnitCode
-Insert Individual:
-  sf_object: Individual
-  table: Individual
-  fields:
-  - LastName
-Insert vlocity_cmt__Party__c:
-  sf_object: vlocity_cmt__Party__c
-  table: vlocity_cmt__Party__c
-Insert DandBCompany:
-  sf_object: DandBCompany
-  table: DandBCompany
-  fields:
-  - DunsNumber
-  - Name
 Insert OperatingHours:
   sf_object: OperatingHours
   table: OperatingHours
   fields:
+  - CurrencyIsoCode
+  - Description
   - Name
   - TimeZone
-Insert AttributeDefinition:
-  sf_object: AttributeDefinition
-  table: AttributeDefinition
+Insert FSL__Scheduling_Policy__c:
+  sf_object: FSL__Scheduling_Policy__c
+  table: FSL__Scheduling_Policy__c
+  fields:
+  - FSL__Commit_Mode__c
+  - CurrencyIsoCode
+  - FSL__Description__c
+  - FSL__Fix_Overlaps__c
+  - FSL__Daily_Optimization__c
+  - Name
+  - FSL__Service_Clustering_Weight__c
+  - FSL__Service_Priority_Weight__c
+  - FSL__Travel_Mode__c
+Insert SchedulingConstraint:
+  sf_object: SchedulingConstraint
+  table: SchedulingConstraint
+  fields:
+  - Name
+Insert TravelMode:
+  sf_object: TravelMode
+  table: TravelMode
+  fields:
+  - Name
+Insert ServiceTerritory:
+  sf_object: ServiceTerritory
+  table: ServiceTerritory
   fields:
   - IsActive
-  - DeveloperName
-  - CurrencyIsoCode
-  - DataType
-  - DefaultValue
-  - Description
-  - Label
-  - Name
-  - IsRequired
-  - SourceSystemIdentifier
-  lookups:
-    PicklistId:
-      table: AttributePicklist
-      key_field: PicklistId
-    UnitOfMeasureId:
-      table: UnitOfMeasure
-      key_field: UnitOfMeasureId
-Insert Account:
-  sf_object: Account
-  table: Account
-  fields:
+  - Street
+  - City
+  - Country
   - CurrencyIsoCode
   - Description
-  - Fax
-  - vlocity_cmt__Juridsiction1__c
-  - vlocity_cmt__Jurisdiction2__c
+  - GeocodeAccuracy
+  - FSL__Hide_Emergency_Map__c
+  - FSL__Internal_SLR_Geolocation__Latitude__s
+  - FSL__Internal_SLR_Geolocation__Longitude__s
+  - Latitude
+  - Longitude
   - Name
-  - AccountNumber
-  - vlocity_cmt__AccountPaymentType__c
-  - Phone
-  - Rating
-  - Site
-  - AccountSource
-  - Type
-  - Active__c
-  - vlocity_cmt__Active__c
-  - AnnualRevenue
-  - vlocity_cmt__AutoPaymentAmount__c
-  - vlocity_cmt__AutoPaymentLimitAmount__c
-  - vlocity_cmt__BillCycle__c
-  - vlocity_cmt__BillDeliveryMethod__c
-  - vlocity_cmt__BillFormat__c
-  - vlocity_cmt__BillFrequency__c
-  - vlocity_cmt__BillingAccountStatus__c
-  - BillingCity
-  - BillingCountry
-  - vlocity_cmt__BillingEmailAddress__c
-  - BillingGeocodeAccuracy
-  - BillingLatitude
-  - BillingLongitude
-  - BillingState
-  - BillingStreet
-  - BillingPostalCode
-  - vlocity_cmt__Churn__c
-  - CleanStatus
-  - vlocity_cmt__CLTV__c
-  - vlocity_cmt__ContactPreferences__c
-  - vlocity_cmt__CreditRating__c
-  - vlocity_cmt__CreditScore__c
-  - vlocity_cmt__CustomerClass__c
-  - vlocity_cmt__CustomerOfBrand__c
-  - CustomerPriority__c
-  - vlocity_cmt__CustomerPriority__c
-  - vlocity_cmt__vCustomerPriority__c
-  - vlocity_cmt__CustomerSinceDate__c
-  - vlocity_cmt__CustomerValue__c
-  - DunsNumber
-  - Jigsaw
-  - vlocity_cmt__DateFounded__c
-  - vlocity_cmt__DirectoryListed__c
-  - NumberOfEmployees
-  - vlocity_cmt__EnableAutopay__c
-  - vlocity_cmt__Disclosure1__c
-  - vlocity_cmt__HasFraud__c
-  - vlocity_cmt__FraudReason__c
-  - vlocity_cmt__Disclosure2__c
-  - Industry
-  - vlocity_cmt__IsPersonAccount__c
-  - vlocity_cmt__IsRootResolved__c
-  - vlocity_cmt__LegalForm__c
-  - vlocity_cmt__Disclosure3__c
-  - NaicsCode
-  - NaicsDesc
-  - vlocity_cmt__NetWorth__c
-  - vlocity_cmt__BillNumberOfCopies__c
-  - NumberofLocations__c
-  - vlocity_cmt__NumberofLocations__c
-  - Ownership
-  - vlocity_cmt__PreferredLanguage__c
-  - vlocity_cmt__PrepayReloadThreshold__c
-  - ShippingCity
-  - ShippingCountry
-  - ShippingGeocodeAccuracy
-  - ShippingLatitude
-  - ShippingLongitude
-  - ShippingState
-  - ShippingStreet
-  - ShippingPostalCode
-  - Sic
-  - SicDesc
-  - SLA__c
-  - vlocity_cmt__SLA__c
-  - vlocity_cmt__vSLA__c
-  - SLAExpirationDate__c
-  - vlocity_cmt__vSLAExpirationDate__c
-  - SLASerialNumber__c
-  - vlocity_cmt__vSLASerialNumber__c
-  - vlocity_cmt__Status__c
-  - vlocity_cmt__TaxExemptionType__c
-  - vlocity_cmt__TaxExemptionEndDate__c
-  - vlocity_cmt__TaxExemptionPercentage__c
-  - vlocity_cmt__TaxExemptionStartDate__c
-  - vlocity_cmt__TaxID__c
-  - TickerSymbol
-  - Tradestyle
-  - UpsellOpportunity__c
-  - vlocity_cmt__UpsellOpportunity__c
-  - Website
-  - YearStarted
-  - RecordTypeId
+  - FSL__NumberOfServicesToDripFeed__c
+  - FSL__Service_Cluster_Min_Size__c
+  - FSL__Service_Cluster_Proximity__c
+  - State
+  - FSL__System_Jobs__c
+  - FSL__TerritoryLevel__c
+  - TypicalInTerritoryTravelTime
+  - FSL__O2_Enabled__c
+  - PostalCode
   lookups:
-    vlocity_cmt__AutoPaymentMethodId__c:
-      table: vlocity_cmt__PaymentMethod__c
-      key_field: vlocity_cmt__AutoPaymentMethodId__c
-      after: Insert vlocity_cmt__PaymentMethod__c
-    vlocity_cmt__PrimaryContactId__c:
-      table: Contact
-      key_field: vlocity_cmt__PrimaryContactId__c
-      after: Insert Contact
-    DandbCompanyId:
-      table: DandBCompany
-      key_field: DandbCompanyId
+    SchedulingConstraintId:
+      table: SchedulingConstraint
+      key_field: SchedulingConstraintId
     OperatingHoursId:
       table: OperatingHours
       key_field: OperatingHoursId
+    ParentTerritoryId:
+      table: ServiceTerritory
+      key_field: ParentTerritoryId
+      after: Insert ServiceTerritory
+    TravelModeId:
+      table: TravelMode
+      key_field: TravelModeId
+Insert Address:
+  sf_object: Address
+  table: Address
+  lookups:
     ParentId:
-      table: Account
+      table: Location
       key_field: ParentId
-      after: Insert Account
-    vlocity_cmt__PartyId__c:
-      table: vlocity_cmt__Party__c
-      key_field: vlocity_cmt__PartyId__c
-    vlocity_cmt__PersonContactId__c:
-      table: Contact
-      key_field: vlocity_cmt__PersonContactId__c
-      after: Insert Contact
-    vlocity_cmt__PremisesId__c:
-      table: vlocity_cmt__Premises__c
-      key_field: vlocity_cmt__PremisesId__c
-      after: Insert vlocity_cmt__Premises__c
-    vlocity_cmt__ReferredByContactId__c:
-      table: Contact
-      key_field: vlocity_cmt__ReferredByContactId__c
-      after: Insert Contact
-    vlocity_cmt__RootAccountId__c:
-      table: Account
-      key_field: vlocity_cmt__RootAccountId__c
-      after: Insert Account
-Insert Contact:
-  sf_object: Contact
-  table: Contact
+      after: Insert Location
+Insert Location:
+  sf_object: Location
+  table: Location
   fields:
-  - AssistantName
-  - AssistantPhone
-  - Birthdate
-  - CleanStatus
+  - CloseDate
+  - ConstructionEndDate
+  - ConstructionStartDate
   - CurrencyIsoCode
-  - Department
   - Description
-  - DoNotCall
-  - Email
-  - EmailBouncedDate
-  - EmailBouncedReason
-  - Fax
-  - FirstName
-  - GenderIdentity
-  - HasOptedOutOfEmail
-  - HasOptedOutOfFax
-  - HomePhone
-  - Jigsaw
-  - Languages__c
-  - LastName
-  - LeadSource
-  - Level__c
-  - MailingCity
-  - MailingCountry
-  - MailingGeocodeAccuracy
-  - MailingLatitude
-  - MailingLongitude
-  - MailingPostalCode
-  - MailingState
-  - MailingStreet
-  - MobilePhone
-  - OtherCity
-  - OtherCountry
-  - OtherGeocodeAccuracy
-  - OtherLatitude
-  - OtherLongitude
-  - OtherPhone
-  - OtherPostalCode
-  - OtherState
-  - OtherStreet
-  - Phone
-  - Pronouns
-  - SFS_External_ID__c
-  - Salutation
-  - Title
-  - vlocity_cmt__AnnualIncome__c
-  - vlocity_cmt__Authorized__c
-  - vlocity_cmt__ContactNumber__c
-  - vlocity_cmt__CustomerSentiment__c
-  - vlocity_cmt__DriversLicenseNumber__c
-  - vlocity_cmt__EmploymentStatus__c
-  - vlocity_cmt__Gender__c
-  - vlocity_cmt__HasFraud__c
-  - vlocity_cmt__Image__c
-  - vlocity_cmt__IsActive__c
-  - vlocity_cmt__IsEmployee__c
-  - vlocity_cmt__IsPartner__c
-  - vlocity_cmt__IsPersonAccount__c
-  - vlocity_cmt__LastContactbyRecordOwner__c
-  - vlocity_cmt__Location__c
-  - vlocity_cmt__MiddleName__c
-  - vlocity_cmt__NetWorth__c
-  - vlocity_cmt__Occupation__c
-  - vlocity_cmt__SSN__c
-  - vlocity_cmt__SocialSecurityNumber__c
-  - vlocity_cmt__StateOfIssuance__c
-  - vlocity_cmt__Status__c
-  - vlocity_cmt__TaxId__c
-  - vlocity_cmt__Type__c
-  - vlocity_cmt__UserLeaseExpires__c
-  - vlocity_cmt__UserLeaseToken__c
-  - vlocity_cmt__UserName__c
-  - vlocity_cmt__UserPassSalt__c
-  - vlocity_cmt__UserPass__c
-  - vlocity_cmt__WebSite__c
-  - RecordTypeId
-  lookups:
-    AccountId:
-      table: Account
-      key_field: AccountId
-    vlocity_cmt__PrimaryEmployerId__c:
-      table: Account
-      key_field: vlocity_cmt__PrimaryEmployerId__c
-    IndividualId:
-      table: Individual
-      key_field: IndividualId
-    vlocity_cmt__PartyId__c:
-      table: vlocity_cmt__Party__c
-      key_field: vlocity_cmt__PartyId__c
-    ReportsToId:
-      table: Contact
-      key_field: ReportsToId
-      after: Insert Contact
-Insert vlocity_cmt__Premises__c:
-  sf_object: vlocity_cmt__Premises__c
-  table: vlocity_cmt__Premises__c
-  fields:
-  - CurrencyIsoCode
+  - DrivingDirections
+  - ExternalReference
+  - IsInventoryLocation
+  - Latitude
   - Name
-  - vlocity_cmt__ActivationDate__c
-  - vlocity_cmt__Address1__c
-  - vlocity_cmt__Address2__c
-  - vlocity_cmt__AlternateCity__c
-  - vlocity_cmt__AlternateCountry__c
-  - vlocity_cmt__AlternatePostalCode__c
-  - vlocity_cmt__AlternateState__c
-  - vlocity_cmt__AlternateStreetAddress__c
-  - vlocity_cmt__City__c
-  - vlocity_cmt__Country__c
-  - vlocity_cmt__DistributionArea__c
-  - vlocity_cmt__Floor__c
-  - vlocity_cmt__Geolocation__Latitude__s
-  - vlocity_cmt__Geolocation__Longitude__s
-  - vlocity_cmt__HouseNumberSupplement__c
-  - vlocity_cmt__IsKeyAtPremises__c
-  - vlocity_cmt__IsOkToEnter__c
-  - vlocity_cmt__IsSupplyGuaranteed__c
-  - vlocity_cmt__Jurisdiction__c
-  - vlocity_cmt__MeterReadInstructions__c
-  - vlocity_cmt__MeterReadWarning__c
-  - vlocity_cmt__NumberOfOccupants__c
-  - vlocity_cmt__PostalCode__c
-  - vlocity_cmt__PremisesIdentifier__c
-  - vlocity_cmt__PremisesNumber__c
-  - vlocity_cmt__PremisesType__c
-  - vlocity_cmt__State__c
-  - vlocity_cmt__Status__c
-  - vlocity_cmt__StreetAddress__c
-  - vlocity_cmt__SupplyGuaranteeReason__c
-  - vlocity_cmt__TimeZone__c
-  - vlocity_cmt__TrendArea__c
-  - vlocity_cmt__UnitNumber__c
+  - LocationType
+  - Longitude
+  - IsMobile
+  - OpenDate
+  - PossessionDate
+  - RemodelEndDate
+  - RemodelStartDate
+  - ShouldSyncWithOci
+  - TimeZone
   lookups:
-    vlocity_cmt__ParentPremisesId__c:
-      table: vlocity_cmt__Premises__c
-      key_field: vlocity_cmt__ParentPremisesId__c
-      after: Insert vlocity_cmt__Premises__c
-    vlocity_cmt__PropertyOwnerAccountId__c:
-      table: Account
-      key_field: vlocity_cmt__PropertyOwnerAccountId__c
-Insert vlocity_cmt__PaymentMethod__c:
-  sf_object: vlocity_cmt__PaymentMethod__c
-  table: vlocity_cmt__PaymentMethod__c
-  lookups:
-    vlocity_cmt__AccountId__c:
-      table: Account
-      key_field: vlocity_cmt__AccountId__c
-Insert AccountContactRelation:
-  sf_object: AccountContactRelation
-  table: AccountContactRelation
-  fields:
-  - CurrencyIsoCode
-  - IsActive
-  - EndDate
-  - Roles
-  - StartDate
-  lookups:
-    AccountId:
-      table: Account
-      key_field: AccountId
-    ContactId:
-      table: Contact
-      key_field: ContactId
-Insert Asset:
-  sf_object: Asset
-  table: Asset
-  fields:
-  - Name
-  lookups:
-    ContactId:
-      table: Contact
-      key_field: ContactId
-    vlocity_cmt__PremisesId__c:
-      table: vlocity_cmt__Premises__c
-      key_field: vlocity_cmt__PremisesId__c
-Insert vlocity_cmt__ServicePoint__c:
-  sf_object: vlocity_cmt__ServicePoint__c
-  table: vlocity_cmt__ServicePoint__c
-  fields:
-  - vlocity_cmt__IsKeyAtPremises__c
-  - vlocity_cmt__IsPremisesInfoOverridden__c
-  lookups:
-    vlocity_cmt__PremisesId__c:
-      table: vlocity_cmt__Premises__c
-      key_field: vlocity_cmt__PremisesId__c
+    VisitorAddressId:
+      table: Address
+      key_field: VisitorAddressId
+    ParentLocationId:
+      table: Location
+      key_field: ParentLocationId
+      after: Insert Location
