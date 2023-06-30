@@ -546,11 +546,3 @@ extract:
   TimeSlot:
     fields:
     - OperatingHoursId
-  Case:
-    fields: []
-  Huge_Object__c:
-    fields: []
-  ProductServiceCampaignItem:
-    fields: []
-  ReturnOrder:
-    fields: []
