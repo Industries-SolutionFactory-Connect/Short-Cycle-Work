@@ -802,3 +802,16 @@ Insert Asset:
     vlocity_cmt__UsageMeasurementId__c:
       table: vlocity_cmt__ChargeMeasurement__c
       key_field: vlocity_cmt__UsageMeasurementId__c
+Insert AssetAttribute:
+  sf_object: AssetAttribute
+  table: AssetAttribute
+  fields:
+  - AttributeValue
+  - ExternalId
+  lookups:
+    AssetId:
+      table: Asset
+      key_field: AssetId
+    AttributeDefinitionId:
+      table: AttributeDefinition
+      key_field: AttributeDefinitionId

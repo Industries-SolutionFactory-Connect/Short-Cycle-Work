@@ -480,6 +480,9 @@ extract:
     - vlocity_cmt__UsageMeasurementId__c
     - vlocity_cmt__Username__c
     - vlocity_cmt__Password__c
+  AssetAttribute:
+    fields:
+      - FIELDS(ALL)     
   AttributeDefinition:
     fields:
     - IsActive

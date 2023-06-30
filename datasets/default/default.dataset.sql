@@ -259,6 +259,20 @@ CREATE TABLE "Asset" (
 	PRIMARY KEY (id)
 );
 INSERT INTO "Asset" VALUES(1,'','','','Gas Meter','d652edd5-08fd-16b6-2506-620f86d29486','','','','','','','','','','False','','','','USD','','','','','','','','','','','','','','','','','','','','','2023-06-28','False','','','','','','','','False','','','','','','','','','','','','','','200.0','','','','','','','1.0','','','','','','','','','Monthly','','','','','SN3124134','','','Installed','','','','','','','','','','','4','','','5','1','','2','','','','','','2','','','','2','','');
+CREATE TABLE "AssetAttribute" (
+	id INTEGER NOT NULL, 
+	"AttributeValue" VARCHAR(255), 
+	"ExternalId" VARCHAR(255), 
+	"AssetId" VARCHAR(255), 
+	"AttributeDefinitionId" VARCHAR(255), 
+	PRIMARY KEY (id)
+);
+INSERT INTO "AssetAttribute" VALUES(1,'1.0','0pJ6t0000000001EAA','1','3');
+INSERT INTO "AssetAttribute" VALUES(2,'False','0pJ6t0000000002EAA','1','7');
+INSERT INTO "AssetAttribute" VALUES(3,'3/4','0pJ6t0000000003EAA','1','1');
+INSERT INTO "AssetAttribute" VALUES(4,'6/13/2023, 5:26 AM','0pJ6t0000000006EAA','1','6');
+INSERT INTO "AssetAttribute" VALUES(5,'1234','0pJ6t0000000007EAA','1','5');
+INSERT INTO "AssetAttribute" VALUES(6,'BHEL','0pJ6t000000000BEAQ','1','10');
 CREATE TABLE "AttributeDefinition" (
 	id INTEGER NOT NULL, 
 	"IsActive" VARCHAR(255), 
