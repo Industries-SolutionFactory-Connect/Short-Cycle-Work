@@ -120,10 +120,10 @@ CREATE TABLE "AccountContactRelation" (
 	"ContactId" VARCHAR(255), 
 	PRIMARY KEY (id)
 );
-INSERT INTO "AccountContactRelation" VALUES(1,'USD','True','','','','1','1');
+-- INSERT INTO "AccountContactRelation" VALUES(1,'USD','True','','','','1','1');
 -- INSERT INTO "AccountContactRelation" VALUES(2,'USD','True','','','','1','2');
 -- INSERT INTO "AccountContactRelation" VALUES(3,'USD','True','','','','1','3');
-INSERT INTO "AccountContactRelation" VALUES(4,'USD','True','','','','4','4');
+-- INSERT INTO "AccountContactRelation" VALUES(4,'USD','True','','','','4','4');
 -- INSERT INTO "AccountContactRelation" VALUES(5,'USD','True','','','','4','5');
 CREATE TABLE "Account_rt_mapping" (
 	record_type_id VARCHAR(18) NOT NULL, 
