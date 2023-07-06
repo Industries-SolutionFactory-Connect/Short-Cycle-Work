@@ -653,3 +653,41 @@ Insert Asset:
     vlocity_cmt__PremisesId__c:
       table: vlocity_cmt__Premises__c
       key_field: vlocity_cmt__PremisesId__c
+Insert AttributePicklist:
+  sf_object: AttributePicklist
+  table: AttributePicklist
+  fields:
+  - Code
+  - CurrencyIsoCode
+  - DataType
+  - Description
+  - Name
+  - Status
+Insert UnitOfMeasure:
+  sf_object: UnitOfMeasure
+  table: UnitOfMeasure
+  fields:
+  - Name
+  - Type
+  - UnitCode
+Insert AttributeDefinition:
+  sf_object: AttributeDefinition
+  table: AttributeDefinition
+  fields:
+  - IsActive
+  - DeveloperName
+  - CurrencyIsoCode
+  - DataType
+  - DefaultValue
+  - Description
+  - Label
+  - Name
+  - IsRequired
+  - SourceSystemIdentifier
+  lookups:
+    PicklistId:
+      table: AttributePicklist
+      key_field: PicklistId
+    UnitOfMeasureId:
+      table: UnitOfMeasure
+      key_field: UnitOfMeasureId
