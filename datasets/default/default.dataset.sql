@@ -251,6 +251,49 @@ CREATE TABLE "Asset" (
 	PRIMARY KEY (id)
 );
 INSERT INTO "Asset" VALUES(1,'Gas Meter','','False','','USD','','2023-06-28','False','','','','','','','200.0','','1.0','','Installed','','','','','','d652edd5-08fd-16b6-2506-620f86d29486','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','SN3124134','','','','','','','','','','','','','','','','','Monthly','','','','','','','','','','','','4','','','5','1','','2','2','2');
+CREATE TABLE "AttributeDefinition" (
+	id INTEGER NOT NULL, 
+	"IsActive" VARCHAR(255), 
+	"DeveloperName" VARCHAR(255), 
+	"CurrencyIsoCode" VARCHAR(255), 
+	"DataType" VARCHAR(255), 
+	"DefaultValue" VARCHAR(255), 
+	"Description" VARCHAR(255), 
+	"Label" VARCHAR(255), 
+	"Name" VARCHAR(255), 
+	"IsRequired" VARCHAR(255), 
+	"SourceSystemIdentifier" VARCHAR(255), 
+	"PicklistId" VARCHAR(255), 
+	"UnitOfMeasureId" VARCHAR(255), 
+	PRIMARY KEY (id)
+);
+INSERT INTO "AttributeDefinition" VALUES(1,'True','Meter_Size','USD','Text','','','Meter Size','Meter Size','False','','','');
+INSERT INTO "AttributeDefinition" VALUES(2,'True','Number_of_Dials','USD','Text','','','Number of Dials','Number of Dials','False','','','');
+INSERT INTO "AttributeDefinition" VALUES(3,'True','Meter_Read','USD','Text','','','Meter Read','Meter Read','False','','','');
+INSERT INTO "AttributeDefinition" VALUES(4,'True','Meter_Read_DateTime','USD','Text','','','Meter Read Date Time','Meter Read Date Time','False','','','');
+INSERT INTO "AttributeDefinition" VALUES(5,'True','Meter_Bar_Sealed','USD','Checkbox','','','Meter Bar Sealed','Meter Bar Sealed','False','','','');
+INSERT INTO "AttributeDefinition" VALUES(6,'True','Meter_Manufacturer','USD','Text','','','Meter Manufacturer','Meter Manufacturer','False','','','');
+INSERT INTO "AttributeDefinition" VALUES(7,'True','Regulator_Manufacturer','USD','Text','','','Regulator Manufacturer','Regulator Manufacturer','False','','','');
+INSERT INTO "AttributeDefinition" VALUES(8,'True','Regulator_Size','USD','Text','','','Regulator Size','Regulator Size','False','','','');
+INSERT INTO "AttributeDefinition" VALUES(9,'True','Regulator_Manufacture_Date','USD','Text','','','Regulator Manufacture Date','Regulator Manufacture Date','False','','','');
+CREATE TABLE "AttributePicklist" (
+	id INTEGER NOT NULL, 
+	"Code" VARCHAR(255), 
+	"CurrencyIsoCode" VARCHAR(255), 
+	"DataType" VARCHAR(255), 
+	"Description" VARCHAR(255), 
+	"Name" VARCHAR(255), 
+	"Status" VARCHAR(255), 
+	PRIMARY KEY (id)
+);
+INSERT INTO "AttributePicklist" VALUES(1,'11','USD','Currency','','TestCurrency','Draft');
+CREATE TABLE "UnitOfMeasure" (
+	id INTEGER NOT NULL, 
+	"Name" VARCHAR(255), 
+	"Type" VARCHAR(255), 
+	"UnitCode" VARCHAR(255), 
+	PRIMARY KEY (id)
+);
 CREATE TABLE "AssetAttribute" (
 	id INTEGER NOT NULL, 
 	"AttributeValue" VARCHAR(255), 
@@ -259,11 +302,11 @@ CREATE TABLE "AssetAttribute" (
 	"AttributeDefinitionId" VARCHAR(255), 
 	PRIMARY KEY (id)
 );
-INSERT INTO "AssetAttribute" VALUES(1,'1.0','0pJ6t0000000001EAA','1','2');
-INSERT INTO "AssetAttribute" VALUES(2,'False','0pJ6t0000000002EAA','1','5');
-INSERT INTO "AssetAttribute" VALUES(3,'3/4','0pJ6t0000000003EAA','1','4');
-INSERT INTO "AssetAttribute" VALUES(4,'6/13/2023, 5:26 AM','0pJ6t0000000006EAA','1','3');
-INSERT INTO "AssetAttribute" VALUES(5,'1234','0pJ6t0000000007EAA','1','1');
+INSERT INTO "AssetAttribute" VALUES(1,'3/4','0pJ6t0000000003EAA','1','1');
+INSERT INTO "AssetAttribute" VALUES(2,'4','0pJ6t0000000001EAA','1','2');
+INSERT INTO "AssetAttribute" VALUES(3,'123','0pJ6t0000000007EAA','1','3');
+INSERT INTO "AssetAttribute" VALUES(4,'6/13/2023, 5:26 AM','0pJ6t0000000006EAA','1','4');
+INSERT INTO "AssetAttribute" VALUES(5,'False','0pJ6t0000000002EAA','1','5');
 INSERT INTO "AssetAttribute" VALUES(6,'BHEL','0pJ6t000000000BEAQ','1','6');
 CREATE TABLE "Contact" (
 	id INTEGER NOT NULL, 
