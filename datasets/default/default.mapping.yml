@@ -691,3 +691,16 @@ Insert AttributeDefinition:
     UnitOfMeasureId:
       table: UnitOfMeasure
       key_field: UnitOfMeasureId
+Insert AssetAttribute:
+  sf_object: AssetAttribute
+  table: AssetAttribute
+  fields:
+  - AttributeValue
+  - ExternalId
+  lookups:
+    AssetId:
+      table: Asset
+      key_field: AssetId
+    AttributeDefinitionId:
+      table: AttributeDefinition
+      key_field: AttributeDefinitionId
