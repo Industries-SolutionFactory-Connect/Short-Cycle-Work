@@ -342,6 +342,33 @@ extract:
     - vlocity_cmt__UsageUnitCost__c
     - vlocity_cmt__UsageUnitPrice__c
     - vlocity_cmt__Username__c
+  AttributeDefinition:
+    fields:
+    - IsActive
+    - DeveloperName
+    - PicklistId
+    - CurrencyIsoCode
+    - DataType
+    - DefaultValue
+    - Description
+    - Label
+    - Name
+    - IsRequired
+    - SourceSystemIdentifier
+    - UnitOfMeasureId
+  AttributePicklist:
+    fields:
+    - Code
+    - CurrencyIsoCode
+    - DataType
+    - Description
+    - Name
+    - Status
+  UnitOfMeasure:
+    fields:
+    - Name
+    - Type
+    - UnitCode
   AssetAttribute:
    fields:
      - FIELDS(ALL)  
