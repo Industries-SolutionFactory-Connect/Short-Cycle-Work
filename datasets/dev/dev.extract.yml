@@ -538,3 +538,6 @@ extract:
     - FSL__Fix_Overlaps__c
     - FSL__Daily_Optimization__c
     - CurrencyIsoCode
+ AssetAttribute:
+    fields:
+    - FIELDS(ALL)   
