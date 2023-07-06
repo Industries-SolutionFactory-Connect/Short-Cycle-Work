@@ -659,3 +659,16 @@ Insert WorkPlanSelectionRule:
     WorkTypeId:
       table: WorkType
       key_field: WorkTypeId
+Insert AssetAttribute:
+  sf_object: AssetAttribute
+  table: AssetAttribute
+  fields:
+  - AttributeValue
+  - ExternalId
+  lookups:
+    AssetId:
+      table: Asset
+      key_field: AssetId
+    AttributeDefinitionId:
+      table: AttributeDefinition
+      key_field: AttributeDefinitionId
