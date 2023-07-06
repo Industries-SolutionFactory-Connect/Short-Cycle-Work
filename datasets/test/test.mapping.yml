@@ -12,9 +12,6 @@ Insert UnitOfMeasure:
   - Name
   - Type
   - UnitCode
-Insert vlocity_cmt__InventoryItem__c:
-  sf_object: vlocity_cmt__InventoryItem__c
-  table: vlocity_cmt__InventoryItem__c
 Insert Location:
   sf_object: Location
   table: Location
@@ -88,9 +85,6 @@ Insert vlocity_cmt__PriceList__c:
   table: vlocity_cmt__PriceList__c
   fields:
   - vlocity_cmt__Code__c
-Insert vlocity_cmt__ProductAttribXN__c:
-  sf_object: vlocity_cmt__ProductAttribXN__c
-  table: vlocity_cmt__ProductAttribXN__c
 Insert Product2:
   sf_object: Product2
   table: Product2
@@ -163,9 +157,6 @@ Insert vlocity_cmt__Subscription__c:
   table: vlocity_cmt__Subscription__c
   fields:
   - vlocity_cmt__SubscriptionNumber__c
-Insert vlocity_cmt__ChargeMeasurement__c:
-  sf_object: vlocity_cmt__ChargeMeasurement__c
-  table: vlocity_cmt__ChargeMeasurement__c
 Insert OperatingHours:
   sf_object: OperatingHours
   table: OperatingHours
@@ -280,6 +271,45 @@ Insert Pricebook2:
   table: Pricebook2
   fields:
   - Name
+Insert ServiceContract:
+  sf_object: ServiceContract
+  table: ServiceContract
+  fields:
+  - Name
+Insert WorkPlanTemplate:
+  sf_object: WorkPlanTemplate
+  table: WorkPlanTemplate
+  fields:
+  - CurrencyIsoCode
+  - Custom1__c
+  - Description
+  - IsActive
+  - Name
+  - RelativeExecutionOrder
+  - encrypted__c
+Insert WorkType:
+  sf_object: WorkType
+  table: WorkType
+  fields:
+  - CurrencyIsoCode
+  - Description
+  - DurationType
+  - EstimatedDuration
+  - FSL__Due_Date_Offset__c
+  - FSL__Exact_Appointments__c
+  - MinimumCrewSize
+  - Name
+  - RecommendedCrewSize
+  - ShouldAutoCreateSvcAppt
+Insert vlocity_cmt__InventoryItem__c:
+  sf_object: vlocity_cmt__InventoryItem__c
+  table: vlocity_cmt__InventoryItem__c
+Insert vlocity_cmt__ProductAttribXN__c:
+  sf_object: vlocity_cmt__ProductAttribXN__c
+  table: vlocity_cmt__ProductAttribXN__c
+Insert vlocity_cmt__ChargeMeasurement__c:
+  sf_object: vlocity_cmt__ChargeMeasurement__c
+  table: vlocity_cmt__ChargeMeasurement__c
 Insert vlocity_cmt__ServicePoint__c:
   sf_object: vlocity_cmt__ServicePoint__c
   table: vlocity_cmt__ServicePoint__c
@@ -325,6 +355,36 @@ Insert PricebookEntry:
     Product2Id:
       table: Product2
       key_field: Product2Id
+Insert ServiceTerritory:
+  sf_object: ServiceTerritory
+  table: ServiceTerritory
+  fields:
+  - City
+  - Country
+  - CurrencyIsoCode
+  - Description
+  - FSL__Hide_Emergency_Map__c
+  - FSL__Internal_SLR_Geolocation__Latitude__s
+  - FSL__Internal_SLR_Geolocation__Longitude__s
+  - FSL__NumberOfServicesToDripFeed__c
+  - FSL__O2_Enabled__c
+  - FSL__Service_Cluster_Min_Size__c
+  - FSL__Service_Cluster_Proximity__c
+  - FSL__System_Jobs__c
+  - FSL__TerritoryLevel__c
+  - GeocodeAccuracy
+  - IsActive
+  - Latitude
+  - Longitude
+  - Name
+  - PostalCode
+  - State
+  - Street
+  - TypicalInTerritoryTravelTime
+  lookups:
+    OperatingHoursId:
+      table: OperatingHours
+      key_field: OperatingHoursId
 Insert OrderItem:
   sf_object: OrderItem
   table: OrderItem
@@ -648,3 +708,34 @@ Insert Asset:
     vlocity_cmt__UsageMeasurementId__c:
       table: vlocity_cmt__ChargeMeasurement__c
       key_field: vlocity_cmt__UsageMeasurementId__c
+Insert WorkPlanSelectionRule:
+  sf_object: WorkPlanSelectionRule
+  table: WorkPlanSelectionRule
+  fields:
+  - IsActive
+  - Description
+  lookups:
+    AccountId:
+      table: Account
+      key_field: AccountId
+    AssetId:
+      table: Asset
+      key_field: AssetId
+    LocationId:
+      table: Location
+      key_field: LocationId
+    Product2Id:
+      table: Product2
+      key_field: Product2Id
+    ServiceContractId:
+      table: ServiceContract
+      key_field: ServiceContractId
+    ServiceTerritoryId:
+      table: ServiceTerritory
+      key_field: ServiceTerritoryId
+    WorkPlanTemplateId:
+      table: WorkPlanTemplate
+      key_field: WorkPlanTemplateId
+    WorkTypeId:
+      table: WorkType
+      key_field: WorkTypeId

@@ -123,9 +123,8 @@ extract:
     - vlocity_cmt__Username__c
     - vlocity_cmt__Password__c
   Contract:
-    fields: []
-  vlocity_cmt__InventoryItem__c:
-    fields: []
+    fields:
+    - AccountId
   Location:
     fields:
     - CloseDate
@@ -154,6 +153,8 @@ extract:
   OrderItem:
     fields:
     - Quantity
+    - OrderId
+    - PricebookEntryId
   vlocity_cmt__Premises__c:
     fields:
     - CurrencyIsoCode
@@ -194,8 +195,6 @@ extract:
   vlocity_cmt__PriceList__c:
     fields:
     - vlocity_cmt__Code__c
-  vlocity_cmt__ProductAttribXN__c:
-    fields: []
   Product2:
     fields:
     - CanUseQuantitySchedule
@@ -288,13 +287,13 @@ extract:
     - vlocity_cmt__TemperatureArea__c
     - vlocity_cmt__UtilityProvider__c
     - vlocity_cmt__VoltageLevel__c
+    - vlocity_cmt__PremisesId__c
   vlocity_cmt__Subscription__c:
     fields:
     - vlocity_cmt__SubscriptionNumber__c
-  vlocity_cmt__ChargeMeasurement__c:
-    fields: []
   vlocity_cmt__PaymentMethod__c:
-    fields: []
+    fields:
+    - vlocity_cmt__AccountId__c
   OperatingHours:
     fields:
     - CurrencyIsoCode
@@ -505,3 +504,71 @@ extract:
     - vlocity_cmt__UpsellOpportunity__c
     - Website
     - YearStarted
+  PricebookEntry:
+    fields:
+    - Pricebook2Id
+    - Product2Id
+    - UnitPrice
+  Pricebook2:
+    fields:
+    - Name
+  WorkPlanSelectionRule:
+    fields:
+    - AccountId
+    - IsActive
+    - AssetId
+    - Description
+    - LocationId
+    - Product2Id
+    - ServiceContractId
+    - ServiceTerritoryId
+    - WorkPlanTemplateId
+    - WorkTypeId
+  ServiceContract:
+    fields:
+    - Name
+  ServiceTerritory:
+    fields:
+    - City
+    - Country
+    - CurrencyIsoCode
+    - Description
+    - FSL__Hide_Emergency_Map__c
+    - FSL__Internal_SLR_Geolocation__Latitude__s
+    - FSL__Internal_SLR_Geolocation__Longitude__s
+    - FSL__NumberOfServicesToDripFeed__c
+    - FSL__O2_Enabled__c
+    - FSL__Service_Cluster_Min_Size__c
+    - FSL__Service_Cluster_Proximity__c
+    - FSL__System_Jobs__c
+    - FSL__TerritoryLevel__c
+    - GeocodeAccuracy
+    - IsActive
+    - Latitude
+    - Longitude
+    - Name
+    - PostalCode
+    - State
+    - Street
+    - TypicalInTerritoryTravelTime
+  WorkPlanTemplate:
+    fields:
+    - CurrencyIsoCode
+    - Custom1__c
+    - Description
+    - IsActive
+    - Name
+    - RelativeExecutionOrder
+    - encrypted__c
+  WorkType:
+    fields:
+    - CurrencyIsoCode
+    - Description
+    - DurationType
+    - EstimatedDuration
+    - FSL__Due_Date_Offset__c
+    - FSL__Exact_Appointments__c
+    - MinimumCrewSize
+    - Name
+    - RecommendedCrewSize
+    - ShouldAutoCreateSvcAppt
