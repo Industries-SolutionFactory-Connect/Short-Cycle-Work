@@ -96,6 +96,10 @@ plans:
     slug: install
     tier: primary
     title: "Install Salesforce Field Service for E&U: Short Cycle Work"
+    checks:
+      - when: "'FSL' not in org_config.installed_packages or 'vlocity_cmt' not in org_config.installed_packages"
+        action: error
+        message: "This solution requires Field Service Lightning and Vlocity CMT. Please ensure these packages are installed before proceeding"
     steps:
       1:
         flow: deploy_qbrix
