@@ -26,3 +26,12 @@ tasks:
     run_tests:
         options:
             required_org_code_coverage_percent: 75
+
+plans:
+  install:
+    slug: install
+    tier: primary
+    title: "Install Salesforce Field Service for E&U: Short Cycle Work"
+    steps:
+      1:
+        flow: dev_org
