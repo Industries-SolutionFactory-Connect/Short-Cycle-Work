@@ -1,0 +1,28 @@
+extract:
+  AttributeDefinition:
+    fields:
+    - IsActive
+    - DeveloperName
+    - PicklistId
+    - CurrencyIsoCode
+    - DataType
+    - DefaultValue
+    - Description
+    - Label
+    - Name
+    - IsRequired
+    - SourceSystemIdentifier
+    - UnitOfMeasureId
+  AttributePicklist:
+    fields:
+    - Code
+    - CurrencyIsoCode
+    - DataType
+    - Description
+    - Name
+    - Status
+  UnitOfMeasure:
+    fields:
+    - Name
+    - Type
+    - UnitCode
