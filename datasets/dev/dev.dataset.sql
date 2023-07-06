@@ -262,6 +262,20 @@ CREATE TABLE "AttributePicklist" (
 	PRIMARY KEY (id)
 );
 INSERT INTO "AttributePicklist" VALUES(1,'11','TestCurrency');
+CREATE TABLE "AssetAttribute" (
+	id INTEGER NOT NULL, 
+	"AttributeValue" VARCHAR(255), 
+	"ExternalId" VARCHAR(255), 
+	"AssetId" VARCHAR(255), 
+	"AttributeDefinitionId" VARCHAR(255), 
+	PRIMARY KEY (id)
+);
+INSERT INTO "AssetAttribute" VALUES(1,'5','0pJ6t0000000001EAA','1','2');
+INSERT INTO "AssetAttribute" VALUES(2,'False','0pJ6t0000000002EAA','1','6');
+INSERT INTO "AssetAttribute" VALUES(3,'3/4','0pJ6t0000000003EAA','1','1');
+INSERT INTO "AssetAttribute" VALUES(4,'6/13/2023, 5:26 AM','0pJ6t0000000006EAA','1','5');
+INSERT INTO "AssetAttribute" VALUES(5,'1234','0pJ6t0000000007EAA','1','4');
+INSERT INTO "AssetAttribute" VALUES(6,'BHEL','0pJ6t000000000BEAQ','1','9');
 CREATE TABLE "Contact" (
 	id INTEGER NOT NULL, 
 	"Birthdate" VARCHAR(255), 
