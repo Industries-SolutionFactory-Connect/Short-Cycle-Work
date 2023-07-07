@@ -256,6 +256,7 @@ extract:
   Asset:
     fields:
     - AccountId
+    - LocationId
     - vlocity_cmt__Action__c
     - vlocity_cmt__ActivationDate__c
     - vlocity_cmt__ActivationName__c
