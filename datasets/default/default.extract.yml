@@ -543,4 +543,5 @@ extract:
     - CurrencyIsoCode
   TimeSlot:
     fields:
+    - DayOfWeek
     - OperatingHoursId
