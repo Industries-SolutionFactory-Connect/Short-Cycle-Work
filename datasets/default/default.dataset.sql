@@ -517,12 +517,18 @@ CREATE TABLE "ServiceTerritory" (
 INSERT INTO "ServiceTerritory" VALUES(1,'London','United Kingdom','USD','','False','51.5132','-0.088053','','False','','','','0.0','City','True','51.51333','-0.08895','London','','London','','','1');
 CREATE TABLE "TimeSlot" (
 	id INTEGER NOT NULL, 
+	"DayOfWeek" VARCHAR(255),
 	"EndTime" VARCHAR(255), 
 	"StartTime" VARCHAR(255), 
 	"OperatingHoursId" VARCHAR(255), 
 	PRIMARY KEY (id)
 );
-INSERT INTO "TimeSlot" VALUES(1,'18:00:00.000Z','09:00:00.000Z','1');
+INSERT INTO "TimeSlot" VALUES(1,'Monday','18:00:00.000Z','09:00:00.000Z','1');
+INSERT INTO "TimeSlot" VALUES(2,'Tuesday','18:00:00.000Z','09:00:00.000Z','1');
+INSERT INTO "TimeSlot" VALUES(3,'Wednesday','18:00:00.000Z','09:00:00.000Z','1');
+INSERT INTO "TimeSlot" VALUES(4,'Thursday','18:00:00.000Z','09:00:00.000Z','1');
+INSERT INTO "TimeSlot" VALUES(5,'Friday','18:00:00.000Z','09:00:00.000Z','1');
+INSERT INTO "TimeSlot" VALUES(6,'Saturday','18:00:00.000Z','09:00:00.000Z','1');
 CREATE TABLE "WorkPlanSelectionRule" (
 	id INTEGER NOT NULL, 
 	"IsActive" VARCHAR(255), 
