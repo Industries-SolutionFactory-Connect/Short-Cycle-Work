@@ -415,6 +415,7 @@ Insert TimeSlot:
   sf_object: TimeSlot
   table: TimeSlot
   fields:
+  - DayOfWeek
   - EndTime
   - StartTime
   lookups:
