@@ -520,6 +520,7 @@ Insert Asset:
   - vlocity_cmt__ActivationDate__c
   - vlocity_cmt__ActivationName__c
   - Name
+  - LocationId
   - vlocity_cmt__AssetReferenceId__c
   - vlocity_cmt__AttributeMetadataChanges__c
   - vlocity_cmt__AttributeSelectedValues__c
