@@ -230,7 +230,7 @@ CREATE TABLE "Asset" (
 	"vlocity_cmt__UsageMeasurementId__c" VARCHAR(255), 
 	PRIMARY KEY (id)
 );
-INSERT INTO "Asset" VALUES(1,'','','','Regulator','8f05c576-0c48-eae7-d396-016d87a46270','','','','','','','','','','','','','','','SN4235246','','','False','','','','','','','','','','','','20.0','','','','','','USD','','2023-06-27','False','','','False','','1.0','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','Monthly','','','4','','','5','1','','2','','1','','');
+INSERT INTO "Asset" VALUES(1,'','','','Regulator','8f05c576-0c48-eae7-d396-016d87a46270','','','','','','','','','','','','Installed','','','SN4235246','','','False','','','','','','','','','','','','20.0','','','','','','USD','','2023-06-27','False','','','False','','1.0','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','Monthly','','','4','','','5','1','','2','','1','','');
 INSERT INTO "Asset" VALUES(2,'','','','Gas Meter','d652edd5-08fd-16b6-2506-620f86d29486','','','','','','','','','','','','Installed','','','SN3124134','','','False','','','','','','','','','','','','200.0','','','','','','USD','','2023-06-28','False','','','False','','1.0','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','Monthly','','','4','','','5','2','','2','','2','','');
 CREATE TABLE "AttributeDefinition" (
 	id INTEGER NOT NULL, 
@@ -515,6 +515,14 @@ CREATE TABLE "ServiceTerritory" (
 	PRIMARY KEY (id)
 );
 INSERT INTO "ServiceTerritory" VALUES(1,'London','United Kingdom','USD','','False','51.5132','-0.088053','','False','','','','0.0','City','True','51.51333','-0.08895','London','','London','','','1');
+CREATE TABLE "TimeSlot" (
+	id INTEGER NOT NULL, 
+	"EndTime" VARCHAR(255), 
+	"StartTime" VARCHAR(255), 
+	"OperatingHoursId" VARCHAR(255), 
+	PRIMARY KEY (id)
+);
+INSERT INTO "TimeSlot" VALUES(1,'18:00:00.000Z','09:00:00.000Z','1');
 CREATE TABLE "WorkPlanSelectionRule" (
 	id INTEGER NOT NULL, 
 	"IsActive" VARCHAR(255), 

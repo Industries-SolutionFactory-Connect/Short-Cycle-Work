@@ -425,6 +425,9 @@ extract:
     - vlocity_cmt__MainFeatureQuantityUom__c
     - vlocity_cmt__Modification__c
     - vlocity_cmt__StandardPremium__c
+  AssetAttribute:
+    fields:
+    - FIELDS(ALL)
   vlocity_cmt__ProductAttribXN__c:
     fields: []
   Contract:
@@ -538,6 +541,6 @@ extract:
     - FSL__Fix_Overlaps__c
     - FSL__Daily_Optimization__c
     - CurrencyIsoCode
- AssetAttribute:
+  TimeSlot:
     fields:
-    - FIELDS(ALL)   
+    - OperatingHoursId

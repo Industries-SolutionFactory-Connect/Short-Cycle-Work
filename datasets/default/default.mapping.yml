@@ -411,6 +411,16 @@ Insert ServiceTerritory:
     OperatingHoursId:
       table: OperatingHours
       key_field: OperatingHoursId
+Insert TimeSlot:
+  sf_object: TimeSlot
+  table: TimeSlot
+  fields:
+  - EndTime
+  - StartTime
+  lookups:
+    OperatingHoursId:
+      table: OperatingHours
+      key_field: OperatingHoursId
 Insert Contact:
   sf_object: Contact
   table: Contact
@@ -630,6 +640,19 @@ Insert Asset:
     ContactId:
       table: Contact
       key_field: ContactId
+Insert AssetAttribute:
+  sf_object: AssetAttribute
+  table: AssetAttribute
+  fields:
+  - AttributeValue
+  - ExternalId
+  lookups:
+    AssetId:
+      table: Asset
+      key_field: AssetId
+    AttributeDefinitionId:
+      table: AttributeDefinition
+      key_field: AttributeDefinitionId
 Insert WorkPlanSelectionRule:
   sf_object: WorkPlanSelectionRule
   table: WorkPlanSelectionRule
@@ -659,16 +682,3 @@ Insert WorkPlanSelectionRule:
     WorkTypeId:
       table: WorkType
       key_field: WorkTypeId
-Insert AssetAttribute:
-  sf_object: AssetAttribute
-  table: AssetAttribute
-  fields:
-  - AttributeValue
-  - ExternalId
-  lookups:
-    AssetId:
-      table: Asset
-      key_field: AssetId
-    AttributeDefinitionId:
-      table: AttributeDefinition
-      key_field: AttributeDefinitionId
