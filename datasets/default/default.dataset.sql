@@ -261,7 +261,7 @@ CREATE TABLE "AttributePicklist" (
 	"Name" VARCHAR(255), 
 	PRIMARY KEY (id)
 );
-INSERT INTO "AttributePicklist" VALUES(1,'11','TestCurrency');
+---INSERT INTO "AttributePicklist" VALUES(1,'11','TestCurrency');
 CREATE TABLE "AssetAttribute" (
 	id INTEGER NOT NULL, 
 	"AttributeValue" VARCHAR(255), 
