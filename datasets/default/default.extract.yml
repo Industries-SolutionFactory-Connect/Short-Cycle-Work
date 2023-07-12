@@ -17,7 +17,6 @@ extract:
     - Longitude
     - Name
     - OperatingHoursId
-    - CurrencyIsoCode
     - FSL__Hide_Emergency_Map__c
     - FSL__Internal_SLR_Geolocation__Latitude__s
     - FSL__Internal_SLR_Geolocation__Longitude__s
@@ -49,7 +48,6 @@ extract:
     - Description
     - Name
     - RelativeExecutionOrder
-    - CurrencyIsoCode
   WorkPlanTemplateEntry:
     fields:
     - ExecutionOrder
@@ -58,14 +56,9 @@ extract:
   WorkStepTemplate:
     fields:
     - ActionDefinition
-    - CurrencyIsoCode
     - Description
     - IsActive
     - Name
-    - custom_wst__c
-    - date_wst__c
-    - geo_wst__Latitude__s
-    - geo_wst__Longitude__s
   WorkPlanSelectionRule:
     fields:
     - WorkPlanTemplateId
@@ -101,7 +94,6 @@ extract:
     - RecordTypeId
     - vlocity_cmt__Status__c
     - IsSerialized
-    - CurrencyIsoCode
     - NumberOfQuantityInstallments
     - NumberOfRevenueInstallments
     - QuantityInstallmentPeriod
@@ -229,7 +221,6 @@ extract:
     - vlocity_cmt__StreetAddress__c
     - vlocity_cmt__SupplyGuaranteeReason__c
     - vlocity_cmt__TrendArea__c
-    - CurrencyIsoCode
   vlocity_cmt__ServicePoint__c:
     fields:
     - vlocity_cmt__ActivationDate__c
