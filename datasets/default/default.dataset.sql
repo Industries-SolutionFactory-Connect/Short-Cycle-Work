@@ -222,7 +222,6 @@ CREATE TABLE "Product2" (
 	"RecordTypeId" VARCHAR(255), 
 	"vlocity_cmt__Status__c" VARCHAR(255), 
 	"IsSerialized" VARCHAR(255), 
-	"CurrencyIsoCode" VARCHAR(255), 
 	"NumberOfQuantityInstallments" VARCHAR(255), 
 	"NumberOfRevenueInstallments" VARCHAR(255), 
 	"QuantityInstallmentPeriod" VARCHAR(255), 
@@ -273,8 +272,8 @@ CREATE TABLE "Product2" (
 	"vlocity_cmt__ApprovedBy__c" VARCHAR(255), 
 	PRIMARY KEY (id)
 );
-INSERT INTO "Product2" VALUES(1,'True','','PD_REGULATOR','','','Regulator','','','False','USD','','','','','','','','','','','','','','','','','363a19f4-a9a3-2be4-1d00-d85658170799','6e0ac4c2-9e53-250e-64da-e26fcb08360d','','','','False','False','False','False','True','','Seconds','','Draft','','','','','Order Item','','','','','','None','','False','None','','','','');
-INSERT INTO "Product2" VALUES(2,'True','','PD_GAS_METER','','','Gas Meter','','','False','USD','','','','','','','','','','','','','','','','','fdd8e4c7-5d2f-da8d-0d38-ac8f508631b0','f4c74198-e103-8d3a-6f89-6b1e17a35d9c','','','','False','False','False','False','True','','Seconds','','Draft','','','','','Order Item','','','','','','None','','False','None','','','','');
+INSERT INTO "Product2" VALUES(1,'True','','PD_REGULATOR','','','Regulator','','','False','','','','','','','','','','','','','','','','','363a19f4-a9a3-2be4-1d00-d85658170799','6e0ac4c2-9e53-250e-64da-e26fcb08360d','','','','False','False','False','False','True','','Seconds','','Draft','','','','','Order Item','','','','','','None','','False','None','','','','');
+INSERT INTO "Product2" VALUES(2,'True','','PD_GAS_METER','','','Gas Meter','','','False','','','','','','','','','','','','','','','','','fdd8e4c7-5d2f-da8d-0d38-ac8f508631b0','f4c74198-e103-8d3a-6f89-6b1e17a35d9c','','','','False','False','False','False','True','','Seconds','','Draft','','','','','Order Item','','','','','','None','','False','None','','','','');
 CREATE TABLE "Product2_rt_mapping" (
 	record_type_id VARCHAR(18) NOT NULL, 
 	developer_name VARCHAR(255), 
@@ -295,7 +294,6 @@ CREATE TABLE "ServiceTerritory" (
 	"Latitude" VARCHAR(255), 
 	"Longitude" VARCHAR(255), 
 	"Name" VARCHAR(255), 
-	"CurrencyIsoCode" VARCHAR(255), 
 	"FSL__Hide_Emergency_Map__c" VARCHAR(255), 
 	"FSL__Internal_SLR_Geolocation__Latitude__s" VARCHAR(255), 
 	"FSL__Internal_SLR_Geolocation__Longitude__s" VARCHAR(255), 
@@ -307,7 +305,7 @@ CREATE TABLE "ServiceTerritory" (
 	"OperatingHoursId" VARCHAR(255), 
 	PRIMARY KEY (id)
 );
-INSERT INTO "ServiceTerritory" VALUES(1,'True','','London','United Kingdom','','City','51.51333','-0.08895','London','USD','False','51.5132','-0.088053','','False','','London','','1');
+INSERT INTO "ServiceTerritory" VALUES(1,'True','','London','United Kingdom','','City','51.51333','-0.08895','London','False','51.5132','-0.088053','','False','','London','','1');
 CREATE TABLE "WorkPlanSelectionRule" (
 	id INTEGER NOT NULL, 
 	"WorkPlanTemplateId" VARCHAR(255), 
@@ -334,22 +332,21 @@ CREATE TABLE "WorkPlanTemplate" (
 	"IsActive" VARCHAR(255), 
 	"Description" VARCHAR(255), 
 	"Name" VARCHAR(255), 
-	"RelativeExecutionOrder" VARCHAR(255), 
-	"CurrencyIsoCode" VARCHAR(255), 
+	"RelativeExecutionOrder" VARCHAR(255)
 	PRIMARY KEY (id)
 );
-INSERT INTO "WorkPlanTemplate" VALUES(1,'True','Wrap up tasks to be performed after completion of service.','Wrap Up','6','USD');
-INSERT INTO "WorkPlanTemplate" VALUES(2,'True','Perform final health and safety checks after replacing the Meter.','Final Health And Safety Checks','5','USD');
-INSERT INTO "WorkPlanTemplate" VALUES(3,'True','Post the Gas Meter Replacement process, capture new Meter and Regulator details.','Meter And Regulator Details','4','USD');
-INSERT INTO "WorkPlanTemplate" VALUES(4,'True','Before starting the work, verify whether you are at the right Meter.','Verify you are at the Right Meter','2','USD');
-INSERT INTO "WorkPlanTemplate" VALUES(5,'True','Safety instructions to be performed before reaching customer''s location.','Safety Checks','1','USD');
-INSERT INTO "WorkPlanTemplate" VALUES(6,'True','Health and Safety checks to be performed before replacing the actual Meter.','Health and Safety Checks','3','USD');
-INSERT INTO "WorkPlanTemplate" VALUES(7,'True','Gas Meter Turn Off process Instructions.','Turn Off Gas Service','3','USD');
-INSERT INTO "WorkPlanTemplate" VALUES(8,'True','Gas Meter Turn On process Instructions.','Turn On Gas Service','3','USD');
-INSERT INTO "WorkPlanTemplate" VALUES(9,'True','Health and Safety checks to be performed after turning On the Meter.','Health and Safety Checks Turn On Process','4','USD');
-INSERT INTO "WorkPlanTemplate" VALUES(10,'True','Wrap up tasks to be performed after completion of service.','Wrap Up Turn Off Process','5','USD');
-INSERT INTO "WorkPlanTemplate" VALUES(11,'True','Health and Safety checks to be performed after turning Off the Meter.','Health and Safety Checks Turn Off Process','4','USD');
-INSERT INTO "WorkPlanTemplate" VALUES(12,'True','Wrap up tasks to be performed after completion of service.','Wrap Up Turn On Process','5','USD');
+INSERT INTO "WorkPlanTemplate" VALUES(1,'True','Wrap up tasks to be performed after completion of service.','Wrap Up','6');
+INSERT INTO "WorkPlanTemplate" VALUES(2,'True','Perform final health and safety checks after replacing the Meter.','Final Health And Safety Checks','5');
+INSERT INTO "WorkPlanTemplate" VALUES(3,'True','Post the Gas Meter Replacement process, capture new Meter and Regulator details.','Meter And Regulator Details','4');
+INSERT INTO "WorkPlanTemplate" VALUES(4,'True','Before starting the work, verify whether you are at the right Meter.','Verify you are at the Right Meter','2');
+INSERT INTO "WorkPlanTemplate" VALUES(5,'True','Safety instructions to be performed before reaching customer''s location.','Safety Checks','1');
+INSERT INTO "WorkPlanTemplate" VALUES(6,'True','Health and Safety checks to be performed before replacing the actual Meter.','Health and Safety Checks','3');
+INSERT INTO "WorkPlanTemplate" VALUES(7,'True','Gas Meter Turn Off process Instructions.','Turn Off Gas Service','3');
+INSERT INTO "WorkPlanTemplate" VALUES(8,'True','Gas Meter Turn On process Instructions.','Turn On Gas Service','3');
+INSERT INTO "WorkPlanTemplate" VALUES(9,'True','Health and Safety checks to be performed after turning On the Meter.','Health and Safety Checks Turn On Process','4');
+INSERT INTO "WorkPlanTemplate" VALUES(10,'True','Wrap up tasks to be performed after completion of service.','Wrap Up Turn Off Process','5');
+INSERT INTO "WorkPlanTemplate" VALUES(11,'True','Health and Safety checks to be performed after turning Off the Meter.','Health and Safety Checks Turn Off Process','4');
+INSERT INTO "WorkPlanTemplate" VALUES(12,'True','Wrap up tasks to be performed after completion of service.','Wrap Up Turn On Process','5');
 CREATE TABLE "WorkPlanTemplateEntry" (
 	id INTEGER NOT NULL, 
 	"ExecutionOrder" VARCHAR(255), 
@@ -376,28 +373,23 @@ INSERT INTO "WorkPlanTemplateEntry" VALUES(16,'2','1','1');
 CREATE TABLE "WorkStepTemplate" (
 	id INTEGER NOT NULL, 
 	"ActionDefinition" VARCHAR(255), 
-	"CurrencyIsoCode" VARCHAR(255), 
 	"Description" VARCHAR(255), 
 	"IsActive" VARCHAR(255), 
-	"Name" VARCHAR(255), 
-	custom_wst__c VARCHAR(255), 
-	date_wst__c VARCHAR(255), 
-	"geo_wst__Latitude__s" VARCHAR(255), 
-	"geo_wst__Longitude__s" VARCHAR(255), 
+	"Name" VARCHAR(255)
 	PRIMARY KEY (id)
 );
-INSERT INTO "WorkStepTemplate" VALUES(1,'','USD','Post completion of the service, leave note on door or text customer that the job is done.','True','Leave note on door or Text customer jobs done','','','','');
-INSERT INTO "WorkStepTemplate" VALUES(2,'','USD','Post completion of the service, clean the area.','True','Clean Area','','','','');
-INSERT INTO "WorkStepTemplate" VALUES(3,'Update_Meter_Reading','USD','Capture Meter Read and Date Time for the Meter to be replaced.','True','Enter Old Meter Read and Date Time','','','','');
-INSERT INTO "WorkStepTemplate" VALUES(4,'Safety_Checks','USD','Safety instructions to be performed before reaching customer''s location','True','Safety Checks','','','','');
-INSERT INTO "WorkStepTemplate" VALUES(5,'Final_Health_And_Safety_Checks','USD','Perform final health and safety checks after replacing the Meter.','True','Final Health And Safety Checks','','','','');
-INSERT INTO "WorkStepTemplate" VALUES(6,'Verify_Meter_Details','USD','Before starting the work, verify whether you are at the right Meter.','True','Check Meter Details','','','','');
-INSERT INTO "WorkStepTemplate" VALUES(7,'Health_And_Safety_Checks','USD','Health and Safety checks to be performed before replacing the actual Meter.','True','Health and Safety Checks','','','','');
-INSERT INTO "WorkStepTemplate" VALUES(8,'Add_Meter_and_Regulator_Details','USD','Post the Gas Meter Replacement process, capture new Meter and Regulator details.','True','Enter Meter And Regulator Details','','','','');
-INSERT INTO "WorkStepTemplate" VALUES(9,'Health_and_Safety_Check_Turn_On_Meter','USD','Health and Safety checks to be performed after turning On the Meter.','True','Health and Safety Check Turn On Process','','','','');
-INSERT INTO "WorkStepTemplate" VALUES(10,'Health_and_Safety_Check_Turn_Off_Meter','USD','Health and Safety checks to be performed after turning Off the Meter.','True','Health and Safety Check Turn Off Process','','','','');
-INSERT INTO "WorkStepTemplate" VALUES(11,'Turn_On_Gas_Meter','USD','Gas Meter Turn On process Instructions.','True','Turn On Gas Meter','','','','');
-INSERT INTO "WorkStepTemplate" VALUES(12,'Turn_Off_Gas_Meter','USD','Gas Meter Turn Off process Instructions.','True','Turn Off Gas Meter','','','','');
+INSERT INTO "WorkStepTemplate" VALUES(1,'','Post completion of the service, leave note on door or text customer that the job is done.','True','Leave note on door or Text customer jobs done');
+INSERT INTO "WorkStepTemplate" VALUES(2,'''Post completion of the service, clean the area.','True','Clean Area');
+INSERT INTO "WorkStepTemplate" VALUES(3,'Update_Meter_Reading','Capture Meter Read and Date Time for the Meter to be replaced.','True','Enter Old Meter Read and Date Time');
+INSERT INTO "WorkStepTemplate" VALUES(4,'Safety_Checks','Safety instructions to be performed before reaching customer''s location','True','Safety Checks');
+INSERT INTO "WorkStepTemplate" VALUES(5,'Final_Health_And_Safety_Checks','Perform final health and safety checks after replacing the Meter.','True','Final Health And Safety Checks');
+INSERT INTO "WorkStepTemplate" VALUES(6,'Verify_Meter_Details','Before starting the work, verify whether you are at the right Meter.','True','Check Meter Details');
+INSERT INTO "WorkStepTemplate" VALUES(7,'Health_And_Safety_Checks','Health and Safety checks to be performed before replacing the actual Meter.','True','Health and Safety Checks');
+INSERT INTO "WorkStepTemplate" VALUES(8,'Add_Meter_and_Regulator_Details','Post the Gas Meter Replacement process, capture new Meter and Regulator details.','True','Enter Meter And Regulator Details');
+INSERT INTO "WorkStepTemplate" VALUES(9,'Health_and_Safety_Check_Turn_On_Meter','Health and Safety checks to be performed after turning On the Meter.','True','Health and Safety Check Turn On Process');
+INSERT INTO "WorkStepTemplate" VALUES(10,'Health_and_Safety_Check_Turn_Off_Meter','Health and Safety checks to be performed after turning Off the Meter.','True','Health and Safety Check Turn Off Process');
+INSERT INTO "WorkStepTemplate" VALUES(11,'Turn_On_Gas_Meter','Gas Meter Turn On process Instructions.','True','Turn On Gas Meter');
+INSERT INTO "WorkStepTemplate" VALUES(12,'Turn_Off_Gas_Meter','Gas Meter Turn Off process Instructions.','True','Turn Off Gas Meter');
 CREATE TABLE "WorkType" (
 	id INTEGER NOT NULL, 
 	"ShouldAutoCreateSvcAppt" VARCHAR(255), 
@@ -454,12 +446,11 @@ CREATE TABLE "vlocity_cmt__Premises__c" (
 	"vlocity_cmt__StreetAddress__c" VARCHAR(255), 
 	"vlocity_cmt__SupplyGuaranteeReason__c" VARCHAR(255), 
 	"vlocity_cmt__TrendArea__c" VARCHAR(255), 
-	"CurrencyIsoCode" VARCHAR(255), 
 	"vlocity_cmt__ParentPremisesId__c" VARCHAR(255), 
 	PRIMARY KEY (id)
 );
-INSERT INTO "vlocity_cmt__Premises__c" VALUES(1,'','Edinburgh','United Kingdom','','','','','','','','','','','','False','','','77 Whitehill Rd, Fort Kinnaird, Edinburgh, Scotland, EH15 3HR, United Kingdom','','False','','','','','False','EH15 3HR','','66666','','Scotland','Connected','77 Whitehill Rd, Fort Kinnaird','','','USD','');
-INSERT INTO "vlocity_cmt__Premises__c" VALUES(2,'','Coventry','United Kingdom','','','','','','','','','','','','False','','','Abbey Road, Whitley, Coventry, Warwickshire CV3 4LF, United Kingdom','','False','','','','','False','CV3 4LF','','99999','','Warwickshire','Vacant','Abbey Road, Whitley','','','USD','');
+INSERT INTO "vlocity_cmt__Premises__c" VALUES(1,'','Edinburgh','United Kingdom','','','','','','','','','','','','False','','','77 Whitehill Rd, Fort Kinnaird, Edinburgh, Scotland, EH15 3HR, United Kingdom','','False','','','','','False','EH15 3HR','','66666','','Scotland','Connected','77 Whitehill Rd, Fort Kinnaird','','','');
+INSERT INTO "vlocity_cmt__Premises__c" VALUES(2,'','Coventry','United Kingdom','','','','','','','','','','','','False','','','Abbey Road, Whitley, Coventry, Warwickshire CV3 4LF, United Kingdom','','False','','','','','False','CV3 4LF','','99999','','Warwickshire','Vacant','Abbey Road, Whitley','','','');
 CREATE TABLE "vlocity_cmt__ServicePoint__c" (
 	id INTEGER NOT NULL, 
 	"vlocity_cmt__ActivationDate__c" VARCHAR(255), 
