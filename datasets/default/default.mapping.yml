@@ -36,7 +36,6 @@ Insert vlocity_cmt__Premises__c:
   - Name
   - vlocity_cmt__NumberOfOccupants__c
   - vlocity_cmt__IsOkToEnter__c
-  - CurrencyIsoCode
   - vlocity_cmt__Address1__c
   - vlocity_cmt__Address2__c
   - vlocity_cmt__IsSupplyGuaranteed__c
@@ -66,7 +65,6 @@ Insert Product2:
   sf_object: Product2
   table: Product2
   fields:
-  - CurrencyIsoCode
   - Description
   - DisplayUrl
   - Family
@@ -121,14 +119,8 @@ Insert Product2:
   - vlocity_cmt__VersionEndDateTime__c
   - vlocity_cmt__VersionLabel__c
   - vlocity_cmt__VersionStartDateTime__c
-  - CanUseQuantitySchedule
-  - CanUseRevenueSchedule
-  - TransferRecordMode
-  - vlocity_cmt__ApprovedOn__c
   - vlocity_cmt__ChangeDetectorImplementation__c
   - vlocity_cmt__MainFeatureQuantityUom__c
-  - vlocity_cmt__Modification__c
-  - vlocity_cmt__StandardPremium__c
   - RecordTypeId
 Insert vlocity_cmt__ProductAttribXN__c:
   sf_object: vlocity_cmt__ProductAttribXN__c
@@ -149,12 +141,10 @@ Insert Location:
   - Longitude
   - IsMobile
   - OpenDate
-  - CurrencyIsoCode
   - PossessionDate
   - RemodelEndDate
   - RemodelStartDate
   - TimeZone
-  - ShouldSyncWithOci
 Insert WorkType:
   sf_object: WorkType
   table: WorkType
@@ -181,12 +171,9 @@ Insert WorkPlanTemplate:
   table: WorkPlanTemplate
   fields:
   - IsActive
-  - CurrencyIsoCode
   - Description
   - Name
   - RelativeExecutionOrder
-  - Custom1__c
-  - encrypted__c
 Insert FSL__Scheduling_Policy__c:
   sf_object: FSL__Scheduling_Policy__c
   table: FSL__Scheduling_Policy__c
@@ -196,12 +183,10 @@ Insert FSL__Scheduling_Policy__c:
   - FSL__Travel_Mode__c
   - FSL__Fix_Overlaps__c
   - FSL__Daily_Optimization__c
-  - CurrencyIsoCode
 Insert AttributePicklist:
   sf_object: AttributePicklist
   table: AttributePicklist
   fields:
-  - Code
   - Name
 Insert vlocity_cmt__Subscription__c:
   sf_object: vlocity_cmt__Subscription__c
@@ -212,7 +197,6 @@ Insert Account:
   sf_object: Account
   table: Account
   fields:
-  - CurrencyIsoCode
   - Description
   - Fax
   - Name
@@ -231,7 +215,6 @@ Insert Account:
   - BillingState
   - BillingStreet
   - BillingPostalCode
-  - CleanStatus
   - NumberOfEmployees
   - Industry
   - Ownership
@@ -244,22 +227,10 @@ Insert Account:
   - ShippingStreet
   - ShippingPostalCode
   - Website
-  - Active__c
-  - CustomerPriority__c
-  - DunsNumber
   - Jigsaw
-  - NaicsCode
-  - NaicsDesc
-  - NumberofLocations__c
-  - SLAExpirationDate__c
-  - SLASerialNumber__c
-  - SLA__c
   - Sic
   - SicDesc
   - TickerSymbol
-  - Tradestyle
-  - UpsellOpportunity__c
-  - YearStarted
   - vlocity_cmt__AccountPaymentType__c
   - vlocity_cmt__Active__c
   - vlocity_cmt__AutoPaymentAmount__c
@@ -280,7 +251,6 @@ Insert Account:
   - vlocity_cmt__CustomerOfBrand__c
   - vlocity_cmt__CustomerPriority__c
   - vlocity_cmt__CustomerSinceDate__c
-  - vlocity_cmt__CustomerValue__c
   - vlocity_cmt__DateFounded__c
   - vlocity_cmt__DirectoryListed__c
   - vlocity_cmt__Disclosure1__c
@@ -293,7 +263,6 @@ Insert Account:
   - vlocity_cmt__IsRootResolved__c
   - vlocity_cmt__Juridsiction1__c
   - vlocity_cmt__Jurisdiction2__c
-  - vlocity_cmt__LegalForm__c
   - vlocity_cmt__NetWorth__c
   - vlocity_cmt__NumberofLocations__c
   - vlocity_cmt__PreferredLanguage__c
@@ -342,7 +311,6 @@ Insert vlocity_cmt__ServicePoint__c:
   - vlocity_cmt__TemperatureArea__c
   - vlocity_cmt__UtilityProvider__c
   - vlocity_cmt__VoltageLevel__c
-  - CurrencyIsoCode
   - vlocity_cmt__FieldServiceClass__c
   lookups:
     vlocity_cmt__MeterId__c:
@@ -355,14 +323,12 @@ Insert AttributeDefinition:
   sf_object: AttributeDefinition
   table: AttributeDefinition
   fields:
-  - IsActive
   - DeveloperName
   - DefaultValue
   - DataType
   - Description
   - Label
   - Name
-  - IsRequired
   - SourceSystemIdentifier
   lookups:
     PicklistId:
@@ -372,7 +338,6 @@ Insert WorkPlanTemplateEntry:
   sf_object: WorkPlanTemplateEntry
   table: WorkPlanTemplateEntry
   fields:
-  - CurrencyIsoCode
   - ExecutionOrder
   lookups:
     WorkPlanTemplateId:
@@ -415,6 +380,7 @@ Insert TimeSlot:
   sf_object: TimeSlot
   table: TimeSlot
   fields:
+  - DayOfWeek
   - EndTime
   - StartTime
   lookups:
@@ -640,6 +606,9 @@ Insert Asset:
     ContactId:
       table: Contact
       key_field: ContactId
+    LocationId:
+      table: Location
+      key_field: LocationId      
 Insert AssetAttribute:
   sf_object: AssetAttribute
   table: AssetAttribute
