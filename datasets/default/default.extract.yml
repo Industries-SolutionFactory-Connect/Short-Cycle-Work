@@ -330,3 +330,7 @@ extract:
 AssetAttribute:
   fields:
   - FIELDS(ALL)
+TimeSlot:
+  fields:
+  - DayOfWeek
+  - OperatingHoursId
