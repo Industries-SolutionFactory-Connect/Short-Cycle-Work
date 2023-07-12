@@ -332,7 +332,7 @@ CREATE TABLE "WorkPlanTemplate" (
 	"IsActive" VARCHAR(255), 
 	"Description" VARCHAR(255), 
 	"Name" VARCHAR(255), 
-	"RelativeExecutionOrder" VARCHAR(255)
+	"RelativeExecutionOrder" VARCHAR(255),
 	PRIMARY KEY (id)
 );
 INSERT INTO "WorkPlanTemplate" VALUES(1,'True','Wrap up tasks to be performed after completion of service.','Wrap Up','6');
