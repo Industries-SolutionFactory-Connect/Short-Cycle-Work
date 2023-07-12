@@ -379,7 +379,7 @@ CREATE TABLE "WorkStepTemplate" (
 	PRIMARY KEY (id)
 );
 INSERT INTO "WorkStepTemplate" VALUES(1,'','Post completion of the service, leave note on door or text customer that the job is done.','True','Leave note on door or Text customer jobs done');
-INSERT INTO "WorkStepTemplate" VALUES(2,'''Post completion of the service, clean the area.','True','Clean Area');
+INSERT INTO "WorkStepTemplate" VALUES(2,'','Post completion of the service, clean the area.','True','Clean Area');
 INSERT INTO "WorkStepTemplate" VALUES(3,'Update_Meter_Reading','Capture Meter Read and Date Time for the Meter to be replaced.','True','Enter Old Meter Read and Date Time');
 INSERT INTO "WorkStepTemplate" VALUES(4,'Safety_Checks','Safety instructions to be performed before reaching customer''s location','True','Safety Checks');
 INSERT INTO "WorkStepTemplate" VALUES(5,'Final_Health_And_Safety_Checks','Perform final health and safety checks after replacing the Meter.','True','Final Health And Safety Checks');
