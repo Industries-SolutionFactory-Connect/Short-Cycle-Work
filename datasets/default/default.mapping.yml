@@ -41,20 +41,14 @@ Insert WorkPlanTemplate:
   - Description
   - Name
   - RelativeExecutionOrder
-  - CurrencyIsoCode
 Insert WorkStepTemplate:
   sf_object: WorkStepTemplate
   table: WorkStepTemplate
   fields:
   - ActionDefinition
-  - CurrencyIsoCode
   - Description
   - IsActive
   - Name
-  - custom_wst__c
-  - date_wst__c
-  - geo_wst__Latitude__s
-  - geo_wst__Longitude__s
 Insert Location:
   sf_object: Location
   table: Location
@@ -119,7 +113,6 @@ Insert vlocity_cmt__Premises__c:
   - vlocity_cmt__StreetAddress__c
   - vlocity_cmt__SupplyGuaranteeReason__c
   - vlocity_cmt__TrendArea__c
-  - CurrencyIsoCode
   lookups:
     vlocity_cmt__ParentPremisesId__c:
       table: vlocity_cmt__Premises__c
@@ -153,7 +146,6 @@ Insert ServiceTerritory:
   - Latitude
   - Longitude
   - Name
-  - CurrencyIsoCode
   - FSL__Hide_Emergency_Map__c
   - FSL__Internal_SLR_Geolocation__Latitude__s
   - FSL__Internal_SLR_Geolocation__Longitude__s
@@ -318,7 +310,6 @@ Insert Product2:
   - Name
   - vlocity_cmt__Status__c
   - IsSerialized
-  - CurrencyIsoCode
   - NumberOfQuantityInstallments
   - NumberOfRevenueInstallments
   - QuantityInstallmentPeriod
