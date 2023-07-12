@@ -75,8 +75,8 @@ CREATE TABLE "Asset" (
 	"vlocity_cmt__PremisesId__c" VARCHAR(255), 
 	PRIMARY KEY (id)
 );
-INSERT INTO "Asset" VALUES(1,'Regulator','','','','2023-06-27','','','','20.0','','1.0','SN4235246','','','','','','','','','','','','','False','','4','5','','1','2');
-INSERT INTO "Asset" VALUES(2,'Gas Meter','','','','2023-06-28','','','','200.0','','1.0','SN3124134','','Installed','','','','','','','','','','','False','','4','5','1','2','2');
+INSERT INTO "Asset" VALUES(1,'Gas Meter','','','','2023-06-28','','','','200.0','','1.0','SN3124134','','Installed','','','','','','','','','','','False','','4','5','1','2','2');
+INSERT INTO "Asset" VALUES(2,'Regulator','','','','2023-06-27','','','','20.0','','1.0','SN4235246','','Installed','','','','','','','','','','','False','','4','5','','1','2');
 CREATE TABLE "AttributeDefinition" (
 	id INTEGER NOT NULL, 
 	"IsActive" VARCHAR(255), 
@@ -306,6 +306,20 @@ CREATE TABLE "ServiceTerritory" (
 	PRIMARY KEY (id)
 );
 INSERT INTO "ServiceTerritory" VALUES(1,'True','','London','United Kingdom','','City','51.51333','-0.08895','London','False','51.5132','-0.088053','','False','','London','','1');
+CREATE TABLE "TimeSlot" (
+	id INTEGER NOT NULL, 
+	"DayOfWeek" VARCHAR(255),
+	"EndTime" VARCHAR(255), 
+	"StartTime" VARCHAR(255), 
+	"OperatingHoursId" VARCHAR(255), 
+	PRIMARY KEY (id)
+);
+INSERT INTO "TimeSlot" VALUES(1,'Monday','18:00:00.000Z','09:00:00.000Z','1');
+INSERT INTO "TimeSlot" VALUES(2,'Tuesday','18:00:00.000Z','09:00:00.000Z','1');
+INSERT INTO "TimeSlot" VALUES(3,'Wednesday','18:00:00.000Z','09:00:00.000Z','1');
+INSERT INTO "TimeSlot" VALUES(4,'Thursday','18:00:00.000Z','09:00:00.000Z','1');
+INSERT INTO "TimeSlot" VALUES(5,'Friday','18:00:00.000Z','09:00:00.000Z','1');
+INSERT INTO "TimeSlot" VALUES(6,'Saturday','18:00:00.000Z','09:00:00.000Z','1');
 CREATE TABLE "WorkPlanSelectionRule" (
 	id INTEGER NOT NULL, 
 	"WorkPlanTemplateId" VARCHAR(255), 
