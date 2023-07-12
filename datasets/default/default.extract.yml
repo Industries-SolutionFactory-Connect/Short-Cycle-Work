@@ -1,7 +1,6 @@
 extract:
   Account:
     fields:
-    - CurrencyIsoCode
     - Description
     - Fax
     - Name
@@ -35,22 +34,11 @@ extract:
     - ShippingStreet
     - ShippingPostalCode
     - Website
-    - Active__c
-    - CustomerPriority__c
-    - DunsNumber
     - Jigsaw
-    - NaicsCode
     - NaicsDesc
-    - NumberofLocations__c
-    - SLAExpirationDate__c
-    - SLASerialNumber__c
-    - SLA__c
     - Sic
     - SicDesc
     - TickerSymbol
-    - Tradestyle
-    - UpsellOpportunity__c
-    - YearStarted
     - vlocity_cmt__AccountPaymentType__c
     - vlocity_cmt__Active__c
     - vlocity_cmt__AutoPaymentAmount__c
@@ -112,7 +100,6 @@ extract:
     - Birthdate
     - Fax
     - Phone
-    - CleanStatus
     - Department
     - Email
     - DoNotCall
@@ -146,13 +133,9 @@ extract:
     - HasOptedOutOfEmail
     - AssistantName
     - AssistantPhone
-    - CurrencyIsoCode
     - EmailBouncedDate
     - EmailBouncedReason
     - Jigsaw
-    - Languages__c
-    - Level__c
-    - SFS_External_ID__c
     - Salutation
     - vlocity_cmt__AnnualIncome__c
     - vlocity_cmt__Authorized__c
@@ -206,7 +189,6 @@ extract:
     - Name
     - vlocity_cmt__NumberOfOccupants__c
     - vlocity_cmt__IsOkToEnter__c
-    - CurrencyIsoCode
     - vlocity_cmt__ParentPremisesId__c
     - vlocity_cmt__Address1__c
     - vlocity_cmt__Address2__c
@@ -249,7 +231,6 @@ extract:
     - vlocity_cmt__TemperatureArea__c
     - vlocity_cmt__UtilityProvider__c
     - vlocity_cmt__VoltageLevel__c
-    - CurrencyIsoCode
     - vlocity_cmt__FieldServiceClass__c
   vlocity_cmt__InventoryItem__c:
     fields: []
@@ -261,10 +242,8 @@ extract:
     - vlocity_cmt__ActivationDate__c
     - vlocity_cmt__ActivationName__c
     - Name
-    - AssetProvidedById
     - vlocity_cmt__AssetReferenceId__c
     - vlocity_cmt__AttributeMetadataChanges__c
-    - AssetServicedById
     - vlocity_cmt__AttributeSelectedValues__c
     - vlocity_cmt__BillingAccountId__c
     - vlocity_cmt__BillingHold__c
@@ -293,7 +272,6 @@ extract:
     - vlocity_cmt__PremisesId__c
     - vlocity_cmt__ProvisioningStatus__c
     - vlocity_cmt__DeregulationStatus__c
-    - Capacity__c
     - City
     - vlocity_cmt__ConnectDate__c
     - ContactId
@@ -304,16 +282,10 @@ extract:
     - Price
     - vlocity_cmt__ItemName__c
     - PurchaseDate
-    - Mileage__c
-    - MileageTracking__c
-    - Performance__c
-    - CurrencyIsoCode
     - GeocodeAccuracy
     - InstallDate
-    - IsInternal
     - Latitude
     - Longitude
-    - NeedMaintenance__c
     - PostalCode
     - Quantity
     - vlocity_cmt__BaseOneTimeTotal__c
@@ -362,9 +334,7 @@ extract:
     fields: []
   Product2:
     fields:
-    - CurrencyIsoCode
     - Description
-    - DisplayUrl
     - Family
     - IsActive
     - IsSerialized
@@ -372,10 +342,8 @@ extract:
     - ProductCode
     - QuantityInstallmentPeriod
     - QuantityScheduleType
-    - QuantityUnitOfMeasure
     - RevenueInstallmentPeriod
     - RevenueScheduleType
-    - StockKeepingUnit
     - vlocity_cmt__EffectiveDate__c
     - vlocity_cmt__EndDate__c
     - vlocity_cmt__EndOfLifeDate__c
@@ -383,7 +351,6 @@ extract:
     - vlocity_cmt__IsOrderable__c
     - RecordTypeId
     - vlocity_cmt__Type__c
-    - ExternalId
     - NumberOfQuantityInstallments
     - NumberOfRevenueInstallments
     - vlocity_cmt__AttributeDefaultValues__c
@@ -418,9 +385,6 @@ extract:
     - vlocity_cmt__VersionEndDateTime__c
     - vlocity_cmt__VersionLabel__c
     - vlocity_cmt__VersionStartDateTime__c
-    - CanUseQuantitySchedule
-    - CanUseRevenueSchedule
-    - TransferRecordMode
     - vlocity_cmt__ApprovedOn__c
     - vlocity_cmt__ChangeDetectorImplementation__c
     - vlocity_cmt__MainFeatureQuantityUom__c
@@ -459,12 +423,10 @@ extract:
     - Longitude
     - IsMobile
     - OpenDate
-    - CurrencyIsoCode
     - PossessionDate
     - RemodelEndDate
     - RemodelStartDate
     - TimeZone
-    - ShouldSyncWithOci
   WorkType:
     fields:
     - ShouldAutoCreateSvcAppt
@@ -486,12 +448,9 @@ extract:
   WorkPlanTemplate:
     fields:
     - IsActive
-    - CurrencyIsoCode
     - Description
     - Name
     - RelativeExecutionOrder
-    - Custom1__c
-    - encrypted__c
   WorkPlanTemplateEntry:
     fields:
     - CurrencyIsoCode
@@ -503,7 +462,6 @@ extract:
     - AccountId
     - IsActive
     - AssetId
-    - CurrencyIsoCode
     - Description
     - Product2Id
     - LocationId
@@ -514,7 +472,6 @@ extract:
     fields:
     - City
     - Country
-    - CurrencyIsoCode
     - Description
     - FSL__Hide_Emergency_Map__c
     - FSL__Internal_SLR_Geolocation__Latitude__s
@@ -541,7 +498,6 @@ extract:
     - FSL__Travel_Mode__c
     - FSL__Fix_Overlaps__c
     - FSL__Daily_Optimization__c
-    - CurrencyIsoCode
   TimeSlot:
     fields:
     - DayOfWeek
