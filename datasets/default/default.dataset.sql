@@ -154,7 +154,6 @@ CREATE TABLE "Asset" (
 	"vlocity_cmt__ProductHierarchyPath__c" VARCHAR(255), 
 	"vlocity_cmt__ProvisioningStatus__c" VARCHAR(255), 
 	"vlocity_cmt__DeregulationStatus__c" VARCHAR(255), 
-	"Capacity__c" VARCHAR(255), 
 	"City" VARCHAR(255), 
 	"vlocity_cmt__ConnectDate__c" VARCHAR(255), 
 	"Country" VARCHAR(255), 
@@ -164,16 +163,10 @@ CREATE TABLE "Asset" (
 	"Price" VARCHAR(255), 
 	"vlocity_cmt__ItemName__c" VARCHAR(255), 
 	"PurchaseDate" VARCHAR(255), 
-	"Mileage__c" VARCHAR(255), 
-	"MileageTracking__c" VARCHAR(255), 
-	"Performance__c" VARCHAR(255), 
-	"CurrencyIsoCode" VARCHAR(255), 
 	"GeocodeAccuracy" VARCHAR(255), 
 	"InstallDate" VARCHAR(255), 
-	"IsInternal" VARCHAR(255), 
 	"Latitude" VARCHAR(255), 
 	"Longitude" VARCHAR(255), 
-	"NeedMaintenance__c" VARCHAR(255), 
 	"PostalCode" VARCHAR(255), 
 	"Quantity" VARCHAR(255), 
 	"vlocity_cmt__BaseOneTimeTotal__c" VARCHAR(255), 
@@ -219,8 +212,6 @@ CREATE TABLE "Asset" (
 	"vlocity_cmt__ReliesOnItemId__c" VARCHAR(255), 
 	"vlocity_cmt__Username__c" VARCHAR(255), 
 	"AccountId" VARCHAR(255), 
-	"AssetProvidedById" VARCHAR(255), 
-	"AssetServicedById" VARCHAR(255), 
 	"ContactId" VARCHAR(255), 
 	"Product2Id" VARCHAR(255), 
 	"vlocity_cmt__BillingAccountId__c" VARCHAR(255), 
@@ -231,8 +222,8 @@ CREATE TABLE "Asset" (
 	"vlocity_cmt__UsageMeasurementId__c" VARCHAR(255), 
 	PRIMARY KEY (id)
 );
-INSERT INTO "Asset" VALUES(1,'1','','','','Gas Meter','d652edd5-08fd-16b6-2506-620f86d29486','','','','','','','','','','','','Installed','','','SN3124134','','','False','','','','','','','','','','','','200.0','','','','','','USD','','2023-06-28','False','','','False','','1.0','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','Monthly','','','4','','','5','2','','2','','2','','');
-INSERT INTO "Asset" VALUES(2,'1','','','','Regulator','8f05c576-0c48-eae7-d396-016d87a46270','','','','','','','','','','','','Installed','','','SN4235246','','','False','','','','','','','','','','','','20.0','','','','','','USD','','2023-06-27','False','','','False','','1.0','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','Monthly','','','4','','','5','1','','2','','1','','');
+INSERT INTO "Asset" VALUES(1,'1','','','','Gas Meter','d652edd5-08fd-16b6-2506-620f86d29486','','','','','','','','','','','','Installed','','','SN3124134','','','False','','','','','','','','','','','200.0','','','','2023-06-28','','','','1.0','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','Monthly','','','4','5','2','','2','','2','','');
+INSERT INTO "Asset" VALUES(2,'1','','','','Regulator','8f05c576-0c48-eae7-d396-016d87a46270','','','','','','','','','','','','Installed','','','SN4235246','','','False','','','','','','','','','','','20.0','','','','2023-06-27','','','','1.0','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','Monthly','','','4','5','1','','2','','1','','');
 CREATE TABLE "AttributeDefinition" (
 	id INTEGER NOT NULL, 
 	"IsActive" VARCHAR(255), 
