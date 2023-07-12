@@ -375,7 +375,7 @@ CREATE TABLE "WorkStepTemplate" (
 	"ActionDefinition" VARCHAR(255), 
 	"Description" VARCHAR(255), 
 	"IsActive" VARCHAR(255), 
-	"Name" VARCHAR(255)
+	"Name" VARCHAR(255),
 	PRIMARY KEY (id)
 );
 INSERT INTO "WorkStepTemplate" VALUES(1,'','Post completion of the service, leave note on door or text customer that the job is done.','True','Leave note on door or Text customer jobs done');
