@@ -336,3 +336,6 @@ extract:
     - BillingCountry
     - vlocity_cmt__BillingEmailAddress__c
     - OperatingHoursId
+AssetAttribute:
+  fields:
+  - FIELDS(ALL)
