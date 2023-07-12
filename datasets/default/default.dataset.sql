@@ -282,7 +282,6 @@ CREATE TABLE "Contact" (
 	"Birthdate" VARCHAR(255), 
 	"Fax" VARCHAR(255), 
 	"Phone" VARCHAR(255), 
-	"CleanStatus" VARCHAR(255), 
 	"Department" VARCHAR(255), 
 	"Email" VARCHAR(255), 
 	"DoNotCall" VARCHAR(255), 
@@ -316,13 +315,9 @@ CREATE TABLE "Contact" (
 	"HasOptedOutOfEmail" VARCHAR(255), 
 	"AssistantName" VARCHAR(255), 
 	"AssistantPhone" VARCHAR(255), 
-	"CurrencyIsoCode" VARCHAR(255), 
 	"EmailBouncedDate" VARCHAR(255), 
 	"EmailBouncedReason" VARCHAR(255), 
 	"Jigsaw" VARCHAR(255), 
-	"Languages__c" VARCHAR(255), 
-	"Level__c" VARCHAR(255), 
-	"SFS_External_ID__c" VARCHAR(255), 
 	"Salutation" VARCHAR(255), 
 	"vlocity_cmt__AnnualIncome__c" VARCHAR(255), 
 	"vlocity_cmt__Authorized__c" VARCHAR(255), 
@@ -357,11 +352,11 @@ CREATE TABLE "Contact" (
 	"AccountId" VARCHAR(255), 
 	PRIMARY KEY (id)
 );
-INSERT INTO "Contact" VALUES(1,'','','01926 187335','Pending','','fredd@headoffice.com','False','Freddy','','','Fed','','','','','','','','','','','','','','','','','','','','','False','','','False','','','USD','','','','','','','Mr.','','False','','','','','','False','','False','False','False','False','','','','','','','','','','','','','','','','','','1');
-INSERT INTO "Contact" VALUES(2,'','','01926 187318','Pending','','graham@headoffice.com','False','Grahem','','','Bell','','','','','','','','','','','','','','','','','','','','','False','','','False','','','USD','','','','','','','Ms.','','False','','','','','','False','','False','False','False','False','','','','','','','','','','','','','','','','','','5');
-INSERT INTO "Contact" VALUES(3,'','','01926 187339','Pending','','jamescook@headoffice.com','False','James','','','Cook','','','','','','','','','','','','','','','','','','','','','False','','','False','','','USD','','','','','','','Mr.','','False','','','','','','False','','False','False','False','False','','','','','','','','','','','','','','','','','','2');
-INSERT INTO "Contact" VALUES(4,'','','0131 9876333','Pending','','james.rawling@billybing.com','False','James','','','Rawlings','','','','','','','','','','','','','','','','','','','','','False','','','False','','','USD','','','','','','','Mr.','','False','','','','','','False','','False','False','False','False','','','','','','','','','','','','','','','','','','4');
-INSERT INTO "Contact" VALUES(5,'','','0131 9876333','Pending','','julia.tom@billybing.com','False','Julia','','','Tom','','','','','','','','','','','','','','','','','','','','','False','','','False','','','USD','','','','','','','Mr.','','False','','','','','','False','','False','False','False','False','','','','','','','','','','','','','','','','','','4');
+INSERT INTO "Contact" VALUES(1,'','','01926 187335','','fredd@headoffice.com','False','Freddy','','','Fed','','','','','','','','','','','','','','','','','','','','','False','','','False','','','','','','Mr.','','False','','','','','','False','','False','False','False','False','','','','','','','','','','','','','','','','','','1');
+INSERT INTO "Contact" VALUES(2,'','','01926 187318','','graham@headoffice.com','False','Grahem','','','Bell','','','','','','','','','','','','','','','','','','','','','False','','','False','','','','','','Ms.','','False','','','','','','False','','False','False','False','False','','','','','','','','','','','','','','','','','','5');
+INSERT INTO "Contact" VALUES(3,'','','01926 187339','','jamescook@headoffice.com','False','James','','','Cook','','','','','','','','','','','','','','','','','','','','','False','','','False','','','','','','Mr.','','False','','','','','','False','','False','False','False','False','','','','','','','','','','','','','','','','','','2');
+INSERT INTO "Contact" VALUES(4,'','','0131 9876333','','james.rawling@billybing.com','False','James','','','Rawlings','','','','','','','','','','','','','','','','','','','','','False','','','False','','','','','','Mr.','','False','','','','','','False','','False','False','False','False','','','','','','','','','','','','','','','','','','4');
+INSERT INTO "Contact" VALUES(5,'','','0131 9876333','','julia.tom@billybing.com','False','Julia','','','Tom','','','','','','','','','','','','','','','','','','','','','False','','','False','','','','','','Mr.','','False','','','','','','False','','False','False','False','False','','','','','','','','','','','','','','','','','','4');
 CREATE TABLE "Contract" (
 	id INTEGER NOT NULL, 
 	"AccountId" VARCHAR(255), 
@@ -373,11 +368,10 @@ CREATE TABLE "FSL__Scheduling_Policy__c" (
 	"Name" VARCHAR(255), 
 	"FSL__Travel_Mode__c" VARCHAR(255), 
 	"FSL__Fix_Overlaps__c" VARCHAR(255), 
-	"FSL__Daily_Optimization__c" VARCHAR(255), 
-	"CurrencyIsoCode" VARCHAR(255), 
+	"FSL__Daily_Optimization__c" VARCHAR(255)
 	PRIMARY KEY (id)
 );
-INSERT INTO "FSL__Scheduling_Policy__c" VALUES(1,'','Test Scheduling Policy','False','False','False','USD');
+INSERT INTO "FSL__Scheduling_Policy__c" VALUES(1,'','Short Cycle Work Scheduling Policy','False','False','False');
 CREATE TABLE "Location" (
 	id INTEGER NOT NULL, 
 	"CloseDate" VARCHAR(255), 
@@ -392,15 +386,13 @@ CREATE TABLE "Location" (
 	"Longitude" VARCHAR(255), 
 	"IsMobile" VARCHAR(255), 
 	"OpenDate" VARCHAR(255), 
-	"CurrencyIsoCode" VARCHAR(255), 
 	"PossessionDate" VARCHAR(255), 
 	"RemodelEndDate" VARCHAR(255), 
 	"RemodelStartDate" VARCHAR(255), 
-	"TimeZone" VARCHAR(255), 
-	"ShouldSyncWithOci" VARCHAR(255), 
+	"TimeZone" VARCHAR(255)
 	PRIMARY KEY (id)
 );
-INSERT INTO "Location" VALUES(1,'','','','Gas Meter Warning','','','','Gas Meter Location','Site','','False','','USD','','','','','False');
+INSERT INTO "Location" VALUES(1,'','','','Gas Meter Warning','','','','Gas Meter Location','Site','','False','','','','','');
 CREATE TABLE "OperatingHours" (
 	id INTEGER NOT NULL, 
 	"Description" VARCHAR(255), 
@@ -411,9 +403,7 @@ CREATE TABLE "OperatingHours" (
 INSERT INTO "OperatingHours" VALUES(1,'','London','Europe/London');
 CREATE TABLE "Product2" (
 	id INTEGER NOT NULL, 
-	"CurrencyIsoCode" VARCHAR(255), 
 	"Description" VARCHAR(255), 
-	"DisplayUrl" VARCHAR(255), 
 	"Family" VARCHAR(255), 
 	"IsActive" VARCHAR(255), 
 	"IsSerialized" VARCHAR(255), 
@@ -421,10 +411,8 @@ CREATE TABLE "Product2" (
 	"ProductCode" VARCHAR(255), 
 	"QuantityInstallmentPeriod" VARCHAR(255), 
 	"QuantityScheduleType" VARCHAR(255), 
-	"QuantityUnitOfMeasure" VARCHAR(255), 
 	"RevenueInstallmentPeriod" VARCHAR(255), 
 	"RevenueScheduleType" VARCHAR(255), 
-	"StockKeepingUnit" VARCHAR(255), 
 	"vlocity_cmt__EffectiveDate__c" VARCHAR(255), 
 	"vlocity_cmt__EndDate__c" VARCHAR(255), 
 	"vlocity_cmt__EndOfLifeDate__c" VARCHAR(255), 
@@ -432,7 +420,6 @@ CREATE TABLE "Product2" (
 	"vlocity_cmt__IsOrderable__c" VARCHAR(255), 
 	"RecordTypeId" VARCHAR(255), 
 	"vlocity_cmt__Type__c" VARCHAR(255), 
-	"ExternalId" VARCHAR(255), 
 	"NumberOfQuantityInstallments" VARCHAR(255), 
 	"NumberOfRevenueInstallments" VARCHAR(255), 
 	"vlocity_cmt__AttributeDefaultValues__c" VARCHAR(255), 
@@ -467,9 +454,6 @@ CREATE TABLE "Product2" (
 	"vlocity_cmt__VersionEndDateTime__c" VARCHAR(255), 
 	"vlocity_cmt__VersionLabel__c" VARCHAR(255), 
 	"vlocity_cmt__VersionStartDateTime__c" VARCHAR(255), 
-	"CanUseQuantitySchedule" VARCHAR(255), 
-	"CanUseRevenueSchedule" VARCHAR(255), 
-	"TransferRecordMode" VARCHAR(255), 
 	"vlocity_cmt__ApprovedOn__c" VARCHAR(255), 
 	"vlocity_cmt__ChangeDetectorImplementation__c" VARCHAR(255), 
 	"vlocity_cmt__MainFeatureQuantityUom__c" VARCHAR(255), 
@@ -477,8 +461,8 @@ CREATE TABLE "Product2" (
 	"vlocity_cmt__StandardPremium__c" VARCHAR(255), 
 	PRIMARY KEY (id)
 );
-INSERT INTO "Product2" VALUES(1,'USD','','','','True','False','Regulator','PD_REGULATOR','','','','','','','','','','False','True','','None','','','','','','','','','','363a19f4-a9a3-2be4-1d00-d85658170799','6e0ac4c2-9e53-250e-64da-e26fcb08360d','','','','False','False','False','','Seconds','','Draft','','','Order Item','','','','','','None','','False','','','','False','False','','','','','','');
-INSERT INTO "Product2" VALUES(2,'USD','','','','True','False','Gas Meter','PD_GAS_METER','','','','','','','','','','False','True','','None','','','','','','','','','','fdd8e4c7-5d2f-da8d-0d38-ac8f508631b0','f4c74198-e103-8d3a-6f89-6b1e17a35d9c','','','','False','False','False','','Seconds','','Draft','','','Order Item','','','','','','None','','False','','','','False','False','','','','','','');
+INSERT INTO "Product2" VALUES(1,'','','True','False','Regulator','PD_REGULATOR','','','','','','','','False','True','','None','','','','','','','','','363a19f4-a9a3-2be4-1d00-d85658170799','6e0ac4c2-9e53-250e-64da-e26fcb08360d','','','','False','False','False','','Seconds','','Draft','','','Order Item','','','','','','None','','False','','','','','','','','');
+INSERT INTO "Product2" VALUES(2,'','','True','False','Gas Meter','PD_GAS_METER','','','','','','','','False','True','','None','','','','','','','','','fdd8e4c7-5d2f-da8d-0d38-ac8f508631b0','f4c74198-e103-8d3a-6f89-6b1e17a35d9c','','','','False','False','False','','Seconds','','Draft','','','Order Item','','','','','','None','','False','','','','','','','','');
 CREATE TABLE "Product2_rt_mapping" (
 	record_type_id VARCHAR(18) NOT NULL, 
 	developer_name VARCHAR(255), 
@@ -492,7 +476,6 @@ CREATE TABLE "ServiceTerritory" (
 	id INTEGER NOT NULL, 
 	"City" VARCHAR(255), 
 	"Country" VARCHAR(255), 
-	"CurrencyIsoCode" VARCHAR(255), 
 	"Description" VARCHAR(255), 
 	"FSL__Hide_Emergency_Map__c" VARCHAR(255), 
 	"FSL__Internal_SLR_Geolocation__Latitude__s" VARCHAR(255), 
@@ -515,7 +498,7 @@ CREATE TABLE "ServiceTerritory" (
 	"OperatingHoursId" VARCHAR(255), 
 	PRIMARY KEY (id)
 );
-INSERT INTO "ServiceTerritory" VALUES(1,'London','United Kingdom','USD','','False','51.5132','-0.088053','','False','','','','0.0','City','True','51.51333','-0.08895','London','','London','','','1');
+INSERT INTO "ServiceTerritory" VALUES(1,'London','United Kingdom','','False','51.5132','-0.088053','','False','','','','0.0','City','True','51.51333','-0.08895','London','','London','','','1');
 CREATE TABLE "TimeSlot" (
 	id INTEGER NOT NULL, 
 	"DayOfWeek" VARCHAR(255),
@@ -533,7 +516,6 @@ INSERT INTO "TimeSlot" VALUES(6,'Saturday','18:00:00.000Z','09:00:00.000Z','1');
 CREATE TABLE "WorkPlanSelectionRule" (
 	id INTEGER NOT NULL, 
 	"IsActive" VARCHAR(255), 
-	"CurrencyIsoCode" VARCHAR(255), 
 	"Description" VARCHAR(255), 
 	"AccountId" VARCHAR(255), 
 	"AssetId" VARCHAR(255), 
@@ -544,45 +526,42 @@ CREATE TABLE "WorkPlanSelectionRule" (
 	"WorkTypeId" VARCHAR(255), 
 	PRIMARY KEY (id)
 );
-INSERT INTO "WorkPlanSelectionRule" VALUES(1,'True','USD','Assign Wrap Up tasks for Gas Meter Replacement process','','','','','','1','2');
-INSERT INTO "WorkPlanSelectionRule" VALUES(2,'True','USD','Assign Safety Check tasks for Gas Meter replacement process','','','','','','2','2');
-INSERT INTO "WorkPlanSelectionRule" VALUES(3,'True','USD','Assign addition of Meter and Regulator tasks for Gas Meter Replacement process','','','','','','3','2');
-INSERT INTO "WorkPlanSelectionRule" VALUES(4,'True','USD','Assign Verification tasks for Gas Meter Replacement process','','','','','','4','2');
-INSERT INTO "WorkPlanSelectionRule" VALUES(5,'True','USD','Assign Safety Check tasks for Gas Meter Replacement process','','','','','','5','2');
-INSERT INTO "WorkPlanSelectionRule" VALUES(6,'True','USD','Assign Health and Safety Check tasks for Gas Meter Replacement process','','','','','','6','2');
-INSERT INTO "WorkPlanSelectionRule" VALUES(7,'True','USD','Assign Wrap Up tasks for Meter Turn Off/ Move Out process','','','','','','10','1');
-INSERT INTO "WorkPlanSelectionRule" VALUES(8,'True','USD','Assign Health and Safety Check tasks for Meter Turn Off/ Move Out process','','','','','','11','1');
-INSERT INTO "WorkPlanSelectionRule" VALUES(9,'True','USD','Assign Verification tasks for Meter Turn Off/ Move Out process','','','','','','4','1');
-INSERT INTO "WorkPlanSelectionRule" VALUES(10,'True','USD','Assign Safety Checks tasks for Meter Turn Off/ Move Out process','','','','','','5','1');
-INSERT INTO "WorkPlanSelectionRule" VALUES(11,'True','USD','Assign Turn Off process tasks for Meter Turn Off/ Move Out process','','','','','','7','1');
-INSERT INTO "WorkPlanSelectionRule" VALUES(12,'True','USD','Assign Wrap Up tasks for Meter Turn On/ Move In process','','','','','','12','3');
-INSERT INTO "WorkPlanSelectionRule" VALUES(13,'True','USD','Assign Verification task for Meter Turn On/ Move In process','','','','','','4','3');
-INSERT INTO "WorkPlanSelectionRule" VALUES(14,'True','USD','Assign Safety Check tasks for Meter Turn On/ Move In process','','','','','','5','3');
-INSERT INTO "WorkPlanSelectionRule" VALUES(15,'True','USD','Assign Health and Safety Check tasks for Meter Turn On/ Move In process','','','','','','9','3');
-INSERT INTO "WorkPlanSelectionRule" VALUES(16,'True','USD','Assign Turn On process tasks for Meter Turn On/ Move In process','','','','','','8','3');
+INSERT INTO "WorkPlanSelectionRule" VALUES(1,'True','Assign Wrap Up tasks for Gas Meter Replacement process','','','','','','1','2');
+INSERT INTO "WorkPlanSelectionRule" VALUES(2,'True','Assign Safety Check tasks for Gas Meter replacement process','','','','','','2','2');
+INSERT INTO "WorkPlanSelectionRule" VALUES(3,'True','Assign addition of Meter and Regulator tasks for Gas Meter Replacement process','','','','','','3','2');
+INSERT INTO "WorkPlanSelectionRule" VALUES(4,'True','Assign Verification tasks for Gas Meter Replacement process','','','','','','4','2');
+INSERT INTO "WorkPlanSelectionRule" VALUES(5,'True','Assign Safety Check tasks for Gas Meter Replacement process','','','','','','5','2');
+INSERT INTO "WorkPlanSelectionRule" VALUES(6,'True','Assign Health and Safety Check tasks for Gas Meter Replacement process','','','','','','6','2');
+INSERT INTO "WorkPlanSelectionRule" VALUES(7,'True','Assign Wrap Up tasks for Meter Turn Off/ Move Out process','','','','','','10','1');
+INSERT INTO "WorkPlanSelectionRule" VALUES(8,'True','Assign Health and Safety Check tasks for Meter Turn Off/ Move Out process','','','','','','11','1');
+INSERT INTO "WorkPlanSelectionRule" VALUES(9,'True','Assign Verification tasks for Meter Turn Off/ Move Out process','','','','','','4','1');
+INSERT INTO "WorkPlanSelectionRule" VALUES(10,'True','Assign Safety Checks tasks for Meter Turn Off/ Move Out process','','','','','','5','1');
+INSERT INTO "WorkPlanSelectionRule" VALUES(11,'True','Assign Turn Off process tasks for Meter Turn Off/ Move Out process','','','','','','7','1');
+INSERT INTO "WorkPlanSelectionRule" VALUES(12,'True','Assign Wrap Up tasks for Meter Turn On/ Move In process','','','','','','12','3');
+INSERT INTO "WorkPlanSelectionRule" VALUES(13,'True','Assign Verification task for Meter Turn On/ Move In process','','','','','','4','3');
+INSERT INTO "WorkPlanSelectionRule" VALUES(14,'True','Assign Safety Check tasks for Meter Turn On/ Move In process','','','','','','5','3');
+INSERT INTO "WorkPlanSelectionRule" VALUES(15,'True','Assign Health and Safety Check tasks for Meter Turn On/ Move In process','','','','','','9','3');
+INSERT INTO "WorkPlanSelectionRule" VALUES(16,'True','Assign Turn On process tasks for Meter Turn On/ Move In process','','','','','','8','3');
 CREATE TABLE "WorkPlanTemplate" (
 	id INTEGER NOT NULL, 
 	"IsActive" VARCHAR(255), 
-	"CurrencyIsoCode" VARCHAR(255), 
 	"Description" VARCHAR(255), 
 	"Name" VARCHAR(255), 
-	"RelativeExecutionOrder" VARCHAR(255), 
-	"Custom1__c" VARCHAR(255), 
-	encrypted__c VARCHAR(255), 
+	"RelativeExecutionOrder" VARCHAR(255)
 	PRIMARY KEY (id)
 );
-INSERT INTO "WorkPlanTemplate" VALUES(1,'True','USD','Wrap up tasks to be performed after completion of service.','Wrap Up','6','','');
-INSERT INTO "WorkPlanTemplate" VALUES(2,'True','USD','Perform final health and safety checks after replacing the Meter.','Final Health And Safety Checks','5','','');
-INSERT INTO "WorkPlanTemplate" VALUES(3,'True','USD','Post the Gas Meter Replacement process, capture new Meter and Regulator details.','Meter And Regulator Details','4','','');
-INSERT INTO "WorkPlanTemplate" VALUES(4,'True','USD','Before starting the work, verify whether you are at the right Meter.','Verify you are at the Right Meter','2','','');
-INSERT INTO "WorkPlanTemplate" VALUES(5,'True','USD','Safety instructions to be performed before reaching customer''s location.','Safety Checks','1','','');
-INSERT INTO "WorkPlanTemplate" VALUES(6,'True','USD','Health and Safety checks to be performed before replacing the actual Meter.','Health and Safety Checks','3','','');
-INSERT INTO "WorkPlanTemplate" VALUES(7,'True','USD','Gas Meter Turn Off process Instructions.','Turn Off Gas Service','3','','');
-INSERT INTO "WorkPlanTemplate" VALUES(8,'True','USD','Gas Meter Turn On process Instructions.','Turn On Gas Service','3','','');
-INSERT INTO "WorkPlanTemplate" VALUES(9,'True','USD','Health and Safety checks to be performed after turning On the Meter.','Health and Safety Checks Turn On Process','4','','');
-INSERT INTO "WorkPlanTemplate" VALUES(10,'True','USD','Wrap up tasks to be performed after completion of service.','Wrap Up Turn Off Process','5','','');
-INSERT INTO "WorkPlanTemplate" VALUES(11,'True','USD','Health and Safety checks to be performed after turning Off the Meter.','Health and Safety Checks Turn Off Process','4','','');
-INSERT INTO "WorkPlanTemplate" VALUES(12,'True','USD','Wrap up tasks to be performed after completion of service.','Wrap Up Turn On Process','5','','');
+INSERT INTO "WorkPlanTemplate" VALUES(1,'True','Wrap up tasks to be performed after completion of service.','Wrap Up','6');
+INSERT INTO "WorkPlanTemplate" VALUES(2,'True','Perform final health and safety checks after replacing the Meter.','Final Health And Safety Checks','5');
+INSERT INTO "WorkPlanTemplate" VALUES(3,'True','Post the Gas Meter Replacement process, capture new Meter and Regulator details.','Meter And Regulator Details','4');
+INSERT INTO "WorkPlanTemplate" VALUES(4,'True','Before starting the work, verify whether you are at the right Meter.','Verify you are at the Right Meter','2');
+INSERT INTO "WorkPlanTemplate" VALUES(5,'True','Safety instructions to be performed before reaching customer''s location.','Safety Checks','1');
+INSERT INTO "WorkPlanTemplate" VALUES(6,'True','Health and Safety checks to be performed before replacing the actual Meter.','Health and Safety Checks','3');
+INSERT INTO "WorkPlanTemplate" VALUES(7,'True','Gas Meter Turn Off process Instructions.','Turn Off Gas Service','3','','');
+INSERT INTO "WorkPlanTemplate" VALUES(8,'True','Gas Meter Turn On process Instructions.','Turn On Gas Service','3','','');
+INSERT INTO "WorkPlanTemplate" VALUES(9,'True','Health and Safety checks to be performed after turning On the Meter.','Health and Safety Checks Turn On Process','4');
+INSERT INTO "WorkPlanTemplate" VALUES(10,'True','Wrap up tasks to be performed after completion of service.','Wrap Up Turn Off Process','5');
+INSERT INTO "WorkPlanTemplate" VALUES(11,'True','Health and Safety checks to be performed after turning Off the Meter.','Health and Safety Checks Turn Off Process','4');
+INSERT INTO "WorkPlanTemplate" VALUES(12,'True','Wrap up tasks to be performed after completion of service.','Wrap Up Turn On Process','5');
 CREATE TABLE "WorkPlanTemplateEntry" (
 	id INTEGER NOT NULL, 
 	"CurrencyIsoCode" VARCHAR(255), 
@@ -673,7 +652,6 @@ CREATE TABLE "vlocity_cmt__Premises__c" (
 	"Name" VARCHAR(255), 
 	"vlocity_cmt__NumberOfOccupants__c" VARCHAR(255), 
 	"vlocity_cmt__IsOkToEnter__c" VARCHAR(255), 
-	"CurrencyIsoCode" VARCHAR(255), 
 	"vlocity_cmt__Address1__c" VARCHAR(255), 
 	"vlocity_cmt__Address2__c" VARCHAR(255), 
 	"vlocity_cmt__IsSupplyGuaranteed__c" VARCHAR(255), 
@@ -691,8 +669,8 @@ CREATE TABLE "vlocity_cmt__Premises__c" (
 	"vlocity_cmt__ParentPremisesId__c" VARCHAR(255), 
 	PRIMARY KEY (id)
 );
-INSERT INTO "vlocity_cmt__Premises__c" VALUES(1,'','','','','','','Edinburgh','United Kingdom','','','','','','','False','','','77 Whitehill Rd, Fort Kinnaird, Edinburgh, Scotland, EH15 3HR, United Kingdom','','False','USD','','','False','EH15 3HR','','66666','','Scotland','Connected','77 Whitehill Rd, Fort Kinnaird','','','','','');
-INSERT INTO "vlocity_cmt__Premises__c" VALUES(2,'','','','','','','Coventry','United Kingdom','','','','','','','False','','','Abbey Road, Whitley, Coventry, Warwickshire CV3 4LF, United Kingdom','','False','USD','','','False','CV3 4LF','','99999','','Warwickshire','Vacant','Abbey Road, Whitley','','','','','');
+INSERT INTO "vlocity_cmt__Premises__c" VALUES(1,'','','','','','','Edinburgh','United Kingdom','','','','','','','False','','','77 Whitehill Rd, Fort Kinnaird, Edinburgh, Scotland, EH15 3HR, United Kingdom','','False','','','False','EH15 3HR','','66666','','Scotland','Connected','77 Whitehill Rd, Fort Kinnaird','','','','','');
+INSERT INTO "vlocity_cmt__Premises__c" VALUES(2,'','','','','','','Coventry','United Kingdom','','','','','','','False','','','Abbey Road, Whitley, Coventry, Warwickshire CV3 4LF, United Kingdom','','False','','','False','CV3 4LF','','99999','','Warwickshire','Vacant','Abbey Road, Whitley','','','','','');
 CREATE TABLE "vlocity_cmt__ProductAttribXN__c" (
 	id INTEGER NOT NULL, 
 	PRIMARY KEY (id)
@@ -722,14 +700,13 @@ CREATE TABLE "vlocity_cmt__ServicePoint__c" (
 	"vlocity_cmt__TemperatureArea__c" VARCHAR(255), 
 	"vlocity_cmt__UtilityProvider__c" VARCHAR(255), 
 	"vlocity_cmt__VoltageLevel__c" VARCHAR(255), 
-	"CurrencyIsoCode" VARCHAR(255), 
 	"vlocity_cmt__FieldServiceClass__c" VARCHAR(255), 
 	"vlocity_cmt__MeterId__c" VARCHAR(255), 
 	"vlocity_cmt__PremisesId__c" VARCHAR(255), 
 	PRIMARY KEY (id)
 );
-INSERT INTO "vlocity_cmt__ServicePoint__c" VALUES(1,'','','','False','','','','','','','','','','True','','True','G-BB22331','','Gas','Connected','','','','USD','','','1');
-INSERT INTO "vlocity_cmt__ServicePoint__c" VALUES(2,'','','','False','','','','','','','','','','True','','True','G-CV9871233','','Gas','Connected','','','','USD','','','2');
+INSERT INTO "vlocity_cmt__ServicePoint__c" VALUES(1,'','','','False','','','','','','','','','','True','','True','G-BB22331','','Gas','Connected','','','','','','1');
+INSERT INTO "vlocity_cmt__ServicePoint__c" VALUES(2,'','','','False','','','','','','','','','','True','','True','G-CV9871233','','Gas','Connected','','','','','','2');
 CREATE TABLE "vlocity_cmt__Subscription__c" (
 	id INTEGER NOT NULL, 
 	"vlocity_cmt__SubscriptionNumber__c" VARCHAR(255), 
