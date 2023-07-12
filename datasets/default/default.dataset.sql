@@ -1,7 +1,6 @@
 BEGIN TRANSACTION;
 CREATE TABLE "Account" (
 	id INTEGER NOT NULL, 
-	"CurrencyIsoCode" VARCHAR(255), 
 	"Description" VARCHAR(255), 
 	"Fax" VARCHAR(255), 
 	"Name" VARCHAR(255), 
@@ -20,7 +19,6 @@ CREATE TABLE "Account" (
 	"BillingState" VARCHAR(255), 
 	"BillingStreet" VARCHAR(255), 
 	"BillingPostalCode" VARCHAR(255), 
-	"CleanStatus" VARCHAR(255), 
 	"NumberOfEmployees" VARCHAR(255), 
 	"Industry" VARCHAR(255), 
 	"Ownership" VARCHAR(255), 
@@ -34,22 +32,11 @@ CREATE TABLE "Account" (
 	"ShippingStreet" VARCHAR(255), 
 	"ShippingPostalCode" VARCHAR(255), 
 	"Website" VARCHAR(255), 
-	"Active__c" VARCHAR(255), 
-	"CustomerPriority__c" VARCHAR(255), 
-	"DunsNumber" VARCHAR(255), 
 	"Jigsaw" VARCHAR(255), 
-	"NaicsCode" VARCHAR(255), 
 	"NaicsDesc" VARCHAR(255), 
-	"NumberofLocations__c" VARCHAR(255), 
-	"SLAExpirationDate__c" VARCHAR(255), 
-	"SLASerialNumber__c" VARCHAR(255), 
-	"SLA__c" VARCHAR(255), 
 	"Sic" VARCHAR(255), 
 	"SicDesc" VARCHAR(255), 
 	"TickerSymbol" VARCHAR(255), 
-	"Tradestyle" VARCHAR(255), 
-	"UpsellOpportunity__c" VARCHAR(255), 
-	"YearStarted" VARCHAR(255), 
 	"vlocity_cmt__AccountPaymentType__c" VARCHAR(255), 
 	"vlocity_cmt__Active__c" VARCHAR(255), 
 	"vlocity_cmt__AutoPaymentAmount__c" VARCHAR(255), 
@@ -103,11 +90,11 @@ CREATE TABLE "Account" (
 	"OperatingHoursId" VARCHAR(255), 
 	PRIMARY KEY (id)
 );
-INSERT INTO "Account" VALUES(1,'USD','','','Ronald Ross','','0131 878 1204','','','','','','Birmingham','United Kingdom','','','','West Midlands','42 High St','B4 7SS','Pending','','','','0127i000003izQNAAY','Birmingham','United Kingdom','','','','West Midlands','42 High St','B4 7SS','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','False','False','False','False','False','','False','False','False','','','','','','','','','Active','','','','','','','','','','','');
-INSERT INTO "Account" VALUES(2,'USD','','','Mark James','','0131 878 1252','','','','','','Newcastle upon Tyne','United Kingdom','','','','Tyne and Wear','22 Benton Rd','NE7 7EG','Pending','','','','0127i000003izQNAAY','Edinburgh','United Kingdom','','','','Scotland','5 Whitehill Rd, Newcraighall','EH15 3HR','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','False','False','False','False','False','','False','False','False','','','','','','','','','Active','','','','','','','','','','','');
-INSERT INTO "Account" VALUES(3,'USD','','','Imperial Autos - Head Office','111111','01926 187300','','','','','','','','','','','','','','Pending','','','','0127i000003izQLAAY','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','False','False','False','False','False','','False','False','False','','','','','','','','','','','','','','','','','','','','');
-INSERT INTO "Account" VALUES(4,'USD','','','Billy Bing','','(220) 022-0022','','','','','','London','United Kingdom','','','','London','123 west','34334','Pending','','','','0127i000003izQNAAY','Edinburgh','United Kingdom','','','','Scotland','5 Whitehill Rd, Newcraighall','EH15 3HR','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','False','False','False','False','False','','False','False','False','','','','','','','','','Active','','','','','','','','','','','');
-INSERT INTO "Account" VALUES(5,'USD','','','Elon Horowitz','','0131 878 1272','','','','','','Bristol','United Kingdom','','','','Avon','31 Corn St','BS1 1HT','Pending','','','','0127i000003izQNAAY','Glasgow','United Kingdom','','','','Scotland','900 Kennishead Rd','G53 7RA','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','False','False','False','False','False','','False','False','False','','','','','','','','','Active','','','','','','','','','','','');
+INSERT INTO "Account" VALUES(1,'','','Ronald Ross','','0131 878 1204','','','','','','Birmingham','United Kingdom','','','','West Midlands','42 High St','B4 7SS','','','','0127i000003izQNAAY','Birmingham','United Kingdom','','','','West Midlands','42 High St','B4 7SS','','','','','','','','','','','','','','','','','','','','','','','','','','','','','False','False','False','False','False','','False','False','False','','','','','','','','','Active','','','','','','','','','','','');
+INSERT INTO "Account" VALUES(2,'','','Mark James','','0131 878 1252','','','','','','Newcastle upon Tyne','United Kingdom','','','','Tyne and Wear','22 Benton Rd','NE7 7EG','','','','0127i000003izQNAAY','Edinburgh','United Kingdom','','','','Scotland','5 Whitehill Rd, Newcraighall','EH15 3HR','','','','','','','','','','','','','','','','','','','','','','','','','','','','','False','False','False','False','False','','False','False','False','','','','','','','','','Active','','','','','','','','','','','');
+INSERT INTO "Account" VALUES(3,'','','Imperial Autos - Head Office','111111','01926 187300','','','','','','','','','','','','','','','','','0127i000003izQLAAY','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','False','False','False','False','False','','False','False','False','','','','','','','','','','','','','','','','','','','','');
+INSERT INTO "Account" VALUES(4,'','','Billy Bing','','(220) 022-0022','','','','','','London','United Kingdom','','','','London','123 west','34334','','','','0127i000003izQNAAY','Edinburgh','United Kingdom','','','','Scotland','5 Whitehill Rd, Newcraighall','EH15 3HR','','','','','','','','','','','','','','','','','','','','','','','','','','','','','False','False','False','False','False','','False','False','False','','','','','','','','','Active','','','','','','','','','','','');
+INSERT INTO "Account" VALUES(5,'','','Elon Horowitz','','0131 878 1272','','','','','','Bristol','United Kingdom','','','','Avon','31 Corn St','BS1 1HT','','','','0127i000003izQNAAY','Glasgow','United Kingdom','','','','Scotland','900 Kennishead Rd','G53 7RA','','','','','','','','','','','','','','','','','','','','','','','','','','','','','False','False','False','False','False','','False','False','False','','','','','','','','','Active','','','','','','','','','','','');
 CREATE TABLE "Account_rt_mapping" (
 	record_type_id VARCHAR(18) NOT NULL, 
 	developer_name VARCHAR(255), 
