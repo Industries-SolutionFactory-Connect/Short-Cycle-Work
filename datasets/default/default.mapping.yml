@@ -417,3 +417,16 @@ Insert Asset:
     Product2Id:
       table: Product2
       key_field: Product2Id
+Insert AssetAttribute:
+    sf_object: AssetAttribute
+    table: AssetAttribute
+    fields:
+    - AttributeValue
+    - ExternalId
+    lookups:
+      AssetId:
+        table: Asset
+        key_field: AssetId
+      AttributeDefinitionId:
+        table: AttributeDefinition
+        key_field: AttributeDefinitionId
