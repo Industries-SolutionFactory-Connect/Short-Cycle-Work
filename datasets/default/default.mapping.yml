@@ -36,7 +36,6 @@ Insert vlocity_cmt__Premises__c:
   - Name
   - vlocity_cmt__NumberOfOccupants__c
   - vlocity_cmt__IsOkToEnter__c
-  - CurrencyIsoCode
   - vlocity_cmt__Address1__c
   - vlocity_cmt__Address2__c
   - vlocity_cmt__IsSupplyGuaranteed__c
@@ -66,9 +65,7 @@ Insert Product2:
   sf_object: Product2
   table: Product2
   fields:
-  - CurrencyIsoCode
   - Description
-  - DisplayUrl
   - Family
   - IsActive
   - IsSerialized
@@ -76,17 +73,14 @@ Insert Product2:
   - ProductCode
   - QuantityInstallmentPeriod
   - QuantityScheduleType
-  - QuantityUnitOfMeasure
   - RevenueInstallmentPeriod
   - RevenueScheduleType
-  - StockKeepingUnit
   - vlocity_cmt__EffectiveDate__c
   - vlocity_cmt__EndDate__c
   - vlocity_cmt__EndOfLifeDate__c
   - vlocity_cmt__IsConfigurable__c
   - vlocity_cmt__IsOrderable__c
   - vlocity_cmt__Type__c
-  - ExternalId
   - NumberOfQuantityInstallments
   - NumberOfRevenueInstallments
   - vlocity_cmt__AttributeDefaultValues__c
@@ -121,9 +115,6 @@ Insert Product2:
   - vlocity_cmt__VersionEndDateTime__c
   - vlocity_cmt__VersionLabel__c
   - vlocity_cmt__VersionStartDateTime__c
-  - CanUseQuantitySchedule
-  - CanUseRevenueSchedule
-  - TransferRecordMode
   - vlocity_cmt__ApprovedOn__c
   - vlocity_cmt__ChangeDetectorImplementation__c
   - vlocity_cmt__MainFeatureQuantityUom__c
@@ -149,12 +140,10 @@ Insert Location:
   - Longitude
   - IsMobile
   - OpenDate
-  - CurrencyIsoCode
   - PossessionDate
   - RemodelEndDate
   - RemodelStartDate
   - TimeZone
-  - ShouldSyncWithOci
 Insert WorkType:
   sf_object: WorkType
   table: WorkType
@@ -181,12 +170,9 @@ Insert WorkPlanTemplate:
   table: WorkPlanTemplate
   fields:
   - IsActive
-  - CurrencyIsoCode
   - Description
   - Name
   - RelativeExecutionOrder
-  - Custom1__c
-  - encrypted__c
 Insert FSL__Scheduling_Policy__c:
   sf_object: FSL__Scheduling_Policy__c
   table: FSL__Scheduling_Policy__c
@@ -196,7 +182,6 @@ Insert FSL__Scheduling_Policy__c:
   - FSL__Travel_Mode__c
   - FSL__Fix_Overlaps__c
   - FSL__Daily_Optimization__c
-  - CurrencyIsoCode
 Insert AttributePicklist:
   sf_object: AttributePicklist
   table: AttributePicklist
@@ -212,7 +197,6 @@ Insert Account:
   sf_object: Account
   table: Account
   fields:
-  - CurrencyIsoCode
   - Description
   - Fax
   - Name
@@ -231,7 +215,6 @@ Insert Account:
   - BillingState
   - BillingStreet
   - BillingPostalCode
-  - CleanStatus
   - NumberOfEmployees
   - Industry
   - Ownership
@@ -244,22 +227,11 @@ Insert Account:
   - ShippingStreet
   - ShippingPostalCode
   - Website
-  - Active__c
-  - CustomerPriority__c
-  - DunsNumber
   - Jigsaw
-  - NaicsCode
   - NaicsDesc
-  - NumberofLocations__c
-  - SLAExpirationDate__c
-  - SLASerialNumber__c
-  - SLA__c
   - Sic
   - SicDesc
   - TickerSymbol
-  - Tradestyle
-  - UpsellOpportunity__c
-  - YearStarted
   - vlocity_cmt__AccountPaymentType__c
   - vlocity_cmt__Active__c
   - vlocity_cmt__AutoPaymentAmount__c
@@ -342,7 +314,6 @@ Insert vlocity_cmt__ServicePoint__c:
   - vlocity_cmt__TemperatureArea__c
   - vlocity_cmt__UtilityProvider__c
   - vlocity_cmt__VoltageLevel__c
-  - CurrencyIsoCode
   - vlocity_cmt__FieldServiceClass__c
   lookups:
     vlocity_cmt__MeterId__c:
@@ -387,7 +358,6 @@ Insert ServiceTerritory:
   fields:
   - City
   - Country
-  - CurrencyIsoCode
   - Description
   - FSL__Hide_Emergency_Map__c
   - FSL__Internal_SLR_Geolocation__Latitude__s
@@ -429,7 +399,6 @@ Insert Contact:
   - Birthdate
   - Fax
   - Phone
-  - CleanStatus
   - Department
   - Email
   - DoNotCall
@@ -463,13 +432,9 @@ Insert Contact:
   - HasOptedOutOfEmail
   - AssistantName
   - AssistantPhone
-  - CurrencyIsoCode
   - EmailBouncedDate
   - EmailBouncedReason
   - Jigsaw
-  - Languages__c
-  - Level__c
-  - SFS_External_ID__c
   - Salutation
   - vlocity_cmt__AnnualIncome__c
   - vlocity_cmt__Authorized__c
@@ -543,7 +508,6 @@ Insert Asset:
   - vlocity_cmt__ProductHierarchyPath__c
   - vlocity_cmt__ProvisioningStatus__c
   - vlocity_cmt__DeregulationStatus__c
-  - Capacity__c
   - City
   - vlocity_cmt__ConnectDate__c
   - Country
@@ -553,16 +517,10 @@ Insert Asset:
   - Price
   - vlocity_cmt__ItemName__c
   - PurchaseDate
-  - Mileage__c
-  - MileageTracking__c
-  - Performance__c
-  - CurrencyIsoCode
   - GeocodeAccuracy
   - InstallDate
-  - IsInternal
   - Latitude
   - Longitude
-  - NeedMaintenance__c
   - PostalCode
   - Quantity
   - vlocity_cmt__BaseOneTimeTotal__c
@@ -611,12 +569,6 @@ Insert Asset:
     AccountId:
       table: Account
       key_field: AccountId
-    AssetProvidedById:
-      table: Account
-      key_field: AssetProvidedById
-    AssetServicedById:
-      table: Account
-      key_field: AssetServicedById
     vlocity_cmt__BillingAccountId__c:
       table: Account
       key_field: vlocity_cmt__BillingAccountId__c
@@ -662,7 +614,6 @@ Insert WorkPlanSelectionRule:
   table: WorkPlanSelectionRule
   fields:
   - IsActive
-  - CurrencyIsoCode
   - Description
   lookups:
     AccountId:
