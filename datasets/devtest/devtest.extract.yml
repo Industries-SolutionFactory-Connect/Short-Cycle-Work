@@ -1,6 +1,0 @@
-extract:
-  Location:
-    fields:
-    - CloseDate
-    - ConstructionEndDate
-    - ConstructionStartDate
