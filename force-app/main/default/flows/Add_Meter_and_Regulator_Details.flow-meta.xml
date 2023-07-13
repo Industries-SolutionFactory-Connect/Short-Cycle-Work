@@ -58,39 +58,11 @@
             <label>Yes</label>
         </rules>
     </decisions>
-    <description>A Screen flow that is used to add the details and photos of Meter and Regulators.</description>
+    <description>A Screen flow that is used to add the details and photos of Meter and Regulator.</description>
     <environments>Default</environments>
     <interviewLabel>Add Meter and Regulator Details {!$Flow.CurrentDateTime}</interviewLabel>
     <isTemplate>true</isTemplate>
     <label>Add Meter and Regulator Details</label>
-    <loops>
-        <description>Loop through uploaded Meter photos.</description>
-        <name>Loop_Through_Meter_Photos</name>
-        <label>Loop Through Meter Photos</label>
-        <locationX>331</locationX>
-        <locationY>535</locationY>
-        <assignNextValueToReference>var_MeterContentDocumentId</assignNextValueToReference>
-        <collectionReference>var_MeterContentDocumentIds</collectionReference>
-        <iterationOrder>Asc</iterationOrder>
-        <nextValueConnector>
-            <targetReference>Create_MeterAssetAttachment</targetReference>
-        </nextValueConnector>
-        <noMoreValuesConnector>
-            <targetReference>Create_RegulatorAsset</targetReference>
-        </noMoreValuesConnector>
-    </loops>
-    <loops>
-        <name>Loop_Through_Regulator_Photos</name>
-        <label>Loop Through Regulator Photos</label>
-        <locationX>1111</locationX>
-        <locationY>536</locationY>
-        <assignNextValueToReference>var_RegulatorContentDocumentId</assignNextValueToReference>
-        <collectionReference>var_RegulatorContentDocumentIds</collectionReference>
-        <iterationOrder>Asc</iterationOrder>
-        <nextValueConnector>
-            <targetReference>Create_RegulatorAssetAttachment</targetReference>
-        </nextValueConnector>
-    </loops>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
@@ -114,8 +86,8 @@
         <description>Create Asset for Gas Meter.</description>
         <name>Create_GasMeterAsset</name>
         <label>Create Gas Meter Asset</label>
-        <locationX>721</locationX>
-        <locationY>365</locationY>
+        <locationX>652</locationX>
+        <locationY>362</locationY>
         <assignRecordIdToReference>var_MeterAssetId</assignRecordIdToReference>
         <connector>
             <targetReference>Create_MeterReadAssetAttribute</targetReference>
@@ -189,45 +161,13 @@
         <object>Asset</object>
     </recordCreates>
     <recordCreates>
-        <description>Attach the uploaded file to Meter Asset.</description>
-        <name>Create_MeterAssetAttachment</name>
-        <label>Create Meter Asset Attachment</label>
-        <locationX>329</locationX>
-        <locationY>745</locationY>
-        <connector>
-            <targetReference>Loop_Through_Meter_Photos</targetReference>
-        </connector>
-        <inputAssignments>
-            <field>ContentDocumentId</field>
-            <value>
-                <elementReference>var_MeterContentDocumentId</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>LinkedEntityId</field>
-            <value>
-                <elementReference>var_MeterAssetId</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>ShareType</field>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Visibility</field>
-            <value>
-                <stringValue>AllUsers</stringValue>
-            </value>
-        </inputAssignments>
-        <object>ContentDocumentLink</object>
-    </recordCreates>
-    <recordCreates>
         <description>Create Asset Attribute for Meter Manufacturer.</description>
         <name>Create_MeterManufacturerAssetAttribute</name>
         <label>Create Meter Manufacturer Asset Attribute</label>
-        <locationX>198</locationX>
-        <locationY>533</locationY>
+        <locationX>150</locationX>
+        <locationY>521</locationY>
         <connector>
-            <targetReference>Loop_Through_Meter_Photos</targetReference>
+            <targetReference>Create_RegulatorAsset</targetReference>
         </connector>
         <inputAssignments>
             <field>AssetId</field>
@@ -253,8 +193,8 @@
         <description>Create Asset Attribute for Meter Reading.</description>
         <name>Create_MeterReadAssetAttribute</name>
         <label>Create Meter Read Asset Attribute</label>
-        <locationX>557</locationX>
-        <locationY>365</locationY>
+        <locationX>480</locationX>
+        <locationY>362</locationY>
         <connector>
             <targetReference>Create_MeterReadDateAssetAttribute</targetReference>
         </connector>
@@ -282,7 +222,7 @@
         <description>Create Asset Attribute for Meter Read Date.</description>
         <name>Create_MeterReadDateAssetAttribute</name>
         <label>Create Meter Read Date Asset Attribute</label>
-        <locationX>384</locationX>
+        <locationX>313</locationX>
         <locationY>362</locationY>
         <connector>
             <targetReference>Create_MeterSizeAssetAttribute</targetReference>
@@ -311,8 +251,8 @@
         <description>Create Asset Attribute for Meter Size.</description>
         <name>Create_MeterSizeAssetAttribute</name>
         <label>Create Meter Size Asset Attribute</label>
-        <locationX>199</locationX>
-        <locationY>370</locationY>
+        <locationX>151</locationX>
+        <locationY>362</locationY>
         <connector>
             <targetReference>Create_MeterManufacturerAssetAttribute</targetReference>
         </connector>
@@ -340,8 +280,8 @@
         <description>Create Asset for Regulator.</description>
         <name>Create_RegulatorAsset</name>
         <label>Create Regulator Asset</label>
-        <locationX>549</locationX>
-        <locationY>537</locationY>
+        <locationX>334</locationX>
+        <locationY>520</locationY>
         <assignRecordIdToReference>var_RegulatorAssetId</assignRecordIdToReference>
         <connector>
             <targetReference>Create_RegulatorSizeAssetAttribute</targetReference>
@@ -409,43 +349,11 @@
         <object>Asset</object>
     </recordCreates>
     <recordCreates>
-        <description>Attach uploaded file to Regulator Asset</description>
-        <name>Create_RegulatorAssetAttachment</name>
-        <label>Create Regulator Asset Attachment</label>
-        <locationX>1121</locationX>
-        <locationY>736</locationY>
-        <connector>
-            <targetReference>Loop_Through_Regulator_Photos</targetReference>
-        </connector>
-        <inputAssignments>
-            <field>ContentDocumentId</field>
-            <value>
-                <elementReference>var_RegulatorContentDocumentId</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>LinkedEntityId</field>
-            <value>
-                <elementReference>var_RegulatorAssetId</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Visibility</field>
-            <value>
-                <stringValue>AllUsers</stringValue>
-            </value>
-        </inputAssignments>
-        <object>ContentDocumentLink</object>
-    </recordCreates>
-    <recordCreates>
         <description>Create Asset Attribute for Regulator Manufacture Date.</description>
         <name>Create_RegulatorManufactureDate</name>
         <label>Create Regulator Manufacture Date</label>
-        <locationX>989</locationX>
-        <locationY>536</locationY>
-        <connector>
-            <targetReference>Loop_Through_Regulator_Photos</targetReference>
-        </connector>
+        <locationX>888</locationX>
+        <locationY>520</locationY>
         <inputAssignments>
             <field>AssetId</field>
             <value>
@@ -470,8 +378,8 @@
         <description>Create Asset Attribute for Regulator Manufacturer.</description>
         <name>Create_RegulatorManufacturerAssetAttribute</name>
         <label>Create Regulator Manufacturer Asset Attribute</label>
-        <locationX>834</locationX>
-        <locationY>537</locationY>
+        <locationX>700</locationX>
+        <locationY>520</locationY>
         <connector>
             <targetReference>Create_RegulatorManufactureDate</targetReference>
         </connector>
@@ -499,8 +407,8 @@
         <description>Create Regulator Size Asset Attribute.</description>
         <name>Create_RegulatorSizeAssetAttribute</name>
         <label>Create Regulator Size Asset Attribute</label>
-        <locationX>690</locationX>
-        <locationY>537</locationY>
+        <locationX>525</locationX>
+        <locationY>520</locationY>
         <connector>
             <targetReference>Create_RegulatorManufacturerAssetAttribute</targetReference>
         </connector>
@@ -667,8 +575,8 @@
     <recordLookups>
         <name>Get_RegulatorManufactureDateAttributeDefinition</name>
         <label>Get Regulator Manufacture Date Attribute Definition</label>
-        <locationX>1111</locationX>
-        <locationY>363</locationY>
+        <locationX>1107</locationX>
+        <locationY>361</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_RegulatorSizeAttributeDefinition</targetReference>
@@ -690,8 +598,8 @@
     <recordLookups>
         <name>Get_RegulatorManufacturerAttributeDefinition</name>
         <label>Get Regulator Manufacturer Attribute Definition</label>
-        <locationX>1260</locationX>
-        <locationY>363</locationY>
+        <locationX>1255</locationX>
+        <locationY>361</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_RegulatorManufactureDateAttributeDefinition</targetReference>
@@ -714,8 +622,8 @@
         <description>Get Regulator Size Attribute Definition.</description>
         <name>Get_RegulatorSizeAttributeDefinition</name>
         <label>Get Regulator Size Attribute Definition</label>
-        <locationX>987</locationX>
-        <locationY>363</locationY>
+        <locationX>955</locationX>
+        <locationY>362</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>S01_MeterAndRegulatorDetails</targetReference>
@@ -762,8 +670,8 @@
         <description>Get Work Step</description>
         <name>Get_WorkStep</name>
         <label>Get Work Step</label>
-        <locationX>392</locationX>
-        <locationY>241</locationY>
+        <locationX>427</locationX>
+        <locationY>237</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_WorkOrder</targetReference>
@@ -786,8 +694,8 @@
         <description>A Screen flow that is used to add the details and photos of Meter and Regulators.</description>
         <name>S01_MeterAndRegulatorDetails</name>
         <label>Enter Meter And Regulator Details</label>
-        <locationX>862</locationX>
-        <locationY>363</locationY>
+        <locationX>818</locationX>
+        <locationY>362</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
