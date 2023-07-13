@@ -210,79 +210,18 @@ CREATE TABLE "OperatingHours" (
 	PRIMARY KEY (id)
 );
 INSERT INTO "OperatingHours" VALUES(1,'','London','Europe/London');
-
 CREATE TABLE "Product2" (
 	id INTEGER NOT NULL, 
 	"IsActive" VARCHAR(255), 
-	"vlocity_cmt__ApprovedOn__c" VARCHAR(255), 
 	"ProductCode" VARCHAR(255), 
 	"Description" VARCHAR(255), 
 	"Family" VARCHAR(255), 
 	"Name" VARCHAR(255), 
-	"RecordTypeId" VARCHAR(255), 
-	"vlocity_cmt__Status__c" VARCHAR(255), 
 	"IsSerialized" VARCHAR(255), 
-	"NumberOfQuantityInstallments" VARCHAR(255), 
-	"NumberOfRevenueInstallments" VARCHAR(255), 
-	"QuantityInstallmentPeriod" VARCHAR(255), 
-	"QuantityScheduleType" VARCHAR(255), 
-	"RevenueInstallmentPeriod" VARCHAR(255), 
-	"RevenueScheduleType" VARCHAR(255), 
-	"vlocity_cmt__AttributeDefaultValues__c" VARCHAR(255), 
-	"vlocity_cmt__AttributeMetadata__c" VARCHAR(255), 
-	"vlocity_cmt__AttributeRules__c" VARCHAR(255), 
-	"vlocity_cmt__AttributesMarkupConfig__c" VARCHAR(255), 
-	"vlocity_cmt__CategoryData__c" VARCHAR(255), 
-	"vlocity_cmt__ChangeDetectorImplementation__c" VARCHAR(255), 
-	"vlocity_cmt__EffectiveDate__c" VARCHAR(255), 
-	"vlocity_cmt__EndDate__c" VARCHAR(255), 
-	"vlocity_cmt__EndOfLifeDate__c" VARCHAR(255), 
-	"vlocity_cmt__FulfilmentStartDate__c" VARCHAR(255), 
-	"vlocity_cmt__GlobalGroupKey__c" VARCHAR(255), 
-	"vlocity_cmt__GlobalKey__c" VARCHAR(255), 
-	"vlocity_cmt__HeaderData__c" VARCHAR(255), 
-	"vlocity_cmt__HelpText__c" VARCHAR(255), 
-	"vlocity_cmt__ImageId__c" VARCHAR(255), 
-	"vlocity_cmt__IsConfigurable__c" VARCHAR(255), 
-	"vlocity_cmt__IsCustomerSubscription__c" VARCHAR(255), 
-	"vlocity_cmt__IsLocationDependent__c" VARCHAR(255), 
-	"vlocity_cmt__IsNotAssetizable__c" VARCHAR(255), 
-	"vlocity_cmt__IsOrderable__c" VARCHAR(255), 
-	"vlocity_cmt__JSONAttribute__c" VARCHAR(255), 
-	"vlocity_cmt__JeopardySafetyIntervalUnit__c" VARCHAR(255), 
-	"vlocity_cmt__JeopardySafetyInterval__c" VARCHAR(255), 
-	"vlocity_cmt__LifecycleStatus__c" VARCHAR(255), 
-	"vlocity_cmt__MainFeatureQuantityUom__c" VARCHAR(255), 
-	"vlocity_cmt__MainFeatureQuantity__c" VARCHAR(255), 
-	"vlocity_cmt__MainFeatureTermInDays__c" VARCHAR(255), 
-	"vlocity_cmt__Modification__c" VARCHAR(255), 
-	"vlocity_cmt__Scope__c" VARCHAR(255), 
-	"vlocity_cmt__SellingEndDate__c" VARCHAR(255), 
-	"vlocity_cmt__SellingStartDate__c" VARCHAR(255), 
-	"vlocity_cmt__SpecificationSubType__c" VARCHAR(255), 
-	"vlocity_cmt__SpecificationType__c" VARCHAR(255), 
-	"vlocity_cmt__StandardPremium__c" VARCHAR(255), 
-	"vlocity_cmt__SubType__c" VARCHAR(255), 
-	"vlocity_cmt__TimeToLive__c" VARCHAR(255), 
-	"vlocity_cmt__TrackAsAgreement__c" VARCHAR(255), 
-	"vlocity_cmt__Type__c" VARCHAR(255), 
-	"vlocity_cmt__VersionEndDateTime__c" VARCHAR(255), 
-	"vlocity_cmt__VersionLabel__c" VARCHAR(255), 
-	"vlocity_cmt__VersionStartDateTime__c" VARCHAR(255), 
-	"vlocity_cmt__ApprovedBy__c" VARCHAR(255), 
 	PRIMARY KEY (id)
 );
-INSERT INTO "Product2" VALUES(1,'True','','PD_REGULATOR','','','Regulator','','','False','','','','','','','','','','','','','','','','','363a19f4-a9a3-2be4-1d00-d85658170799','6e0ac4c2-9e53-250e-64da-e26fcb08360d','','','','False','False','False','False','True','','Seconds','','Draft','','','','','Order Item','','','','','','None','','False','None','','','','');
-INSERT INTO "Product2" VALUES(2,'True','','PD_GAS_METER','','','Gas Meter','','','False','','','','','','','','','','','','','','','','','fdd8e4c7-5d2f-da8d-0d38-ac8f508631b0','f4c74198-e103-8d3a-6f89-6b1e17a35d9c','','','','False','False','False','False','True','','Seconds','','Draft','','','','','Order Item','','','','','','None','','False','None','','','','');
-CREATE TABLE "Product2_rt_mapping" (
-	record_type_id VARCHAR(18) NOT NULL, 
-	developer_name VARCHAR(255), 
-	PRIMARY KEY (record_type_id)
-);
-INSERT INTO "Product2_rt_mapping" VALUES('0127i000003izQIAAY','Class');
-INSERT INTO "Product2_rt_mapping" VALUES('0127i000003izQBAAY','Product');
-INSERT INTO "Product2_rt_mapping" VALUES('0127i000003izQEAAY','ProductTemplate');
-INSERT INTO "Product2_rt_mapping" VALUES('0127i000003izQ6AAI','TermSpec');
+INSERT INTO "Product2" VALUES(1,'True','PD_REGULATOR','Standard gas regulator','Gas','Regulator','False');
+INSERT INTO "Product2" VALUES(2,'True','PD_GAS_METER','Standard fixed gas','Gas','Gas Meter','False');
 CREATE TABLE "ServiceTerritory" (
 	id INTEGER NOT NULL, 
 	"IsActive" VARCHAR(255), 
