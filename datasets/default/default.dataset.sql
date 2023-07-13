@@ -261,25 +261,28 @@ INSERT INTO "TimeSlot" VALUES(5,'Friday','18:00:00.000Z','09:00:00.000Z','1');
 INSERT INTO "TimeSlot" VALUES(6,'Saturday','18:00:00.000Z','09:00:00.000Z','1');
 CREATE TABLE "WorkPlanSelectionRule" (
 	id INTEGER NOT NULL, 
+	"IsActive" VARCHAR(255), 
+	"Description" VARCHAR(255), 
 	"WorkPlanTemplateId" VARCHAR(255), 
+	"WorkTypeId" VARCHAR(255), 
 	PRIMARY KEY (id)
 );
-INSERT INTO "WorkPlanSelectionRule" VALUES(1,'1');
-INSERT INTO "WorkPlanSelectionRule" VALUES(2,'2');
-INSERT INTO "WorkPlanSelectionRule" VALUES(3,'3');
-INSERT INTO "WorkPlanSelectionRule" VALUES(4,'4');
-INSERT INTO "WorkPlanSelectionRule" VALUES(5,'5');
-INSERT INTO "WorkPlanSelectionRule" VALUES(6,'6');
-INSERT INTO "WorkPlanSelectionRule" VALUES(7,'10');
-INSERT INTO "WorkPlanSelectionRule" VALUES(8,'11');
-INSERT INTO "WorkPlanSelectionRule" VALUES(9,'4');
-INSERT INTO "WorkPlanSelectionRule" VALUES(10,'5');
-INSERT INTO "WorkPlanSelectionRule" VALUES(11,'7');
-INSERT INTO "WorkPlanSelectionRule" VALUES(12,'12');
-INSERT INTO "WorkPlanSelectionRule" VALUES(13,'4');
-INSERT INTO "WorkPlanSelectionRule" VALUES(14,'5');
-INSERT INTO "WorkPlanSelectionRule" VALUES(15,'9');
-INSERT INTO "WorkPlanSelectionRule" VALUES(16,'8');
+INSERT INTO "WorkPlanSelectionRule" VALUES(1,'True', 'Assign Wrap Up tasks for Gas Meter Replacement process','1','2');
+INSERT INTO "WorkPlanSelectionRule" VALUES(2,'True', 'Assign Safety Check tasks for Gas Meter replacement process','2','2');
+INSERT INTO "WorkPlanSelectionRule" VALUES(3,'True', 'Assign addition of Meter and Regulator tasks for Gas Meter Replacement process','3','2');
+INSERT INTO "WorkPlanSelectionRule" VALUES(4,'True', 'Assign Verification tasks for Gas Meter Replacement process','4','2');
+INSERT INTO "WorkPlanSelectionRule" VALUES(5,'True', 'Assign Safety Check tasks for Gas Meter Replacement process','5','2');
+INSERT INTO "WorkPlanSelectionRule" VALUES(6,'True', 'Assign Health and Safety Check tasks for Gas Meter Replacement process','6','2');
+INSERT INTO "WorkPlanSelectionRule" VALUES(7,'True', 'Assign Wrap Up tasks for Meter Turn Off/ Move Out process','10','1');
+INSERT INTO "WorkPlanSelectionRule" VALUES(8,'True', 'Assign Health and Safety Check tasks for Meter Turn Off/ Move Out process','11','1');
+INSERT INTO "WorkPlanSelectionRule" VALUES(9,'True', 'Assign Verification tasks for Meter Turn Off/ Move Out process','4','1');
+INSERT INTO "WorkPlanSelectionRule" VALUES(10,'True', 'Assign Safety Checks tasks for Meter Turn Off/ Move Out process','5','1');
+INSERT INTO "WorkPlanSelectionRule" VALUES(11,'True', 'Assign Turn Off process tasks for Meter Turn Off/ Move Out process','7','1');
+INSERT INTO "WorkPlanSelectionRule" VALUES(12,'True', 'Assign Wrap Up tasks for Meter Turn On/ Move In process','12','3');
+INSERT INTO "WorkPlanSelectionRule" VALUES(13,'True', 'Assign Verification task for Meter Turn On/ Move In process','4','3');
+INSERT INTO "WorkPlanSelectionRule" VALUES(14,'True', 'Assign Safety Check tasks for Meter Turn On/ Move In process','5','3');
+INSERT INTO "WorkPlanSelectionRule" VALUES(15,'True', 'Assign Health and Safety Check tasks for Meter Turn On/ Move In process','9','3');
+INSERT INTO "WorkPlanSelectionRule" VALUES(16,'True', 'Assign Turn On process tasks for Meter Turn On/ Move In process','8','3');
 CREATE TABLE "WorkPlanTemplate" (
 	id INTEGER NOT NULL, 
 	"IsActive" VARCHAR(255), 
