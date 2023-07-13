@@ -61,7 +61,10 @@ extract:
     - Name
   WorkPlanSelectionRule:
     fields:
+    - IsActive
+    - Description
     - WorkPlanTemplateId
+    - WorkTypeId
   Location:
     fields:
     - CloseDate
