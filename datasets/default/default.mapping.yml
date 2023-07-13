@@ -173,10 +173,16 @@ Insert WorkPlanTemplateEntry:
 Insert WorkPlanSelectionRule:
   sf_object: WorkPlanSelectionRule
   table: WorkPlanSelectionRule
+  fields:
+  - IsActive
+  - Description
   lookups:
     WorkPlanTemplateId:
       table: WorkPlanTemplate
       key_field: WorkPlanTemplateId
+    WorkTypeId:
+      table: WorkType
+      key_field: WorkTypeId
 Insert vlocity_cmt__ServicePoint__c:
   sf_object: vlocity_cmt__ServicePoint__c
   table: vlocity_cmt__ServicePoint__c
