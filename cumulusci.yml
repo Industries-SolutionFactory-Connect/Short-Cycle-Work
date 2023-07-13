@@ -100,6 +100,9 @@ plans:
       - when: "'FSL' not in org_config.installed_packages or 'vlocity_cmt' not in org_config.installed_packages"
         action: error
         message: "This solution requires Field Service Lightning and Vlocity CMT. Please ensure these packages are installed before proceeding"
+      - when: "'FieldServiceStandardPsl' not in tasks.get_assigned_permission_set_licenses() or 'vlocity_cmt.EAndUCloudBasePsl' not in tasks.get_assigned_permission_set_licenses()"
+        action: error
+        message: "This solution requires the Permission Set Licenses 'FieldServiceStandardPsl' and 'vlocity_cmt.EAndUCloudBasePsl'. Please ensure that you are assigned these Permission Set LIcenses before proceeding."
     steps:
       1:
         flow: deploy_qbrix
